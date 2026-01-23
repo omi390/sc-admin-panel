@@ -1,0 +1,212 @@
+[
+    {
+        "routeName": "Customized Requests",
+        "URI": "provider/booking/post",
+        "keywords": "BOOKING MANAGEMENT Bookings Customized Requests Request List Customized Booking Requests New Offer Requests My Bid Requests Total Customized Booking Booking ID Customer Info Booking Request Time Service Time Category Other Provider Offering",
+        "isModified": true
+    },
+    {
+        "routeName": "Booking Requests",
+        "URI": "provider/booking/list?booking_status=pending",
+        "keywords": "BOOKING MANAGEMENT Bookings Booking List Booking Requests Booking ID Customer Info Total Amount Payment Status Schedule Date Booking Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Booking List (Accepted)",
+        "URI": "provider/booking/list?booking_status=accepted",
+        "keywords": "BOOKING MANAGEMENT Bookings Booking List Accepted Booking ID Customer Info Total Amount Payment Status Schedule Date Booking Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Booking List (Ongoing)",
+        "URI": "provider/booking/list?booking_status=ongoing",
+        "keywords": "BOOKING MANAGEMENT Bookings Booking List Ongoing Booking ID Customer Info Total Amount Payment Status Schedule Date Booking Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Booking List (Completed)",
+        "URI": "provider/booking/list?booking_status=completed",
+        "keywords": "BOOKING MANAGEMENT Bookings Booking List Completed Booking ID Customer Info Total Amount Payment Status Schedule Date Booking Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Booking List (Canceled)",
+        "URI": "provider/booking/list?booking_status=Canceled",
+        "keywords": "BOOKING MANAGEMENT Bookings Booking List Canceled Booking ID Customer Info Total Amount Payment Status Schedule Date Booking Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Settings (Service Availability)",
+        "URI": "provider/business-settings/get-business-information?web_page=service_availability",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business service availability Information Bookings Business Setup Service Provider Availability Schedules Service Providing Time Weekend",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Settings (Bookings)",
+        "URI": "provider/business-settings/get-business-information?web_page=bookings",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Information Bookings Business Setup Service Cancel Booking Request Edit Booking Request",
+        "isModified": true
+    },
+    {
+        "routeName": "Chatting",
+        "URI": "provider/chat/index",
+        "keywords": "HELP & SUPPORT HELP AND SUPPORT Chatting Chat Index Messages Chat List Start Conversation",
+        "isModified": true
+    },
+    {
+        "routeName": "Create New Advertisement",
+        "URI": "provider/advertisements/ads-create",
+        "keywords": "PROMOTION MANAGEMENT Advertisements Ads create Adds New Advertisements Add Advertisements Create Advertisements Boost Your Visibility with Targeted Ads Video Promotion Provider Promotion",
+        "isModified": true
+    },
+    {
+        "routeName": "Advertisement List",
+        "URI": "provider/advertisements/ads-list",
+        "keywords": "PROMOTION MANAGEMENT Advertisements Ads List Advertisement List Advertisements List All Advertisements Advertisement List Advertisement ID Advertisement Title Ads Type Duration",
+        "isModified": true
+    },
+    {
+        "routeName": "Dashboard",
+        "URI": "provider/dashboard",
+        "keywords": "MAIN Provider Dashboard Business Analytics Total earning Total subscription Total service man Total serviceman Total booking served Want To Get Highlighted Create ads to get highlighted on the app and web browser create ads Earning Statistics Recent Transactions Recent Bookings Activity My Subscriptions Serviceman List",
+        "isModified": true
+    },
+    {
+        "routeName": "Bank Information",
+        "URI": "provider/bank-info",
+        "keywords": "ACCOUNT MANAGEMENT Bank Information Bank Info Provider Bank Information Account Details",
+        "isModified": true
+    },
+    {
+        "routeName": "Account Information (Overview)",
+        "URI": "provider/account-info?page_type=overview",
+        "keywords": "ACCOUNT MANAGEMENT Account Info Account Information Account Overview Receivable balance Cash in hand Withdraw-able Balance Pending Withdraw Already Withdrawn Total Earning Information Details Contact Person Information Business Information Adjust Withdraw Adjust & Withdraw",
+        "isModified": true
+    },
+    {
+        "routeName": "Account Information (Commission Info)",
+        "URI": "provider/account-info?page_type=commission-info",
+        "keywords": "ACCOUNT MANAGEMENT Account Info Account Information Account Commission Conversation",
+        "isModified": true
+    },
+    {
+        "routeName": "Account Information (Reviews)",
+        "URI": "provider/account-info?page_type=review",
+        "keywords": "ACCOUNT MANAGEMENT Account Info Account Information Account Reviews Total Reviews Booking ID Booking Date Service Name Reviews Ratings",
+        "isModified": true
+    },
+    {
+        "routeName": "Account Information (Promotional Cost)",
+        "URI": "provider/account-info?page_type=promotional_cost",
+        "keywords": "ACCOUNT MANAGEMENT Account Info Account Information Account Promotional Cost Currently you are using the following percentages as the promotional cost Discount Cost Percentage Campaign Cost Percentage Coupon Cost Percentage",
+        "isModified": true
+    },
+    {
+        "routeName": "Account Information (Withdraw List)",
+        "URI": "provider/account-info?page_type=withdraw_transaction",
+        "keywords": "ACCOUNT MANAGEMENT Account Info Account Information Account Withdraw List Provide Note Total Amount Admin Note Requested at",
+        "isModified": true
+    },
+    {
+        "routeName": "Profile Update",
+        "URI": "provider/profile-update",
+        "keywords": "Provider Profile Update Update Profile Update Provider Profile General Information Company Logo Contact Person Account Information",
+        "isModified": true
+    },
+    {
+        "routeName": "My Subscriptions",
+        "URI": "provider/sub-category/subscribed",
+        "keywords": "SERVICE MANAGEMENT My Subscriptions Sub Category Subscribed Subscribe Sub Categories Unsubscribe Sub Categories Total Sub Categories Sub Category Name Category Services",
+        "isModified": true
+    },
+    {
+        "routeName": "Available Services",
+        "URI": "provider/sub-category/available/services",
+        "keywords": "Sub Category Available services",
+        "isModified": true
+    },
+    {
+        "routeName": "Withdraw List",
+        "URI": "provider/withdraw",
+        "keywords": "ACCOUNT MANAGEMENT Account Info Account Information Withdraw List Provide Note Total Amount Admin Note Requested at",
+        "isModified": true
+    },
+    {
+        "routeName": "Transaction Reports",
+        "URI": "provider/report/transaction",
+        "keywords": "REPORTS & ANALYTICS REPORTS AND ANALYTICS Reports Report Transaction Transaction Reports Transactions Reports Provider Balance Pending Balance Commission Given Account Payable Account Receivable Total Transactions Transaction ID Transaction Date Transaction To Debit Credit Balance",
+        "isModified": true
+    },
+    {
+        "routeName": "Booking Reports",
+        "URI": "provider/report/booking",
+        "keywords": "REPORTS & ANALYTICS REPORTS AND ANALYTICS Reports Booking Reports Total Bookings Booking Statistics Total Booking Amount Due Amount Already Settled Booking Statistics Booking ID Customer Info Booking Amount Service Discount Coupon Discount VAT Tax",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Reports Overview",
+        "URI": "provider/report/business/overview",
+        "keywords": "REPORTS & ANALYTICS REPORTS AND ANALYTICS Reports Business Overview Reports Business Reports Net Profit Total Expense Campaign Normal Discount Coupon Discount Earning Statistics Total Tax Collected Duration Tax Total Earning Total Expenses Net Profit Net Profit Rate",
+        "isModified": true
+    },
+    {
+        "routeName": "Earning Reports",
+        "URI": "provider/report/business/earning",
+        "keywords": "REPORTS & ANALYTICS REPORTS AND ANALYTICS Reports Business Reports Business Earning Report Earning Reports Business Reports Net Profit Total Earnings Total Expenses Earning Statistics Booking ID Booking Amount Total Service Discount Provider Paid From Total Service Discount Total Coupon Discount Provider Paid From Total Coupon Discount Total Campaign Discount Provider Paid From Total Campaign Discount Subtotal VAT Tax Admin Commission Provider Net Income",
+        "isModified": true
+    },
+    {
+        "routeName": "Expense Reports",
+        "URI": "provider/report/business/expense",
+        "keywords": "REPORTS & ANALYTICS REPORTS AND ANALYTICS Reports Business Reports Expense Reports Business Expense Reports Total Expenses Normal Service Discount Campaign Discount Coupon Discount Expense Statistics Booking ID Normal Discount Coupon Discount Campaign Discount Total Expense",
+        "isModified": true
+    },
+    {
+        "routeName": "Available Services",
+        "URI": "provider/service/available",
+        "keywords": "SERVICE MANAGEMENT Available Services All Service",
+        "isModified": true
+    },
+    {
+        "routeName": "Service Requests List",
+        "URI": "provider/service/request-list",
+        "keywords": "SERVICE MANAGEMENT Service Request Service Request List Total Requests Category Suggested Service Name Description Services Requests",
+        "isModified": true
+    },
+    {
+        "routeName": "Add Service Requests",
+        "URI": "provider/service/make-request",
+        "keywords": "SERVICE MANAGEMENT Service Requests Services Requests Service Make Request Request For Service Tell us more about your desired services Send Request Suggest more services that are willing to book and help us make more efficient platform for you",
+        "isModified": true
+    },
+    {
+        "routeName": "Serviceman List",
+        "URI": "provider/serviceman/list",
+        "keywords": "USER MANAGEMENT Serviceman Service Man Serviceman List Name Contact Info Total Serviceman",
+        "isModified": true
+    },
+    {
+        "routeName": "Add New Serviceman",
+        "URI": "provider/serviceman/create",
+        "keywords": "USER MANAGEMENT Serviceman Service Man Serviceman Create Add New Serviceman General Information Business Information Account Information",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Plan (Package Details)",
+        "URI": "provider/subscription-package/details",
+        "keywords": "SYSTEM MANAGEMENT Business Plan My Business Plan Subscription MANAGEMENT Subscription-package Details Subscription package Details My Subscription Billing Expire Date Total Bill Number of Uses Package Overview Cancel Subscriptions Change/Renew Subscription Plan Change Subscription Plan Renew Subscription Plan Next renewal Bill Total Subscription Taken",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Plan (Transactions)",
+        "URI": "provider/subscription-package/details",
+        "keywords": "SYSTEM MANAGEMENT Business Plan My Business Plan Transactions Subscription MANAGEMENT Subscription-package Details Subscription package Details My Subscription Transaction ID Transaction Date Pricing Duration Payment Status",
+        "isModified": true
+    },
+    {
+        "routeName": "Notification Channel",
+        "URI": "provider/configuration/get-notification-setting?notification_type=provider",
+        "keywords": "SYSTEM MANAGEMENT settings management Business-settings Business settings Notification Channels Setup From here Admins can configure which notifications users receive and through which channels (e.g., Email, SMS, Push notification) Push Notification mail sms Topics",
+        "isModified": false
+    }
+]

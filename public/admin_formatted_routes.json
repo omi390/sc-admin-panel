@@ -1,0 +1,632 @@
+[
+    {
+        "routeName": "System addons",
+        "URI": "admin/addon",
+        "keywords": "SYSTEM ADDON  System addons Addon Index Upload Payment Module Payment Gateway SMS Gateway",
+        "isModified": true
+    },
+    {
+        "routeName": "Dashboard",
+        "URI": "admin/dashboard",
+        "keywords": "Main Dashboard Earning statistics Total earning Commission earning Total Fee Earning Providers Recent transactions Earning statistics Top providers Recent bookings Booking statistics",
+        "isModified": true
+    },
+    {
+        "routeName": "Profile Update",
+        "URI": "admin/profile-update",
+        "keywords": "Update Profile Admin Employee Profile image Edit Profile Edit Admin",
+        "isModified": true
+    },
+    {
+        "routeName": "Employee Role List",
+        "URI": "admin/role/list",
+        "keywords": "EMPLOYEE MANAGEMENT Employee Role Setup Employee Role List Employee Role Index Roles Permissions Accesses Manage Access List Total Employee Roles",
+        "isModified": true
+    },
+    {
+        "routeName": "Employee Role Setup",
+        "URI": "admin/role/create",
+        "keywords": "EMPLOYEE MANAGEMENT Create new role with access Employee Role Setup Create Employee Roles Permissions Accesses Manage Access Add Select the options you want to give access to this role Role Name Add Role Manage Access",
+        "isModified": true
+    },
+    {
+        "routeName": "Employee List",
+        "URI": "admin/employee/list",
+        "keywords": "EMPLOYEE MANAGEMENT Employee List Index Employees All Employees Total Employees Employee Name Employee ID Role Permission",
+        "isModified": true
+    },
+    {
+        "routeName": "Add New Employee",
+        "URI": "admin/employee/create",
+        "keywords": "EMPLOYEE MANAGEMENT Employee Create Add Employees Add New Employee Employee Add Employee Info Set Permissions Give employee\u2019s basic and account info Set what individuals on this role can do General Information Fill an employee\u2019s general info such as name, address number and set roleBusiness Information Give verified information to verify a employee",
+        "isModified": true
+    },
+    {
+        "routeName": "Transaction Reports",
+        "URI": "admin/report/transaction",
+        "keywords": "Transaction Reports REPORTS & ANALYTICS REPORTS And ANALYTICS Admin Balance Commission Earning Extra fee Pending Balance Account Payable Account Receivable Transaction ID Transaction Date Transaction To Debit Credit Balance Transaction Type",
+        "isModified": true
+    },
+    {
+        "routeName": "Booking Reports",
+        "URI": "admin/report/booking",
+        "keywords": "Booking Reports REPORTS & ANALYTICS REPORTS And ANALYTICS Reports Booking Statistics Due Amount Total Booking Amount Already Settled Booking ID Customer Info Provider Info Booking Amount Service Discount Coupon Discount VAT Tax",
+        "isModified": true
+    },
+    {
+        "routeName": "Provider Reports",
+        "URI": "admin/report/provider",
+        "keywords": "REPORTS & ANALYTICS REPORTS And ANALYTICS Reports Provider Reports Provider Info Subscribed Sub Categories Service Men Total Bookings Total Earnings Commission Given Completion Rate",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Reports Overview",
+        "URI": "admin/report/business/overview",
+        "keywords": "Business Overview Report Business Report Net Profit REPORTS & ANALYTICS REPORTS And ANALYTICS Total earning Total expense Earning Statistics Earning Statistics Duration Commission Earnings Total Expenses Net Profit Net Profit Rate",
+        "isModified": true
+    },
+    {
+        "routeName": "Earning Report",
+        "URI": "admin/report/business/earning",
+        "keywords": "REPORTS & ANALYTICS REPORTS And ANALYTICS Earning Report Business Report Business Earning Report Total Earning Commission Earnings Platform fee Earning Statistics",
+        "isModified": true
+    },
+    {
+        "routeName": "Expense Report",
+        "URI": "admin/report/business/expense",
+        "keywords": "REPORTS & ANALYTICS REPORTS And ANALYTICS Report Business Reports Business Expense Reports Total Expenses Normal Service Discount Campaign Discount Coupon Discount Bonus Discount Referral Discount Booking Expense Statistics",
+        "isModified": true
+    },
+    {
+        "routeName": "Keyword Search Analytics",
+        "URI": "admin/analytics/search/keyword",
+        "keywords": "Keyword Search Analytics REPORTS & ANALYTICS REPORTS And ANALYTICS Trending Keywords Zone Wise Search Volume Keyword Search Volume Related Services",
+        "isModified": true
+    },
+    {
+        "routeName": "Customer Search Analytics",
+        "URI": "admin/analytics/search/customer",
+        "keywords": "Customer Search Analytics Analytics REPORTS & ANALYTICS REPORTS And ANALYTICS According to search volume Top Services Search Volume Related Services Times Service Visited Times Added To Cart Total Booking",
+        "isModified": true
+    },
+    {
+        "routeName": "Customized Requests",
+        "URI": "admin/booking/post",
+        "keywords": "BOOKING MANAGEMENT Bookings Customized Booking Requests List Request List Customized Requests Bookings Booking List Total Customized Booking Booking ID Customer Info Booking Request Time Service Time Category Provider Offering",
+        "isModified": true
+    },
+    {
+        "routeName": "Verify Requests",
+        "URI": "admin/booking/list/verification",
+        "keywords": "BOOKING MANAGEMENT Bookings Booking List Bookings Verify Requests Pending Booking Request Verification List Total Request Booking ID Customer Info Total Amount Payment Status Schedule Date Booking Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Booking Requests",
+        "URI": "admin/booking/list?booking_status=pending",
+        "keywords": "BOOKING MANAGEMENT Bookings Pending Booking List Booking Request List Bookings Booking Requests Total Request Booking ID Customer Info Total Amount Payment Status Schedule Date Booking Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Accepted",
+        "URI": "admin/booking/list?booking_status=accepted",
+        "keywords": "BOOKING MANAGEMENT Bookings Accepted Booking List Booking Request List Bookings Booking Requests Total Request Booking ID Customer Info Total Amount Payment Status Schedule Date Booking Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Ongoing",
+        "URI": "admin/booking/list?booking_status=ongoing",
+        "keywords": "BOOKING MANAGEMENT Bookings Ongoing Booking List Booking Request List Bookings Booking Requests Total Request Booking ID Customer Info Total Amount Payment Status Schedule Date Booking Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Completed",
+        "URI": "admin/booking/list?booking_status=completed",
+        "keywords": "BOOKING MANAGEMENT Bookings Completed Booking List Booking Request List Bookings Booking Requests Total Request Booking ID Customer Info Total Amount Payment Status Schedule Date Booking Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Canceled",
+        "URI": "admin/booking/list?booking_status=canceled",
+        "keywords": "BOOKING MANAGEMENT Bookings Canceled Booking List Booking Request List Bookings Booking Requests Total Request Booking ID Customer Info Total Amount Payment Status Schedule Date Booking Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Offline Payment",
+        "URI": "admin/booking/list/offline-payment",
+        "keywords": "BOOKING MANAGEMENT Booking List Offline Payment Booking Offline Payment Booking List Offline Payment Booking Offline Payment Offline Booking",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Setup (Business Info & Maintenance Mode)",
+        "URI": "admin/business-settings/get-business-information?web_page=business_setup",
+        "keywords": "SYSTEM MANAGEMENT Business settings Business setup Get business information Business Info logo favicon Business Name Business Name Email Address Country Currency Symbol Position Currency Code Decimal Point After Currency Default Commission For Admin Pagination Limit Minimum Withdraw Amount Maximum Withdraw Amount Time Zone Time Format Forgot Password Verification Method Phone Number Visibility for Chatting Direct Provider Booking Footer Text Cookies Text Your maintenance mode is activated until I change, System Maintenance Maintenance Date & Time Advance Feature Maintenance Massage",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Setup (General Setup)",
+        "URI": "admin/business-settings/get-business-information?web_page=service_setup",
+        "keywords": "SYSTEM MANAGEMENT Business settings Business setup Get business information General Setup Email Verification Phone Verification Phone Verifiaction Cash After Service Digital Payment Partial Payment Can Combine Payment Offline Payment Guest Checkout",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Setup (Promotions)",
+        "URI": "admin/business-settings/get-business-information?web_page=promotional_setup",
+        "keywords": "SYSTEM MANAGEMENT Business settings Business setup Get business information Promotions Normal Discount Discount Cost Bearer Campaign Discount Campaign Cost Bearer Coupon Discount Coupon Cost Bearer",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Setup (Bookings)",
+        "URI": "admin/business-settings/get-business-information?web_page=bookings",
+        "keywords": "SYSTEM MANAGEMENT Business settings Business setup Get business information Bookings Bookings Setup Bidding System See Other Providers Offers Confirmation OTP for Complete Service Confirmation OTP for Complete Service Service complete Photo Evidence Instant Booking POST Validation Max Booking Amount Min Booking Amount Additional Charge Label Additional Charge Free Additional Charge on Booking Schedule Booking Check The Box If You Want To Add Time Restriction On Schedule Booking",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Setup (Customers)",
+        "URI": "admin/business-settings/get-business-information?web_page=customers",
+        "keywords": "SYSTEM MANAGEMENT Business settings Business setup Get business information Customers Customer Setup Customer Wallet Add Fund To Wallet Customer Loyalty Point Customer Referral Earning Customer Loyalty Point Settings Equivalent Point To 1 Unit Point Earn On Each Booking (%) Minimum Point Required To Convert Customer Referrer Settings ($) Earning To Each Referral Referral-Based New User Discount Settings Referral Based New User Discount Settings Discount Amount Validity",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Setup (Providers)",
+        "URI": "admin/business-settings/get-business-information?web_page=providers",
+        "keywords": "SYSTEM MANAGEMENT Business settings Business setup Get business information Providers Can Cancel Booking Can Edit Booking Suspend On Exceed Cash Limit Provider Self Registration Maximum Cash In Hand Limit Provider Self Delete Minimum Payable Amount",
+        "isModified": true
+    },
+    {
+        "routeName": "Business Setup (Serviceman)",
+        "URI": "admin/business-settings/get-business-information?web_page=servicemen",
+        "keywords": "SYSTEM MANAGEMENT Business settings Business setup Get business information Serviceman Cancel Booking Request Edit Booking Request",
+        "isModified": true
+    },
+    {
+        "routeName": "Page Setup (About Us)",
+        "URI": "admin/business-settings/get-pages-setup?web_page=about_us",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup Page Settings Page Setup About Us Get pages setup aboutus ",
+        "isModified": true
+    },
+    {
+        "routeName": "Page Setup (Cancellation Policy)",
+        "URI": "admin/business-settings/get-pages-setup?web_page=cancellation_policy",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup Page Settings Page Setup Get pages setup Cancellation Policy",
+        "isModified": true
+    },
+    {
+        "routeName": "Page Setup (Privacy Policy)",
+        "URI": "admin/business-settings/get-pages-setup?web_page=privacy_policy",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup Page Settings Page Setup Get pages setup Privacy Policy",
+        "isModified": true
+    },
+    {
+        "routeName": "Page Setup (Refund Policy)",
+        "URI": "admin/business-settings/get-pages-setup?web_page=refund_policy",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup Page Settings Page Setup Get pages setup Refund Policy",
+        "isModified": true
+    },
+    {
+        "routeName": "Page Setup (Terms And Conditions)",
+        "URI": "admin/business-settings/get-pages-setup?web_page=terms_and_conditions",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup Page Settings Page Setup Get pages setup Terms And Conditions",
+        "isModified": true
+    },
+    {
+        "routeName": "Backup Database",
+        "URI": "admin/business-settings/get-database-backup",
+        "keywords": "Database Backup Business Settings Business Setup SYSTEM MANAGEMENT Backup Database",
+        "isModified": true
+    },
+    {
+        "routeName": "Landing Page Setup (Text Setup)",
+        "URI": "admin/business-settings/get-landing-information?web_page=text_setup",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup landing information Landing Page Setup Landing Page Settings landing information Landing Page Setup Text Setup Top Title Top Description Tob Sub Title Mid Title About Us Title About Us Description Registration Title Registration Description Bottom Title",
+        "isModified": true
+    },
+    {
+        "routeName": "Landing Page Setup (Button & Links)",
+        "URI": "admin/business-settings/get-landing-information?web_page=button_and_links",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup landing information Landing Page Setup Landing Page Settings landing information Landing Page Setup Button & Links Button And Links App Url Playstore App Url Appstore Web Url",
+        "isModified": true
+    },
+    {
+        "routeName": "Landing Page Setup (Speciality)",
+        "URI": "admin/business-settings/get-landing-information?web_page=speciality",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup landing information Landing Page Setup Landing Page Settings landing information Landing Page Setup Speciality Speciality Title Speciality Description Title Description Image",
+        "isModified": true
+    },
+    {
+        "routeName": "Landing Page Setup (Testimonial)",
+        "URI": "admin/business-settings/get-landing-information?web_page=testimonial",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup landing information Landing Page Setup Landing Page Settings landing information Landing Page Setup Testimonial Reviewer Name Reviewer Description Review Name Designation Review Image",
+        "isModified": true
+    },
+    {
+        "routeName": "Landing Page Setup (Features)",
+        "URI": "admin/business-settings/get-landing-information?web_page=features",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup landing information Landing Page Setup Landing Page Settings landing information Landing Page Setup Features Feature Title Feature Sub Title SubTitle Images",
+        "isModified": true
+    },
+    {
+        "routeName": "Landing Page Setup (Images)",
+        "URI": "admin/business-settings/get-landing-information?web_page=images",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup landing information Landing Page Setup Landing Page Settings landing information Landing Page Setup Images",
+        "isModified": true
+    },
+    {
+        "routeName": "Landing Page Setup (Background)",
+        "URI": "admin/business-settings/get-landing-information?web_page=background",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup landing information Landing Page Setup Landing Page Settings landing information Landing Page Setup Background Header Background Body Background Footer Background",
+        "isModified": true
+    },
+    {
+        "routeName": "Landing Page Setup (Social Media)",
+        "URI": "admin/business-settings/get-landing-information?web_page=social_media",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup landing information Landing Page Setup Landing Page Settings landing information Landing Page Setup Social Media Media Link",
+        "isModified": true
+    },
+    {
+        "routeName": "Landing Page Setup (Meta)",
+        "URI": "admin/business-settings/get-landing-information?web_page=meta",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup landing information Landing Page Setup Landing Page Settings landing information Landing Page Setup Meta Meta Title Meta Description",
+        "isModified": true
+    },
+    {
+        "routeName": "Landing Page Setup (Web App)",
+        "URI": "admin/business-settings/get-landing-information?web_page=web_app",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup landing information Landing Page Setup Landing Page Settings landing information Landing Page Setup Web App Top Title Top Description Mid Title Mid Sub Title 1 Mid Sub Description 1 Mid Sub Title 2 Mid Sub Description 2 Mid Sub Title 3 Mid Sub Description 3 Download Section Title Download Section Description Bottom Title Testimonial Title",
+        "isModified": true
+    },
+    {
+        "routeName": "Landing Page Setup (Web App Images)",
+        "URI": "admin/business-settings/get-landing-information?web_page=web_app_image",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup landing information Landing Page Setup Landing Page Settings landing information Landing Page Setup Web App Images Web App (Images) Support section image Download section Feature section image",
+        "isModified": true
+    },
+    {
+        "routeName": "Notification Setup",
+        "URI": "admin/configuration/get-notification-setting",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup Configurations Notification Setup Push Notification Firebase Push Notification Setup",
+        "isModified": true
+    },
+    {
+        "routeName": "Language Setup",
+        "URI": "admin/configuration/language-setup",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup Configurations Language Setup Language Settings",
+        "isModified": true
+    },
+    {
+        "routeName": "Customer Settings",
+        "URI": "admin/customer/settings",
+        "keywords": "SYSTEM MANAGEMENT Business Settings Business Setup Customer Settings Customer Setup loyalty point wallet referral earning",
+        "isModified": true
+    },
+    {
+        "routeName": "Category Setup",
+        "URI": "admin/category/create",
+        "keywords": "SERVICE MANAGEMENT Categories Category Setup Sub Category Setup add Category Category List All Category Category name Sub category count Zone count Total Categories",
+        "isModified": true
+    },
+    {
+        "routeName": "Sub Category Setup",
+        "URI": "admin/sub-category/create",
+        "keywords": "SERVICE MANAGEMENT Categories Category Setup Sub Category Setup Name Sub Category List Parent category Service count",
+        "isModified": true
+    },
+    {
+        "routeName": "Messages",
+        "URI": "admin/chat/index",
+        "keywords": "Chat Index Chat List Messages message list conversation chatting messaging Start Conversation",
+        "isModified": true
+    },
+    {
+        "routeName": "Customer List",
+        "URI": "admin/customer/list",
+        "keywords": "CUSTOMER MANAGEMENT Customers Customer List Customer Index Customer Name Contact Info Total Bookings Total Customers",
+        "isModified": true
+    },
+    {
+        "routeName": "Add New Customer",
+        "URI": "admin/customer/create",
+        "keywords": "CUSTOMER MANAGEMENT Customers Add New Customer add customer customer create create customer Profile Image",
+        "isModified": true
+    },
+    {
+        "routeName": "Add Fund To Wallet",
+        "URI": "admin/customer/wallet/add-fund",
+        "keywords": "CUSTOMER MANAGEMENT Customer Wallet Add Fund To Wallet Add Fund",
+        "isModified": true
+    },
+    {
+        "routeName": "Wallet Transaction Report",
+        "URI": "admin/customer/wallet/report",
+        "keywords": "CUSTOMER MANAGEMENT Customer Wallet Wallet Transaction Report Debit Credit Balance Transaction ID Reference Transaction Date Transaction To Total Transactions",
+        "isModified": true
+    },
+    {
+        "routeName": "Loyalty Point Report",
+        "URI": "admin/customer/loyalty-point/report",
+        "keywords": "CUSTOMER MANAGEMENT Customer Loyalty points Report Loyalty point Report Loyalty Points Transactions Debit Credit Balance Total Transactions Transaction ID Customer Transaction Date",
+        "isModified": true
+    },
+    {
+        "routeName": "Offline Payment Method List",
+        "URI": "admin/configuration/offline-payment/list",
+        "keywords": "SYSTEM MANAGEMENT Configurations third party 3rd party 3rdParty ThirdParty payment config Offline payment List payment gateway configurations Offline Payment Method List",
+        "isModified": true
+    },
+    {
+        "routeName": "Add Offline Payment Method",
+        "URI": "admin/configuration/offline-payment/create",
+        "keywords": "SYSTEM MANAGEMENT Configurations Payment Information third party 3rd 3rdParty ThirdParty party payment config Offline payment List payment gateway configurations Offline Payment Method Add Offline Payment Method",
+        "isModified": true
+    },
+    {
+        "routeName": "Bonus List",
+        "URI": "admin/bonus/list",
+        "keywords": "PROMOTION MANAGEMENT Wallet Bonus Bonus List Bonus Index Wallet Bonus Setup Total bonuses Total bonuses Bonus Title Bonus Info Bonus Amount Started On Expires On",
+        "isModified": true
+    },
+    {
+        "routeName": "Wallet Bonus Setup",
+        "URI": "admin/bonus/create",
+        "keywords": "PROMOTION MANAGEMENT Wallet Bonus Add New Bonus Create Bonus New Bonus Wallet Bonus Setup Bonus Title",
+        "isModified": true
+    },
+    {
+        "routeName": "Add New Discount",
+        "URI": "admin/discount/create",
+        "keywords": "PROMOTION MANAGEMENT Discounts Discount Create Add New Discount Add Discount Discount Type Discount amount type",
+        "isModified": true
+    },
+    {
+        "routeName": "Discount List",
+        "URI": "admin/discount/list",
+        "keywords": "PROMOTION MANAGEMENT Discounts Discount List All Discounts Total Discount Discount Type Title Zones",
+        "isModified": true
+    },
+    {
+        "routeName": "Add New Coupon",
+        "URI": "admin/coupon/create",
+        "keywords": "PROMOTION MANAGEMENT Coupons Coupon Create Add New Coupon Add Coupon Discount type Coupon Code Discount Title Discount amount type",
+        "isModified": true
+    },
+    {
+        "routeName": "Coupon List",
+        "URI": "admin/coupon/list",
+        "keywords": "PROMOTION MANAGEMENT Coupons Coupon List Service Wise Category Wise Mixed Total Coupons Title Coupon type Coupon code Discount type Zones Limit per user",
+        "isModified": true
+    },
+    {
+        "routeName": "Add New Campaign",
+        "URI": "admin/campaign/create",
+        "keywords": "PROMOTION MANAGEMENT Campaigns Campaign Create Add New Campaign Campaign Name Discount type Discount Type Discount amount type",
+        "isModified": true
+    },
+    {
+        "routeName": "Campaign List",
+        "URI": "admin/campaign/list",
+        "keywords": "PROMOTION MANAGEMENT Campaigns Campaign List All Campaigns Service Wise Category Wise Mixed Total Campaigns Campaign name Discount type Discount title Applicable On",
+        "isModified": true
+    },
+    {
+        "routeName": "Create New Advertisement",
+        "URI": "admin/advertisements/ads-create",
+        "keywords": "PROMOTION MANAGEMENT Advertisements Ads create Create New Advertisement Add Ads Add Advertisements Create Advertisements Boost Your Visibility with Targeted Ads Advertisement Preview Video Promotion Provider Promotion",
+        "isModified": true
+    },
+    {
+        "routeName": "Advertisement List",
+        "URI": "admin/advertisements/ads-list",
+        "keywords": "PROMOTION MANAGEMENT Advertisements Ads list Advertisements List All Advertisements Advertisement Title Advertisement ID Provider Info Ads Type Duration Advertisement Type Video Promotion Provider Promotion",
+        "isModified": true
+    },
+    {
+        "routeName": "Advertisement Requests",
+        "URI": "admin/advertisements/new-ads-request",
+        "keywords": "PROMOTION MANAGEMENT Advertisements Advertisement Requests New ads request New Advertisement Request Update Requests Advertisement Title Advertisement ID Provider Info Ads Type Duration Advertisement Type Video Promotion Provider Promotion",
+        "isModified": true
+    },
+    {
+        "routeName": "Promotional Banners",
+        "URI": "admin/banner/create",
+        "keywords": "PROMOTION MANAGEMENT Promotional Banners Banner Create Banner List All Banners Add New banner Add Banner Resource type Total Banners Banner Title Promotional Banner Title Promotional Banner Type ",
+        "isModified": true
+    },
+    {
+        "routeName": "Send Notifications",
+        "URI": "admin/push-notification/create",
+        "keywords": "PROMOTION MANAGEMENT Push Notification Send Notifications Notification Title Push Notifications Push Notification Title Push Notification Description",
+        "isModified": true
+    },
+    {
+        "routeName": "Provider List",
+        "URI": "admin/provider/list",
+        "keywords": "PROVIDER MANAGEMENT Providers Provider List Providers All Providers Total Providers Onboarding Request Active Providers Inactive Providers Total Providers Contact Info Total Subscribed Sub Categories Total Booking Served Service Availability",
+        "isModified": true
+    },
+    {
+        "routeName": "Add New Provider",
+        "URI": "admin/provider/create",
+        "keywords": "PROVIDER MANAGEMENT Providers Provider Create Add New Provider Add Provider Add Provider Create Provider Provider General Information Company Logo Company Individual Name Business Information Contact Person Account Information Select Address from Map",
+        "isModified": true
+    },
+    {
+        "routeName": "Provider Onboarding Request",
+        "URI": "admin/provider/onboarding-request",
+        "keywords": "PROVIDER MANAGEMENT Providers Provider Onboarding Request Provider Request Total Requests Contact Info Pending Provider List Provider list",
+        "isModified": true
+    },
+    {
+        "routeName": "SMS Setup",
+        "URI": "admin/configuration/sms-get",
+        "keywords": "SYSTEM MANAGEMENT Configurations 3rd Party Third Party 3rdParty ThirdParty Configuration SMS Config SMS Setup SMS Configurations Twilio 2factor Msg91 Nexmo Releans OTP Template",
+        "isModified": true
+    },
+    {
+        "routeName": "Service List",
+        "URI": "admin/service/list",
+        "keywords": "SERVICE MANAGEMENT Services Service Index Service List Total Services Name Category Zones Minimum Bidding Price All Services services list",
+        "isModified": true
+    },
+    {
+        "routeName": "Add New Service",
+        "URI": "admin/service/create",
+        "keywords": "SERVICE MANAGEMENT Services Service Create Add New Service Add Service Service information Price variation Service Name",
+        "isModified": true
+    },
+    {
+        "routeName": "Service Request List",
+        "URI": "admin/service/request/list",
+        "keywords": "SERVICE MANAGEMENT Services Service Request List Category User Service Name Service Description Given feedback Total Service Requests New Service Request services list",
+        "isModified": true
+    },
+    {
+        "routeName": "All Transactions",
+        "URI": "admin/transaction/list",
+        "keywords": "TRANSACTION MANAGEMENT Transaction List All Transactions Total Transactions Transaction ID Transaction Date Transaction From Transaction To Transaction Type Debit Credit Balance",
+        "isModified": true
+    },
+    {
+        "routeName": "Withdrawal Method List",
+        "URI": "admin/withdraw/method/list",
+        "keywords": "PROVIDER MANAGEMENT Withdraws Withdraw Method Setup Withdraw Method List Method Name Method Fields",
+        "isModified": true
+    },
+    {
+        "routeName": "Add New Withdrawal Method",
+        "URI": "admin/withdraw/method/create",
+        "keywords": "PROVIDER MANAGEMENT Withdraws Withdraw Method Create Withdrawal Methods Add Withdrawal Methods Method Name Add Fields Add Method Create Method",
+        "isModified": true
+    },
+    {
+        "routeName": "Service Zone Setup",
+        "URI": "admin/zone/create",
+        "keywords": "SERVICE MANAGEMENT Service Zones Setup Service Zone Setup Zone Create Zone Setup Instructions Create zone by click on map and connect the dots together Zone Name Total Zones Zone name Providers Category",
+        "isModified": true
+    },
+    {
+        "routeName": "3rd Party (Map Api)",
+        "URI": "admin/configuration/get-third-party-config?web_page=google_map",
+        "keywords": "SYSTEM MANAGEMENT Configurations 3rd Party 3rdParty Third Party ThirdParty Map api Google Map Api Key Setup Map api Key Server Map Api Key Client Client Key Should Have Enable Map Javascript Api And You Can Restrict It With Http Refere. Server Key Should Have Enable Place Api Key And You Can Restrict It With Ip. You Can Use Same Api For Both Field Without Any Restrictions. ",
+        "isModified": true
+    },
+    {
+        "routeName": "3rd Party (Firebase Push Notification)",
+        "URI": "admin/configuration/get-third-party-config?web_page=push_notification",
+        "keywords": "SYSTEM MANAGEMENT Configurations 3rd Party 3rdParty Third Party ThirdParty Firebase Push Notification Firebase Push Notification Setup Push Notifications File Upload File Content Service File Service File Content",
+        "isModified": true
+    },
+    {
+        "routeName": "3rd Party (Recaptcha)",
+        "URI": "admin/configuration/get-third-party-config?web_page=recaptcha",
+        "keywords": "SYSTEM MANAGEMENT Configurations 3rd Party 3rdParty Third Party ThirdParty Recaptcha Recaptcha Setup Site Key Site Secret Instructions",
+        "isModified": true
+    },
+    {
+        "routeName": "3rd Party (Apple Login)",
+        "URI": "admin/configuration/get-third-party-config?web_page=apple_login",
+        "keywords": "SYSTEM MANAGEMENT Configurations 3rd Party 3rdParty Third Party ThirdParty Apple Login Client Id Team Id Key Id Service File Instructions  AuthKey KeyID Team ID Client ID",
+        "isModified": true
+    },
+    {
+        "routeName": "3rd Party (Email Config)",
+        "URI": "admin/configuration/get-third-party-config?web_page=email_config",
+        "keywords": "SYSTEM MANAGEMENT Configurations 3rd Party 3rdParty Third Party ThirdParty Email Config Send Test Mail Mailer Name Host Driver Port User Name Port User Name Email Id Encryption Password Send Mail",
+        "isModified": true
+    },
+    {
+        "routeName": "3rd Party (SMS Config)",
+        "URI": "admin/configuration/get-third-party-config?web_page=google_map",
+        "keywords": "SYSTEM MANAGEMENT Configurations 3rd Party 3rdParty Third Party ThirdParty SMS Config Sms Setup Twilio 2factor Msg91 Nexmo Releans",
+        "isModified": true
+    },
+    {
+        "routeName": "3rd Party (Payment Config)",
+        "URI": "admin/configuration/get-third-party-config?web_page=payment_config&type=digital_payment",
+        "keywords": "SYSTEM MANAGEMENT Configurations 3rd Party 3rdParty Third Party ThirdParty Payment Config Payment Gateway Configurations Digital Payment Gateways Offline Payment Paytm Stripe Razor Pay Senang Pay Flutterwave Paystack Ssl Commerz",
+        "isModified": true
+    },
+    {
+        "routeName": "3rd Party (Storage Connection)",
+        "URI": "admin/configuration/get-third-party-config?web_page=storage_connection",
+        "keywords": "SYSTEM MANAGEMENT Configurations 3rd Party 3rdParty Third Party ThirdParty Storage Connection Storage Connection Setting Local System  3rd Party Storage s3 Storage aws Storage local Storage public Storage S3 Credential The Access Key ID is a publicly accessible identifier used to authenticate requests to S3 Key Secret Credential Region Bucket Url Endpoint",
+        "isModified": true
+    },
+    {
+        "routeName": "3rd Party (App Settings)",
+        "URI": "admin/configuration/get-third-party-config?web_page=app_settings",
+        "keywords": "SYSTEM MANAGEMENT Configurations 3rd Party 3rdParty Third Party ThirdParty App Settings Customer App Configuration Customer App Configuration Provider App Configuration Serviceman App Configuration Min Version For Android Min Version For IOS",
+        "isModified": true
+    },
+    {
+        "routeName": "Gallery",
+        "URI": "admin/business-settings/get-gallery-setup",
+        "keywords": "SYSTEM MANAGEMENT Gallery File Manager ",
+        "isModified": true
+    },
+    {
+        "routeName": "Subscription Package",
+        "URI": "admin/subscription/package/list",
+        "keywords": "SYSTEM MANAGEMENT Subscription Management Subscription Package List Subscription Packages List Subscriptions Subscription List All Subscriptions Create Subscription Plan Add Subscription Package Overview Package Name Pricing Duration Current Subscriber",
+        "isModified": true
+    },
+    {
+        "routeName": "Create Subscription Package",
+        "URI": "admin/subscription/package/create",
+        "keywords": "SYSTEM MANAGEMENT Subscription Management Subscriptions Package Subscription Package Create Create Subscription Package Add Subscription Package Add New Subscription Package Add Subscriptions Packages Create Subscriptions Packages for Subscription Business Model Package Information Create Subscriptions Packages for Subscription Business Model Subscription Packages Package Available Features Set limit Maximum Booking Request Limit Maximum Service Category Limit Maximum Service Sub Category Limit Use Limit Unlimited Unlimited (Default) Subscription Mobile App Review Chat Serviceman Bidding System Booking Limit",
+        "isModified": true
+    },
+    {
+        "routeName": "Settings",
+        "URI": "admin/subscription/settings",
+        "keywords": "SYSTEM MANAGEMENT Subscription Management Subscription Settings Subscription Setting Offer Free Trial Free Trial Period Show Deadline Warning Return Money Restriction Vat",
+        "isModified": true
+    },
+    {
+        "routeName": "Subscriber List",
+        "URI": "admin/subscription/subscriber/list",
+        "keywords": "SYSTEM MANAGEMENT Subscription Management Subscription Subscriber List All Subscribers Subscribed Provider List Total Subscription Active Subscriptions Expired Subscription Expiring Soon TOTAL TRANSACTIONS Provider List Provider Info Package Name Package Price Exp Date Used",
+        "isModified": true
+    },
+    {
+        "routeName": "Notification Channel",
+        "URI": "admin/business-settings/notification-channel?notification_type=user",
+        "keywords": "SYSTEM MANAGEMENT settings management Business-settings Business settings Notification Channels Setup From here Admins can configure which notifications users receive and through which channels (e.g., Email, SMS, Push notification) Push Notification mail sms Topics",
+        "isModified": true
+    },
+    {
+        "routeName": "Login setup",
+        "URI": "admin/business-settings/login/setup",
+        "keywords": "SYSTEM MANAGEMENT settings management login Setup OTP Verification General Login Setup Setup Login Option The option you select will allow the customer to login Manual Login  otp login social media login Social Media Login Setup Connect 3rd Party Login System from Here Choose Social Media\n google facebook apple The option you select will need to verified by the customer & the provider email verification phone number verification ",
+        "isModified": true
+    },
+    {
+        "routeName": "Rules & Restrictions\n",
+        "URI": "admin/business-settings/login/setup?web_page=admin_provider_login",
+        "keywords": "SYSTEM MANAGEMENT settings management login Setup Temporary Login Block Time* Maximum Login Hit* Temporary OTP Block Time* Maximum OTP Hit * OTP Resend Time* in second",
+        "isModified": true
+    },
+    {
+        "routeName": "Subscription Earning",
+        "URI": "admin/report/business/subscription-earning",
+        "keywords": "Report Business Subscription earning REPORTS & ANALYTICS REPORTS ANALYTICS REPORTS AND ANALYTICS Earning Details Total Earning Subscription Based Earning Statistics Providers Based on activity Total Subscription inactive subscribers active subscribers SL Provider Current Package Package Duration Total Subscription Used Total Subscription Earning Total VAT / Tax Net Earning ",
+        "isModified": false
+    },
+    {
+        "routeName": "Commission Earning",
+        "URI": "admin/report/business/commission-earning",
+        "keywords": "Reports Business Commission earning Business reports REPORTS & ANALYTICS REPORTS ANALYTICS REPORTS AND ANALYTICS Earning Statistics Total Earning Providers Based on activity Commission Based Providers inactive subscribers active subscribers SL Bookking ID Booking Date Booking Amount Commission",
+        "isModified": false
+    },
+    {
+        "routeName": "Cron Job",
+        "URI": "admin/business-settings/cron-job",
+        "keywords": "SYSTEM MANAGEMENT Settings Management Business-settings Cron job List Job Title Mail Send Activity Status Action",
+        "isModified": true
+    },
+    {
+        "routeName": "404 Logs",
+        "URI": "admin/business-settings/seo-setting",
+        "keywords": "SYSTEM MANAGEMENT Settings Management 404 Logs SEO Settings Business settings Seo Setting Complete the necessary setup to help users find your site 404 Logs Logs track instances where users encounter page not found errors on a website URL Hits Last Hit Date Redirection Link Action",
+        "isModified": true
+    }
+]

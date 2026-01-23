@@ -1,0 +1,31 @@
+.width-p-0 {
+    width: 0%
+}
+
+.width-p-20 {
+    width: 20%
+}
+
+.width-p-80 {
+    width: 80%
+}
+
+.width-p-90 {
+    width: 90%
+}
+
+.width-p-40 {
+    width: 40%
+}
+
+.width-p-60 {
+    width: 60%
+}
+
+.fs-14px {
+    --fs: 14px
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}

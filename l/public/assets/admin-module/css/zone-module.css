@@ -1,0 +1,16 @@
+.coordinates{
+    display: none;
+}
+.search_area{
+    height: 3em;
+    width:fit-content;
+}
+.map_canvas{
+    height: 310px;
+}
+.map_area{
+    border-radius: 5px;
+}
+.map_canvas{
+    height: 310px;
+}
