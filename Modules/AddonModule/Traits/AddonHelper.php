@@ -6,24 +6,27 @@ trait AddonHelper
 {
     public function get_addons(): array
     {
-        $dir = 'Modules';
-        $directories = self::getDirectories($dir);
+        $dir = base_path('Modules');
+        $directories = $this->getDirectories($dir);
         $addons = [];
+
         foreach ($directories as $directory) {
-            $subDirectories = self::getDirectories('Modules/' . $directory);
+            $subDirectories = $this->getDirectories($dir . '/' . $directory);
             if (in_array('Addon', $subDirectories)) {
-                $addons[] = 'Modules/' . $directory;
+                $addons[] = $dir . '/' . $directory;
             }
         }
 
         $array = [];
         foreach ($addons as $item) {
-            $fullData = include($item . '/Addon/info.php');
-            $array[] = [
-                'addon_name' => $fullData['name'],
-                'software_id' => $fullData['software_id'],
-                'is_published' => $fullData['is_published'],
-            ];
+            if (file_exists($item . '/Addon/info.php')) {
+                $fullData = include($item . '/Addon/info.php');
+                $array[] = [
+                    'addon_name' => $fullData['name'] ?? null,
+                    'software_id' => $fullData['software_id'] ?? null,
+                    'is_published' => $fullData['is_published'] ?? false,
+                ];
+            }
         }
 
         return $array;
@@ -31,21 +34,27 @@ trait AddonHelper
 
     public function get_addon_admin_routes(): array
     {
-        $dir = 'Modules';
-        $directories = self::getDirectories($dir);
+        $dir = base_path('Modules');
+        $directories = $this->getDirectories($dir);
         $addons = [];
+
         foreach ($directories as $directory) {
-            $subDirectories = self::getDirectories('Modules/' . $directory);
+            $subDirectories = $this->getDirectories($dir . '/' . $directory);
             if (in_array('Addon', $subDirectories)) {
-                $addons[] = 'Modules/' . $directory;
+                $addons[] = $dir . '/' . $directory;
             }
         }
 
         $fullData = [];
         foreach ($addons as $item) {
-            $info = include($item . '/Addon/info.php');
-            if ($info['is_published']) {
-                $fullData[] = include($item . '/Addon/admin_routes.php');
+            $infoFile = $item . '/Addon/info.php';
+            $routesFile = $item . '/Addon/admin_routes.php';
+
+            if (file_exists($infoFile) && file_exists($routesFile)) {
+                $info = include($infoFile);
+                if (!empty($info['is_published'])) {
+                    $fullData[] = include($routesFile);
+                }
             }
         }
 
@@ -54,24 +63,26 @@ trait AddonHelper
 
     public function get_payment_publish_status(): array
     {
-        $dir = 'Modules';
-        $directories = self::getDirectories($dir);
+        $dir = base_path('Modules');
+        $directories = $this->getDirectories($dir);
         $addons = [];
+
         foreach ($directories as $directory) {
-            $subDirectories = self::getDirectories($dir . '/' . $directory);
-            if ($directory == 'Gateways') {
-                if (in_array('Addon', $subDirectories)) {
-                    $addons[] = $dir . '/' . $directory;
-                }
+            $subDirectories = $this->getDirectories($dir . '/' . $directory);
+            if ($directory == 'Gateways' && in_array('Addon', $subDirectories)) {
+                $addons[] = $dir . '/' . $directory;
             }
         }
 
         $array = [];
         foreach ($addons as $item) {
-            $fullData = include($item . '/Addon/info.php');
-            $array[] = [
-                'is_published' => $fullData['is_published'],
-            ];
+            $infoFile = $item . '/Addon/info.php';
+            if (file_exists($infoFile)) {
+                $fullData = include($infoFile);
+                $array[] = [
+                    'is_published' => $fullData['is_published'] ?? false,
+                ];
+            }
         }
 
         return $array;
@@ -80,13 +91,13 @@ trait AddonHelper
     function getDirectories(string $path): array
     {
         $directories = [];
+        if (!is_dir($path)) return []; // prevent scandir errors
         $items = scandir($path);
         foreach ($items as $item) {
-            if ($item == '..' || $item == '.')
-                continue;
-            if (is_dir($path . '/' . $item))
-                $directories[] = $item;
+            if ($item == '..' || $item == '.') continue;
+            if (is_dir($path . '/' . $item)) $directories[] = $item;
         }
         return $directories;
     }
 }
+
