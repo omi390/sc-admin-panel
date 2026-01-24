@@ -151,6 +151,7 @@
                                         <th>{{translate('Customer_Info')}}</th>
                                         <th>{{translate('Total_Amount')}}</th>
                                         <th>{{translate('Payment_Status')}}</th>
+                                        <th>{{translate('Status')}}</th>
                                         <th>{{translate('Schedule_Date')}}</th>
                                         <th>{{translate('Booking_Date')}}</th>
                                         <th>{{translate('Action')}}</th>
@@ -189,6 +190,22 @@
                                                     class="badge badge badge-{{$booking->is_paid?'success':'danger'}} radius-50">
                                                     <span class="dot"></span>
                                                     {{$booking->is_paid?translate('paid'):translate('unpaid')}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                @php
+                                                    $statusBadge = match($booking->booking_status) {
+                                                        'pending' => 'warning',
+                                                        'accepted' => 'info',
+                                                        'arrived' => 'primary',
+                                                        'ongoing' => 'info',
+                                                        'completed' => 'success',
+                                                        'canceled' => 'danger',
+                                                        default => 'secondary',
+                                                    };
+                                                @endphp
+                                                <span class="badge badge-{{ $statusBadge }} text-capitalize">
+                                                    {{ translate(ucfirst($booking->booking_status)) }}
                                                 </span>
                                             </td>
                                             <td>{{date('d-M-Y h:ia',strtotime($booking->service_schedule))}}</td>
