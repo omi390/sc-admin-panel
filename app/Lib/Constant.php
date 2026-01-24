@@ -21,6 +21,7 @@ const USER_TYPES = [
 const BOOKING_STATUSES = [
     ['key' => 'pending', 'value' => 'Pending'],
     ['key' => 'accepted', 'value' => 'Accepted'],
+    ['key' => 'arrived', 'value' => 'Arrived'],
     ['key' => 'ongoing', 'value' => 'Ongoing'],
     ['key' => 'completed', 'value' => 'Completed'],
     ['key' => 'canceled', 'value' => 'Canceled'],

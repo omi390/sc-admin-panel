@@ -486,6 +486,8 @@
                                                 value="0"
                                                 disabled {{$booking['booking_status'] == 'accepted' ? 'selected' : ''}}>{{translate('Accepted')}}</option>
                                             <option
+                                                value="arrived" {{$booking['booking_status'] == 'arrived' ? 'selected' : ''}}>{{translate('Arrived')}}</option>
+                                            <option
                                                 value="ongoing" {{$booking['booking_status'] == 'ongoing' ? 'selected' : ''}}>{{translate('Ongoing')}}</option>
                                             <option
                                                 value="completed" {{$booking['booking_status'] == 'completed' ? 'selected' : ''}}>{{translate('Completed')}}</option>

@@ -29,6 +29,10 @@ $accepted_booking_count = \Modules\BookingModule\Entities\Booking::where('bookin
         });
     })
     ->count();
+
+$arrived_booking_count = \Modules\BookingModule\Entities\Booking::where('booking_status', 'arrived')->count();
+$all_booking_count = \Modules\BookingModule\Entities\Booking::count();
+
 $pending_providers = \Modules\ProviderManagement\Entities\Provider::ofApproval(2)->count();
 $denied_providers = \Modules\ProviderManagement\Entities\Provider::ofApproval(0)->count();
 $logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'business_information', path: 'business/', defaultPath: 'public/assets/placeholder.png');
@@ -93,6 +97,12 @@ $logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'bus
                             </a>
                         </li>
                         <li>
+                            <a href="{{route('admin.booking.list', ['booking_status'=>'all'])}}"
+                               class="{{request()->is('admin/booking/list') && request()->query('booking_status')=='all'?'active-menu':''}}">
+                                <span class="link-title">{{translate('All_Bookings')}} <span class="count">{{$all_booking_count}}</span></span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{route('admin.booking.list.verification', ['booking_status'=>'pending', 'type' => 'pending'])}}"
                                class="{{request()->is('admin/booking/list/verification') && request()->query('booking_status')=='pending' ?'active-menu':''}}"><span
                                     class="link-title">{{translate('verify_requests')}} <span
@@ -114,6 +124,10 @@ $logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'bus
                                class="{{request()->is('admin/booking/list') && request()->query('booking_status')=='accepted'?'active-menu':''}}"><span
                                     class="link-title">{{translate('Accepted')}} <span
                                         class="count">{{$accepted_booking_count}}</span></span></a>
+                        </li>
+                        <li><a href="{{route('admin.booking.list', ['booking_status'=>'arrived'])}}"
+                               class="{{request()->is('admin/booking/list') && request()->query('booking_status')=='arrived'?'active-menu':''}}"><span
+                                    class="link-title">{{translate('Arrived')}} <span class="count">{{$arrived_booking_count}}</span></span></a>
                         </li>
                         <li><a href="{{route('admin.booking.list', ['booking_status'=>'ongoing'])}}"
                                class="{{request()->is('admin/booking/list') && request()->query('booking_status')=='ongoing'?'active-menu':''}}"><span

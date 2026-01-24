@@ -296,6 +296,8 @@
   'Completed' => 'Completed',
   'Ongoing' => 'Ongoing',
   'Accepted' => 'Accepted',
+  'Arrived' => 'Arrived',
+  'All_Bookings' => 'All Bookings',
   'Booking_Requests' => 'Booking Requests',
   'Bookings' => 'Bookings',
   'Booking_Management' => 'Booking Management',
