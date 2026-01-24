@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container pt-3">
-        <section class="page-header bg__img" data-img="{{asset('public/assets/landing')}}/img/terms-page-header.png">
+        <section class="page-header bg__img" data-img="{{asset('assets/landing')}}/img/terms-page-header.png">
             <h3 class="title">{{translate('terms_and_conditions')}}</h3>
         </section>
     </div>

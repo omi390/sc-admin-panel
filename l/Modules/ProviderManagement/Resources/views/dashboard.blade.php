@@ -14,7 +14,7 @@
                     <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
                         <div class="d-flex align-items-center gap-2">
                             <img width="20"
-                                 src="{{asset('public/assets/provider-module')}}/img/media/business_analytics.png"
+                                 src="{{asset('assets/provider-module')}}/img/media/business_analytics.png"
                                  alt="">
                             <h4>{{translate('Business Analytics')}}</h4>
                         </div>
@@ -24,7 +24,7 @@
                             <div class="business-summary business-summary-earning">
                                 <h2>{{with_currency_symbol($data[0]['top_cards']['total_earning'])}}</h2>
                                 <h3>{{translate('total_earning')}}</h3>
-                                <img src="{{asset('public/assets/provider-module')}}/img/icons/total-earning.png"
+                                <img src="{{asset('assets/provider-module')}}/img/icons/total-earning.png"
                                      class="absolute-img" alt="">
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                             <div class="business-summary business-summary-customers">
                                 <h2>{{$data[0]['top_cards']['total_subscribed_services']}}</h2>
                                 <h3>{{translate('total_subscription')}}</h3>
-                                <img src="{{asset('public/assets/provider-module')}}/img/icons/customers.png"
+                                <img src="{{asset('assets/provider-module')}}/img/icons/customers.png"
                                      class="absolute-img"
                                      alt="">
                             </div>
@@ -41,7 +41,7 @@
                             <div class="business-summary business-summary-providers">
                                 <h2>{{$data[0]['top_cards']['total_service_man']}}</h2>
                                 <h3>{{translate('total_service_man')}}</h3>
-                                <img src="{{asset('public/assets/provider-module')}}/img/icons/providers.png"
+                                <img src="{{asset('assets/provider-module')}}/img/icons/providers.png"
                                      class="absolute-img"
                                      alt="">
                             </div>
@@ -50,7 +50,7 @@
                             <div class="business-summary business-summary-services">
                                 <h2>{{$data[0]['top_cards']['total_booking_served']}}</h2>
                                 <h3>{{translate('total_booking_served')}}</h3>
-                                <img src="{{asset('public/assets/provider-module')}}/img/icons/services.png"
+                                <img src="{{asset('assets/provider-module')}}/img/icons/services.png"
                                      class="absolute-img"
                                      alt="">
                             </div>
@@ -59,11 +59,11 @@
                 </div>
             </div>
 
-            <div class="card mb-3" data-bg-img="{{asset('public/assets/provider-module')}}/img/media/create-ads-bg.png">
+            <div class="card mb-3" data-bg-img="{{asset('assets/provider-module')}}/img/media/create-ads-bg.png">
                 <div class="card-body">
                     <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
                         <div class="media align-items-center gap-3">
-                            <img width="84" src="{{asset('public/assets/provider-module')}}/img/media/create-ads.png"
+                            <img width="84" src="{{asset('assets/provider-module')}}/img/media/create-ads.png"
                                  alt="">
                             <div class="media-body">
                                 <h4 class="mb-2">{{translate('Want To Get Highlighted?')}}</h4>
@@ -121,7 +121,7 @@
                             <h4 class="mb-3 c1">{{translate('Recent_Transactions')}}</h4>
                             @if(isset($data[6]['recent_transactions']) && count($data[6]['recent_transactions']) > 0)
                                 <div class="d-flex align-items-center gap-3 mb-4">
-                                    <img src="{{asset('public/assets/provider-module')}}/img/icons/arrow-up.png" alt="">
+                                    <img src="{{asset('assets/provider-module')}}/img/icons/arrow-up.png" alt="">
                                     <p class="opacity-75">{{$data[6]['this_month_trx_count']}} {{translate('transactions_this_month')}}</p>
                                 </div>
                             @endif
@@ -333,7 +333,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/provider-module')}}/plugins/apex/apexcharts.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/apex/apexcharts.min.js"></script>
     <script>
         "use strict";
 

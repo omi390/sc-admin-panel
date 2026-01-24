@@ -3,8 +3,8 @@
 @section('title',translate('bonus_list'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/dataTables/jquery.dataTables.min.css')}}"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/dataTables/select.dataTables.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/dataTables/jquery.dataTables.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/dataTables/select.dataTables.min.css')}}"/>
 @endpush
 
 @section('content')
@@ -195,7 +195,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body pb-5 px-xl-5 text-center">
-                    <img width="80" class="mb-4 pb-3" src="{{asset('public/assets/admin-module/img/add_fund.png')}}"
+                    <img width="80" class="mb-4 pb-3" src="{{asset('assets/admin-module/img/add_fund.png')}}"
                          alt="">
                     <h4 class="mb-3">{{translate('Wallet bonus is only applicable when a customer add fund to wallet via outside
                         payment gateway ')}}!</h4>
@@ -210,7 +210,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module/plugins/select2/select2.min.js')}}"></script>
+    <script src="{{asset('assets/admin-module/plugins/select2/select2.min.js')}}"></script>
     <script>
         "use strict"
         $(document).ready(function () {
@@ -235,6 +235,6 @@
             @endif
         })
     </script>
-    <script src="{{asset('public/assets/admin-module/plugins/dataTables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('public/assets/admin-module/plugins/dataTables/dataTables.select.min.js')}}"></script>
+    <script src="{{asset('assets/admin-module/plugins/dataTables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/admin-module/plugins/dataTables/dataTables.select.min.js')}}"></script>
 @endpush

@@ -111,7 +111,7 @@
                                     <h3>{{translate('Debit')}}</h3>
                                     <div class="absolute-img" data-bs-toggle="tooltip"
                                          data-bs-title="{{translate('Total spent points')}}">
-                                        <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg"
+                                        <img src="{{asset('assets/admin-module')}}/img/icons/info.svg"
                                              class="svg" alt="">
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@
                                     <h3>{{translate('Credit')}}</h3>
                                     <div class="absolute-img" data-bs-toggle="tooltip"
                                          data-bs-title="{{translate('Total earned points')}}">
-                                        <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg"
+                                        <img src="{{asset('assets/admin-module')}}/img/icons/info.svg"
                                              class="svg" alt="">
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
                                     <h3>{{translate('Balance')}}</h3>
                                     <div class="absolute-img" data-bs-toggle="tooltip"
                                          data-bs-title="{{translate('Available points')}}">
-                                        <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg"
+                                        <img src="{{asset('assets/admin-module')}}/img/icons/info.svg"
                                              class="svg" alt="">
                                     </div>
                                 </div>

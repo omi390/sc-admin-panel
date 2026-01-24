@@ -84,7 +84,7 @@
                                         <a class="p-0 row text-capitalize"
                                            href="{{route('admin.business-settings.get-gallery-setup', [base64_encode($file['path']), 'storage' => $storage])}}">
                                             <div><img class=""
-                                                      src="{{asset('public/assets/admin-module/img/folder.png')}}"
+                                                      src="{{asset('assets/admin-module/img/folder.png')}}"
                                                       alt=""></div>
                                             <div><p>{{Str::limit($file['name'],10)}}</p></div>
                                         </a>

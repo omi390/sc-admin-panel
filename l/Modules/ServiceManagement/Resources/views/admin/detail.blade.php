@@ -3,10 +3,10 @@
 @section('title',translate('service_details'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/wysiwyg-editor/froala_editor.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/wysiwyg-editor/froala_editor.min.css"/>
 @endpush
 
 @section('content')
@@ -23,7 +23,7 @@
                             <div class="statistics-card statistics-card__total-orders">
                                 <h2>{{$service->bookings_count}}</h2>
                                 <h3>{{translate('total_bookings')}}</h3>
-                                <img src="{{asset('public/assets/admin-module/img/icons/total-orders.png')}}"
+                                <img src="{{asset('assets/admin-module/img/icons/total-orders.png')}}"
                                      class="absolute-img" alt="{{ translate('total-orders') }}">
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                             <div class="statistics-card statistics-card__ongoing">
                                 <h2>{{$service['ongoing_count']??0}}</h2>
                                 <h3>{{translate('ongoing')}}</h3>
-                                <img src="{{asset('public/assets/admin-module/img/icons/ongoing.png')}}"
+                                <img src="{{asset('assets/admin-module/img/icons/ongoing.png')}}"
                                      class="absolute-img" alt="{{ translate('ongoing-orders') }}">
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                             <div class="statistics-card statistics-card__canceled">
                                 <h2>{{$service['canceled_count']??0}}</h2>
                                 <h3>{{translate('canceled')}}</h3>
-                                <img src="{{asset('public/assets/admin-module/img/icons/canceled.png')}}"
+                                <img src="{{asset('assets/admin-module/img/icons/canceled.png')}}"
                                      class="absolute-img" alt="{{ translate('canceled-orders') }}">
                             </div>
                         </div>

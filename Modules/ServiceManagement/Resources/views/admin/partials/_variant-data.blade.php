@@ -63,7 +63,7 @@
                     <div class="d-flex align-items-center gap-2">
                         <img src="{{$item['variation_image']}}" alt="Variant Image" 
                              style="max-width: 60px; max-height: 60px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd;"
-                             onerror="this.src='{{asset('public/assets/admin-module/img/media/upload-file.png')}}'">
+                             onerror="this.src='{{asset('assets/admin-module/img/media/upload-file.png')}}'">
                         <a href="{{$item['variation_image']}}" target="_blank" class="btn btn-sm btn--primary" title="{{translate('view_image')}}">
                             <span class="material-icons" style="font-size: 16px;">open_in_new</span>
                         </a>

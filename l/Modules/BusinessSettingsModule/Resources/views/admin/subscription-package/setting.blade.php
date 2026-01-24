@@ -3,7 +3,7 @@
 @section('title',translate('Subscription Setting'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/toaster/simple-notify.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/toaster/simple-notify.min.css')}}"/>
 @endpush
 
 @section('content')
@@ -150,7 +150,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{ translate('Are You Sure ?')}}</h3>
                         <p>{{ translate('want_to_update_status')}}</p>
                         <div class="d-flex gap-3 justify-content-center flex-wrap">

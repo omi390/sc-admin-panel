@@ -49,7 +49,7 @@
             <div class="card mt-3">
                 <div class="card-body">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <img width="20" src="{{asset('public/assets/admin-module')}}/img/icons/billing.svg" class="svg" alt="">
+                        <img width="20" src="{{asset('assets/admin-module')}}/img/icons/billing.svg" class="svg" alt="">
                         <h3>{{translate('Billing')}}</h3>
                     </div>
 
@@ -57,7 +57,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="overview-card after-w50 d-flex gap-3 align-items-center p-lg-4">
                                 <div class="img-circle">
-                                    <img width="34" src="{{asset('public/assets/admin-module/img/icons/b1.png')}}" alt="{{ translate('basic') }}">
+                                    <img width="34" src="{{asset('assets/admin-module/img/icons/b1.png')}}" alt="{{ translate('basic') }}">
                                 </div>
                                 <div class="d-flex flex-column gap-2">
                                     <div>{{translate('Expire Date')}}</div>
@@ -69,7 +69,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="overview-card style__three after-w50 d-flex gap-3 align-items-center p-lg-4">
                                 <div class="img-circle">
-                                    <img width="34" src="{{asset('public/assets/admin-module/img/icons/b2.png')}}" alt="{{ translate('basic') }}">
+                                    <img width="34" src="{{asset('assets/admin-module/img/icons/b2.png')}}" alt="{{ translate('basic') }}">
                                 </div>
                                 <div class="d-flex flex-column gap-2">
                                     <div>{{translate('Next renewal Bill')}} <small>({{translate('Vat included')}})</small></div>
@@ -80,7 +80,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="overview-card style__two after-w50 d-flex gap-3 align-items-center p-lg-4">
                                 <div class="img-circle">
-                                    <img width="34" src="{{asset('public/assets/admin-module/img/icons/b3.png')}}" alt="{{ translate('basic') }}">
+                                    <img width="34" src="{{asset('assets/admin-module/img/icons/b3.png')}}" alt="{{ translate('basic') }}">
                                 </div>
                                 <div class="d-flex flex-column gap-2">
                                     <div>{{translate('Total Subscription Taken')}}</div>
@@ -96,7 +96,7 @@
                 <div class="card mt-3">
                     <div class="card-body">
                         <div class="d-flex align-items-center gap-2 mb-3">
-                            <img width="20" src="{{asset('public/assets/admin-module/img/icons/ov11.png')}}" alt="">
+                            <img width="20" src="{{asset('assets/admin-module/img/icons/ov11.png')}}" alt="">
                             <h3>{{translate('Package Overview')}}</h3>
                         </div>
 
@@ -168,7 +168,7 @@
                     <div class="card mt-3">
                         <div class="card-body">
                             <div class="d-flex align-items-center gap-2 mb-3">
-                                <img width="20" src="{{asset('public/assets/admin-module/img/icons/ov11.png')}}" alt="">
+                                <img width="20" src="{{asset('assets/admin-module/img/icons/ov11.png')}}" alt="">
                                 <h3>{{translate('Package Overview')}}</h3>
                             </div>
 

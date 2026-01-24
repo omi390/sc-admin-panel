@@ -236,7 +236,7 @@
                                                                                             <div class="text-center">
                                                                                                 <img width="75"
                                                                                                      class="my-3"
-                                                                                                     src="{{asset('public/assets/admin-module/img/media/deny.png')}}"
+                                                                                                     src="{{asset('assets/admin-module/img/media/deny.png')}}"
                                                                                                      alt="{{ translate('deny') }}">
                                                                                                 <h3 class="mb-3">{{translate('Deny_this_request')}}
                                                                                                     ?</h3>
@@ -329,7 +329,7 @@
                                                                                             <div class="text-center">
                                                                                                 <img width="75"
                                                                                                      class="my-3"
-                                                                                                     src="{{asset('public/assets/admin-module/img/media/accept.png')}}"
+                                                                                                     src="{{asset('assets/admin-module/img/media/accept.png')}}"
                                                                                                      alt="{{ translate('accept') }}">
                                                                                                 <h3 class="mb-3">{{translate('Accept_this_request')}}
                                                                                                     ?</h3>
@@ -420,7 +420,7 @@
                                                                                             <div class="text-center">
                                                                                                 <img width="75"
                                                                                                      class="my-3"
-                                                                                                     src="{{asset('public/assets/admin-module/img/media/settle.png')}}"
+                                                                                                     src="{{asset('assets/admin-module/img/media/settle.png')}}"
                                                                                                      alt="{{ translate('settle') }}">
                                                                                                 <h3 class="mb-3">{{translate('Settled_this_request')}}
                                                                                                     ?</h3>
@@ -534,7 +534,7 @@
                                     <input type="file" id="fileInput" class="upload-file__input"
                                            name="withdraw_request_file" accept=".xlsx" required>
                                     <div class="upload-file__img">
-                                        <img src="{{asset('public/assets/admin-module/img/media/upload-file.png')}}"
+                                        <img src="{{asset('assets/admin-module/img/media/upload-file.png')}}"
                                              alt="{{translate('image')}}">
                                     </div>
                                     <span class="upload-file__edit">
@@ -547,7 +547,7 @@
                                 <div class="d-flex flex-wrap align-items-center gap-3">
                                     <div class="">
                                         <img width="24"
-                                             src="{{asset('public/assets/admin-module')}}/img/media/excel.png"
+                                             src="{{asset('assets/admin-module')}}/img/media/excel.png"
                                              alt="">
                                     </div>
                                     <div class="flex-grow-1 text-start">
@@ -640,7 +640,7 @@
                         };
                     } else {
                         reader.onload = function (e) {
-                            img.attr("src", "{{asset('public/assets/admin-module/img/media/excel.png')}}");
+                            img.attr("src", "{{asset('assets/admin-module/img/media/excel.png')}}");
                         };
                     }
 

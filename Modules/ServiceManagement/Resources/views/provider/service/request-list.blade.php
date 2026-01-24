@@ -19,7 +19,7 @@
                                     <div class="service-details-info bg-dark p-3 rounded shadow">
                                         <div class="d-flex flex-column gap-3">
                                             <div class="d-flex align-items-center gap-2">
-                                                <img width="16" class="rounded" src="{{asset('public/assets/admin-module')}}/img/note.png" alt="">
+                                                <img width="16" class="rounded" src="{{asset('assets/admin-module')}}/img/note.png" alt="">
                                                 <h5 class="text-white">{{translate('Note')}}</h5>
                                             </div>
 

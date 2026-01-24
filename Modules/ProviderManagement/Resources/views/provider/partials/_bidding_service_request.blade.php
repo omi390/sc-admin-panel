@@ -5,7 +5,7 @@
 <div class="modal-body pb-4 px-lg-4">
     <div class="d-flex flex-column align-items-center">
         <img width="75" class="mb-3"
-             src="{{asset('public/assets/provider-module')}}/img/icons/notification.png"
+             src="{{asset('assets/provider-module')}}/img/icons/notification.png"
              alt="">
 
         <h3 class="text-primary text-center mb-3">{{translate('New Service Request')}}</h3>

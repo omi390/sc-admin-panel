@@ -252,7 +252,7 @@
                                                                 <span data-bs-toggle="tooltip"
                                                                       title="Priority isn't set yet!">
                                                                 <img
-                                                                    src="{{asset('public/assets/admin-module')}}/img/icons/info-hexa.svg"
+                                                                    src="{{asset('assets/admin-module')}}/img/icons/info-hexa.svg"
                                                                     alt="">
                                                             </span>
                                                             </div>
@@ -397,7 +397,7 @@
                                                                                 aria-label="Close"></button>
                                                                         <div class="d-flex justify-content-center mb-4">
                                                                             <img width="75" height="75"
-                                                                                 src="{{asset('public/assets/admin-module/img/delete2.png')}}"
+                                                                                 src="{{asset('assets/admin-module/img/delete2.png')}}"
                                                                                  class="rounded-circle" alt="">
                                                                         </div>
 
@@ -442,7 +442,7 @@
                                                                                 aria-label="Close"></button>
                                                                         <div class="d-flex justify-content-center mb-4">
                                                                             <img width="75" height="75"
-                                                                                 src="{{asset('public/assets/admin-module/img/ad_delete.svg')}}"
+                                                                                 src="{{asset('assets/admin-module/img/ad_delete.svg')}}"
                                                                                  class="rounded-circle" alt="">
                                                                         </div>
 
@@ -471,7 +471,7 @@
                                                                                 aria-label="Close"></button>
                                                                         <div class="d-flex justify-content-center mb-4">
                                                                             <img width="75" height="75"
-                                                                                 src="{{asset('public/assets/admin-module/img/paused.png')}}"
+                                                                                 src="{{asset('assets/admin-module/img/paused.png')}}"
                                                                                  class="rounded-circle" alt="">
                                                                         </div>
 
@@ -513,7 +513,7 @@
                                                                                 aria-label="Close"></button>
                                                                         <div class="d-flex justify-content-center mb-4">
                                                                             <img width="75" height="75"
-                                                                                 src="{{asset('public/assets/admin-module/img/resume.svg')}}"
+                                                                                 src="{{asset('assets/admin-module/img/resume.svg')}}"
                                                                                  class="rounded-circle" alt="">
                                                                         </div>
 
@@ -559,7 +559,7 @@
                             <div class="card-body">
                                 <div class="d-flex flex-column gap-2 align-items-center text-center">
                                     <img width="140" class="mb-2"
-                                         src="{{asset('public/assets/provider-module')}}/img/media/create-ads.png"
+                                         src="{{asset('assets/provider-module')}}/img/media/create-ads.png"
                                          alt="">
                                     <h4>{{translate('Advertisement List')}}</h4>
                                     <p>{{translate("Uh oh! there is not advertisement created by provider!")}}</p>
@@ -758,7 +758,7 @@
                                                                 <span data-bs-toggle="tooltip"
                                                                       title="Priority isn't set yet!">
                                                                 <img
-                                                                    src="{{asset('public/assets/admin-module')}}/img/icons/info-hexa.svg"
+                                                                    src="{{asset('assets/admin-module')}}/img/icons/info-hexa.svg"
                                                                     alt="">
                                                             </span>
                                                             </div>
@@ -903,7 +903,7 @@
                                                                                 aria-label="Close"></button>
                                                                         <div class="d-flex justify-content-center mb-4">
                                                                             <img width="75" height="75"
-                                                                                 src="{{asset('public/assets/admin-module/img/delete2.png')}}"
+                                                                                 src="{{asset('assets/admin-module/img/delete2.png')}}"
                                                                                  class="rounded-circle" alt="">
                                                                         </div>
 
@@ -948,7 +948,7 @@
                                                                                 aria-label="Close"></button>
                                                                         <div class="d-flex justify-content-center mb-4">
                                                                             <img width="75" height="75"
-                                                                                 src="{{asset('public/assets/admin-module/img/ad_delete.svg')}}"
+                                                                                 src="{{asset('assets/admin-module/img/ad_delete.svg')}}"
                                                                                  class="rounded-circle" alt="">
                                                                         </div>
 
@@ -978,7 +978,7 @@
                                                                                 aria-label="Close"></button>
                                                                         <div class="d-flex justify-content-center mb-4">
                                                                             <img width="75" height="75"
-                                                                                 src="{{asset('public/assets/admin-module/img/paused.png')}}"
+                                                                                 src="{{asset('assets/admin-module/img/paused.png')}}"
                                                                                  class="rounded-circle" alt="">
                                                                         </div>
 
@@ -1020,7 +1020,7 @@
                                                                                 aria-label="Close"></button>
                                                                         <div class="d-flex justify-content-center mb-4">
                                                                             <img width="75" height="75"
-                                                                                 src="{{asset('public/assets/admin-module/img/resume.svg')}}"
+                                                                                 src="{{asset('assets/admin-module/img/resume.svg')}}"
                                                                                  class="rounded-circle" alt="">
                                                                         </div>
 

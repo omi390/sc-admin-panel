@@ -52,7 +52,7 @@
                                 <div class="col-lg-4">
                                     <div class="promotional_cost_card d-flex justify-content-between gap-2 p-3 p-sm-4">
                                         <div class="media gap-2 align-items-center">
-                                            <img width="40" src="{{asset('public/assets/admin-module')}}/img/icons/1.png" alt="">
+                                            <img width="40" src="{{asset('assets/admin-module')}}/img/icons/1.png" alt="">
                                             <div class="text-dark">
                                                 @php($data = $promotionalCostPercentage->where('key_name', 'discount_cost_bearer')->first()->live_values ?? null)
                                                 {{translate('Discount_Cost_Percentage')}}:
@@ -64,7 +64,7 @@
                                 <div class="col-lg-4">
                                     <div class="promotional_cost_card style__2 d-flex justify-content-between gap-2 p-3 p-sm-4" >
                                         <div class="media gap-2 align-items-center">
-                                            <img width="40" src="{{asset('public/assets/admin-module')}}/img/icons/campaign_discount.png" alt="">
+                                            <img width="40" src="{{asset('assets/admin-module')}}/img/icons/campaign_discount.png" alt="">
                                             <div class="text-dark">
                                                 @php($data = $promotionalCostPercentage->where('key_name', 'campaign_cost_bearer')->first()->live_values ?? null)
                                                 {{translate('Campaign_Cost_Percentage')}}:
@@ -76,7 +76,7 @@
                                 <div class="col-lg-4">
                                     <div class="promotional_cost_card style__3 d-flex justify-content-between gap-2 p-3 p-sm-4">
                                         <div class="media gap-2 align-items-center">
-                                            <img width="40" src="{{asset('public/assets/admin-module')}}/img/icons/2.png" alt="">
+                                            <img width="40" src="{{asset('assets/admin-module')}}/img/icons/2.png" alt="">
                                             <div class="text-dark">
                                                 @php($data = $promotionalCostPercentage->where('key_name', 'coupon_cost_bearer')->first()->live_values ?? null)
                                                 {{translate('Coupon_Cost_Percentage')}}:

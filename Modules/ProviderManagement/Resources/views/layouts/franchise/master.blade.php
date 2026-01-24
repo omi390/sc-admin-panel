@@ -24,19 +24,19 @@
             href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
             rel="stylesheet">
 
-    <link href="{{asset('public/assets/provider-module')}}/css/material-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/bootstrap.min.css"/>
+    <link href="{{asset('assets/provider-module')}}/css/material-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/bootstrap.min.css"/>
     <link rel="stylesheet"
-          href="{{asset('public/assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.css"/>
+          href="{{asset('assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.css"/>
 
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/plugins/apex/apexcharts.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/plugins/apex/apexcharts.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/plugins/select2/select2.min.css"/>
 
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/toastr.css">
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/toastr.css">
 
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/intl-tel-input/css/intlTelInput.min.css')}}"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/style.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/dev.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/intl-tel-input/css/intlTelInput.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/style.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/dev.css"/>
     @stack('css_or_js')
     <style>
         @keyframes progress-animation {
@@ -94,23 +94,23 @@
 </main>
 
 
-<script src="{{asset('public/assets/provider-module')}}/js/jquery-3.6.0.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/main.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/jquery-3.6.0.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/main.js"></script>
 
 
-<script src="{{asset('public/assets/provider-module')}}/plugins/select2/select2.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/plugins/select2/select2.min.js"></script>
 
-<script src="{{asset('public/assets/provider-module')}}/js/sweet_alert.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/toastr.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/dev.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/sweet_alert.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/toastr.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/dev.js"></script>
 <script src="{{ asset('public/assets/admin-module/plugins/intl-tel-input/js/intlTelInput.js') }}"></script>
 <script src="{{ asset('public/assets/admin-module/js/country-picker-init.js') }}"></script>
-<script src="{{asset('public/assets/admin-module/js/firebase.min.js')}}"></script>
+<script src="{{asset('assets/admin-module/js/firebase.min.js')}}"></script>
 
 <audio id="audio-element">
-    <source src="{{asset('public/assets/provider-module')}}/sound/notification.mp3" type="audio/mpeg">
+    <source src="{{asset('assets/provider-module')}}/sound/notification.mp3" type="audio/mpeg">
 </audio>
 
 <script>

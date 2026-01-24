@@ -3,7 +3,7 @@
 @section('title',translate('3rd_party'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/swiper/swiper-bundle.min.css"/>
 @endpush
 
 @section('content')
@@ -237,7 +237,7 @@
                                                 <div class="swiper-slide">
                                                     <div class="d-flex flex-column align-items-center gap-2 fs-12">
                                                         <img width="80" class="mb-3"
-                                                             src="{{asset('public/assets/admin-module/img/media/firebase-console.png')}}"
+                                                             src="{{asset('assets/admin-module/img/media/firebase-console.png')}}"
                                                              alt="">
                                                         <h5 class="modal-title text-center mb-3">Go to Firebase
                                                             Console</h5>
@@ -262,7 +262,7 @@
                                                 <div class="swiper-slide">
                                                     <div class="d-flex flex-column align-items-center gap-2 fs-12">
                                                         <img width="80" class="mb-3"
-                                                             src="{{asset('public/assets/admin-module/img/media/project-settings.png')}}"
+                                                             src="{{asset('assets/admin-module/img/media/project-settings.png')}}"
                                                              alt="">
                                                         <h5 class="modal-title text-center mb-3">{{translate('Navigate to Project
                                                             Settings')}}</h5>
@@ -284,7 +284,7 @@
                                                 <div class="swiper-slide">
                                                     <div class="d-flex flex-column align-items-center gap-2 fs-12">
                                                         <img width="80" class="mb-3"
-                                                             src="{{asset('public/assets/admin-module/img/media/cloud-message.png')}}"
+                                                             src="{{asset('assets/admin-module/img/media/cloud-message.png')}}"
                                                              alt="">
                                                         <h5 class="modal-title text-center mb-3">{{translate('Cloud Messaging
                                                             API')}}</h5>
@@ -423,7 +423,7 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <h4 class="page-title">
-                                            <img src="{{asset('public/assets/admin-module/img/media/apple.png')}}"
+                                            <img src="{{asset('assets/admin-module/img/media/apple.png')}}"
                                                  alt="">
                                             {{translate('Apple_login')}}
                                         </h4>
@@ -1633,7 +1633,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{ translate('Are you sure you want save this information') }}?</h3>
                         <p>{{ translate('Connecting to S3 server for storage means that only new data will be stored in the S3 server. Existing data saved in local storage will not be migrated to the S3 server.') }}</p>
                         <div class="d-flex gap-3 justify-content-center flex-wrap">
@@ -1687,7 +1687,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/swiper/swiper-bundle.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/swiper/swiper-bundle.min.js"></script>
     <script>
         "use strict";
 

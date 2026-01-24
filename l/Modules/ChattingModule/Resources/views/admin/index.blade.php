@@ -3,8 +3,8 @@
 @section('title',translate('chat_list'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/select2/select2.min.css')}}"/>
-    <link rel="stylesheet" href="{{asset('public/assets/css/lightbox.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/select2/select2.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/css/lightbox.css')}}">
 @endpush
 
 @section('content')
@@ -196,7 +196,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/js/lightbox.min.js')}}"></script>
+    <script src="{{asset('assets/js/lightbox.min.js')}}"></script>
     <script>
 
         "use Strict";
@@ -245,6 +245,6 @@
 
     </script>
 
-    <script src="{{asset('public/assets/chatting-module/js/custom.js')}}"></script>
+    <script src="{{asset('assets/chatting-module/js/custom.js')}}"></script>
 
 @endpush

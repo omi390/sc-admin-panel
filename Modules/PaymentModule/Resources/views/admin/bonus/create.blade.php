@@ -192,7 +192,7 @@
                                     </div>
                                     <div class="modal-body pb-5 px-xl-5 text-center">
                                         <img width="80" class="mb-4 pb-3"
-                                             src="{{asset('public/assets/admin-module/img/add_fund.png')}}" alt="">
+                                             src="{{asset('assets/admin-module/img/add_fund.png')}}" alt="">
                                         <h4 class="mb-3">{{translate('Wallet bonus is only applicable when a customer add fund to
                                             wallet via outside payment gateway')}} !</h4>
                                         <p>{{translate('Customer will get extra amount to his / her wallet additionally with the

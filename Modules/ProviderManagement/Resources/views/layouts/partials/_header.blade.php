@@ -12,7 +12,7 @@
                 @if($trialDuration == 0 && $packageSubscriber != null && $isPackageEnded > 0 && $isPackageEnded < $deadlineWarning)
                 <div class="cancellantion-note cancellantion-note__header border-0 flex-grow-1 d-flex justify-content-between gap-2 align-items-center text-danger rounded">
                         <div class="media gap-2 align-items-center w-0 flex-grow-1">
-                            <img src="{{asset('public/assets/provider-module')}}/img/icons/time_bottom.svg" class="svg text-danger wh-20" alt="">
+                            <img src="{{asset('assets/provider-module')}}/img/icons/time_bottom.svg" class="svg text-danger wh-20" alt="">
                                 <div class="media-body line-clamp-1" data-bs-toggle="tooltip" title="{{ $deadlineWarningMessage }}">
                                     {{ $deadlineWarningMessage }}
                                 </div>

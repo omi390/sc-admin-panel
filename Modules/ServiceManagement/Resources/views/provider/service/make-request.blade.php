@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="col-5 col-lg-5">
                                     <div class="text-center">
-                                        <img width="220" src="{{asset('public/assets/admin-module/img/media/serv.png')}}" alt="{{ translate('service') }}">
+                                        <img width="220" src="{{asset('assets/admin-module/img/media/serv.png')}}" alt="{{ translate('service') }}">
                                     </div>
                                 </div>
                             </div>

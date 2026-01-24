@@ -4,7 +4,7 @@
 
 @push('css_or_js')
 
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
 
 @endpush
 
@@ -437,12 +437,12 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/provider-module')}}/js//tags-input.min.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/js/spartan-multi-image-picker.js"></script>
-    <script src="{{asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.js')}}"></script>
+    <script src="{{asset('assets/provider-module')}}/js//tags-input.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/js/spartan-multi-image-picker.js"></script>
+    <script src="{{asset('assets/admin-module/plugins/swiper/swiper-bundle.min.js')}}"></script>
 
-    <script src="{{asset('public/assets/provider-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key={{business_config('google_map', 'third_party')?->live_values['map_api_key_client']}}&libraries=places&v=3.45.8"></script>
 
@@ -595,7 +595,7 @@
                 groupClassName: 'item',
                 dropFileLabel: "{{translate('Drop_here')}}",
                 placeholderImage: {
-                    image: '{{asset('public/assets/admin-module')}}/img/media/banner-upload-file.png',
+                    image: '{{asset('assets/admin-module')}}/img/media/banner-upload-file.png',
                     width: '100%',
                 },
 

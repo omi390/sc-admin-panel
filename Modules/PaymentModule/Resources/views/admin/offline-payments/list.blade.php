@@ -3,7 +3,7 @@
 @section('title',translate('payment_gateway_configuration'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/select2/select2.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/select2/select2.min.css')}}"/>
 @endpush
 
 @section('content')

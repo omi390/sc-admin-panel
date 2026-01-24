@@ -161,7 +161,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/provider-module/js/spartan-multi-image-picker.js')}}"></script>
+    <script src="{{asset('assets/provider-module/js/spartan-multi-image-picker.js')}}"></script>
     <script>
         "use strict";
 
@@ -172,7 +172,7 @@
                 groupClassName: 'multi_image_picker_item',
                 dropFileLabel: "{{translate('Drop_here')}}",
                 placeholderImage: {
-                    image: '{{asset('public/assets/provider-module')}}/img/media/identity-img.png',
+                    image: '{{asset('assets/provider-module')}}/img/media/identity-img.png',
                     width: '100%',
                 },
 

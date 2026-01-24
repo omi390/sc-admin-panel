@@ -3,7 +3,7 @@
 @section('title',translate('CronJob list'))
 
 @push('css_or_js')
-<link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
 @endpush
 
 @section('content')
@@ -138,7 +138,7 @@
                         <div class="card mb-20">
                             <div class="card-body">
                                 <div class="d-flex align-items-center gap-3">
-                                    <img src="{{asset('public/assets/admin-module/img/php.png')}}" alt="">
+                                    <img src="{{asset('assets/admin-module/img/php.png')}}" alt="">
                                     <div class="w-0 flex-grow-1">
                                         <h6 class="fs-12 mb-1">{{translate('PHP File Path')}}</h6>
                                         <div class="fs-12 php-file-path"></div>
@@ -152,7 +152,7 @@
                         <div class="card mb-20">
                             <div class="card-body">
                                 <div class="d-flex align-items-center gap-3 copy-div pb-2">
-                                    <img src="{{asset('public/assets/admin-module/img/command.png')}}" alt="">
+                                    <img src="{{asset('assets/admin-module/img/command.png')}}" alt="">
                                     <div class="w-0 flex-grow-1">
                                         <h6 class="fs-12 mb-1">{{translate('PHP File Path')}}</h6>
                                         <div class="fs-12 command">/path/to/php/file</div>
@@ -274,7 +274,7 @@
 @endsection
 
 @push('script')
-<script src="{{asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('assets/admin-module/plugins/swiper/swiper-bundle.min.js')}}"></script>
 <script>
     var swiper = new Swiper('.cron-jobs-slider', {
         slidesPerView: 1,

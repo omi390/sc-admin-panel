@@ -3,11 +3,11 @@
 @section('title',translate('service_setup'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/wysiwyg-editor/froala_editor.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/css/tags-input.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/wysiwyg-editor/froala_editor.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/css/tags-input.min.css"/>
 @endpush
 
 @section('content')
@@ -147,7 +147,7 @@
                                                             <input type="file" class="upload-file__input"
                                                                    name="thumbnail" accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*">
                                                             <div class="upload-file__img">
-                                                                <img src="{{asset('public/assets/admin-module/img/media/upload-file.png')}}"
+                                                                <img src="{{asset('assets/admin-module/img/media/upload-file.png')}}"
                                                                         alt="{{ translate('service') }}">
                                                             </div>
                                                             <span class="upload-file__edit">
@@ -170,7 +170,7 @@
                                                             <input type="file" class="upload-file__input"
                                                                    name="cover_image" accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*">
                                                             <div class="upload-file__img upload-file__img_banner">
-                                                                <img src="{{asset('public/assets/admin-module/img/media/banner-upload-file.png')}}"
+                                                                <img src="{{asset('assets/admin-module/img/media/banner-upload-file.png')}}"
                                                                      alt="{{ translate('service-cover-image') }}">
                                                             </div>
                                                             <span class="upload-file__edit">
@@ -296,12 +296,12 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/js//tags-input.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
-    <script src="{{asset('public/assets/admin-module/plugins/tinymce/tinymce.min.js')}}"></script>
-    <script src="{{asset('public/assets/ckeditor/jquery.js')}}"></script>
+    <script src="{{asset('assets/admin-module')}}/js//tags-input.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="{{asset('assets/admin-module/plugins/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('assets/ckeditor/jquery.js')}}"></script>
 
     <script>
         (function ($) {

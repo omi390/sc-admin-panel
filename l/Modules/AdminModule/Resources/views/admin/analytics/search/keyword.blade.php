@@ -100,7 +100,7 @@
                                             class="bg-light h-100 rounded d-flex justify-content-center align-items-center p-3">
                                             <div class="text-center">
                                                 <img class="mb-2" width="50"
-                                                     src="{{asset('public/assets/admin-module')}}/img/media/search-volume.png"
+                                                     src="{{asset('assets/admin-module')}}/img/media/search-volume.png"
                                                      alt="">
                                                 <h2 class="mb-2">{{$total}}</h2>
                                                 <p>{{translate('Total Search Volume')}}</p>
@@ -187,7 +187,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
     <script>
         "use strict";
 

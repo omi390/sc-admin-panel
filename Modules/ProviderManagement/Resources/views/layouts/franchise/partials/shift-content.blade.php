@@ -15,7 +15,7 @@
         </div>
         <div class="col-2">
             <div class="flex-shrink-0 d-flex justify-content-center">
-                <img width="40" src="{{asset('public/assets/admin-module/img/icons/shift.png')}}" alt="">
+                <img width="40" src="{{asset('assets/admin-module/img/icons/shift.png')}}" alt="">
             </div>
         </div>
         <div class="col-5">

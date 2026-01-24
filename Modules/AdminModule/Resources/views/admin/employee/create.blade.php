@@ -112,7 +112,7 @@
                                                                                 name="profile_image" required accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*">
                                                                         <div class="upload-file__img">
                                                                             <img
-                                                                                src="{{asset('public/assets/admin-module')}}/img/media/upload-file.png"
+                                                                                src="{{asset('assets/admin-module')}}/img/media/upload-file.png"
                                                                                 alt="">
                                                                         </div>
                                                                     </div>
@@ -233,8 +233,8 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/provider-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
-    <script src="{{asset('public/assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
     <script>
         "use strict";
 
@@ -301,7 +301,7 @@
         });
     </script>
 
-    <script src="{{asset('public/assets/admin-module')}}/js/spartan-multi-image-picker.js"></script>
+    <script src="{{asset('assets/admin-module')}}/js/spartan-multi-image-picker.js"></script>
     <script>
         "use strict";
 
@@ -321,7 +321,7 @@
                 maxFileSize: '2097152',
                 dropFileLabel: "{{translate('Drop_here')}}",
                 placeholderImage: {
-                    image: '{{asset('public/assets/admin-module')}}/img/media/banner-upload-file.png',
+                    image: '{{asset('assets/admin-module')}}/img/media/banner-upload-file.png',
                     width: '100%',
                 },
 
@@ -351,8 +351,8 @@
 
     </script>
 
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/js/section/employee/custom.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/js/section/employee/custom.js"></script>
 
 
 @endpush

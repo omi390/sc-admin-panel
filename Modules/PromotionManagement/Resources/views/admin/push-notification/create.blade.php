@@ -3,9 +3,9 @@
 @section('title',translate('Send Notification'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
 @endpush
 
 @section('content')
@@ -77,7 +77,7 @@
                                                            accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*">
                                                     <div class="upload-file__img upload-file__img_banner">
                                                         <img
-                                                            src="{{asset('public/assets/admin-module/img/media/banner-upload-file.png')}}"
+                                                            src="{{asset('assets/admin-module/img/media/banner-upload-file.png')}}"
                                                             alt="{{ translate('notification') }}">
                                                     </div>
                                                     <span class="upload-file__edit">
@@ -270,7 +270,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
     <script>
         "use Strict";
 
@@ -319,7 +319,7 @@
         });
 
     </script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
 @endpush
 

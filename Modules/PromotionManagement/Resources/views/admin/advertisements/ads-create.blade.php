@@ -151,7 +151,7 @@
                                                         <div
                                                             class="upload-file__img upload-file__img_banner upload-file__video-not-playable h-140">
                                                             <img
-                                                                src="{{asset('public/assets/admin-module/img/media/banner-upload-file.png')}}"
+                                                                src="{{asset('assets/admin-module/img/media/banner-upload-file.png')}}"
                                                                 alt="">
                                                         </div>
                                                         <button class="remove-file-button" type="button">
@@ -202,7 +202,7 @@
                                                                data-target="profile-prev-image" name="profile_image">
                                                         <div class="upload-file__img">
                                                             <img
-                                                                src="{{asset('public/assets/admin-module/img/media/upload-file.png')}}"
+                                                                src="{{asset('assets/admin-module/img/media/upload-file.png')}}"
                                                                 alt="">
                                                         </div>
                                                         <button class="remove-file-button" type="button">
@@ -230,7 +230,7 @@
                                                                name="cover_image">
                                                         <div class="upload-file__img upload-file__img_banner">
                                                             <img
-                                                                src="{{asset('public/assets/admin-module/img/media/banner-upload-file.png')}}"
+                                                                src="{{asset('assets/admin-module/img/media/banner-upload-file.png')}}"
                                                                 alt="">
                                                         </div>
                                                         <button class="remove-file-button" type="button">
@@ -400,7 +400,7 @@
             $(this).closest('.upload-file').find('.remove-file-button').on('click', function () {
                 $(this).hide()
                 videoEl.siblings('.play-icon').show();
-                $(this).closest('.upload-file').find('.upload-file__img').html('<img src="{{asset('public/assets/admin-module/img/media/banner-upload-file.png')}}" alt="">');
+                $(this).closest('.upload-file').find('.upload-file__img').html('<img src="{{asset('assets/admin-module/img/media/banner-upload-file.png')}}" alt="">');
                 $(this).closest('.upload-file').find('.video_attachment').val('');
                 $(this).closest('.upload-file').find('.video > video').css('display', 'none');
                 videoEl.css('display', 'none');

@@ -50,7 +50,7 @@
     <div class="py-3 px-4">
         <div class="media gap-2 flex-wrap">
             <img width="58" height="58" class="rounded-circle border border-white"
-                 src="{{asset('public/assets/admin-module/img/user.png')}}" alt="">
+                 src="{{asset('assets/admin-module/img/user.png')}}" alt="">
             <div class="meida-body">
                 <h5 class="c1 mb-3">{{Str::limit($booking->provider->company_name??'', 30)}}</h5>
                 <ul class="list-info">

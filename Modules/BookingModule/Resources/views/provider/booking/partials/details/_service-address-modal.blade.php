@@ -12,7 +12,7 @@
                 <div class="modal-body m-4">
                     <div class="d-flex flex-column gap-2 align-items-center">
                         <img width="75" class="mb-2"
-                             src="{{asset('public/assets/provider-module')}}/img/media/address.jpg"
+                             src="{{asset('assets/provider-module')}}/img/media/address.jpg"
                              alt="">
                         <h3>{{translate('Update customer service address')}}</h3>
 

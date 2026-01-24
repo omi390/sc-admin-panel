@@ -137,7 +137,7 @@
                                 <div class="card p-30 flex-grow-1">
                                     <div class="d-flex gap-4 flex-wrap">
                                         <img width="35" class="avatar"
-                                             src="{{asset('public/assets/admin-module')}}/img/icons/total_booking.png"
+                                             src="{{asset('assets/admin-module')}}/img/icons/total_booking.png"
                                              alt="">
                                         <div class="text-center">
                                             <h2 class="fz-26">{{$bookings_count['total_bookings']}}</h2>
@@ -169,7 +169,7 @@
                                 <div class="card p-30 flex-grow-1">
                                     <div class="d-flex gap-4 flex-wrap">
                                         <img width="35" class="avatar"
-                                             src="{{asset('public/assets/admin-module')}}/img/icons/booking_amount.png"
+                                             src="{{asset('assets/admin-module')}}/img/icons/booking_amount.png"
                                              alt="">
                                         <div class="text-center">
                                             <h2 class="fz-26">{{with_currency_symbol($booking_amount['total_booking_amount'])}}</h2>
@@ -351,7 +351,7 @@
 
 @push('script')
 
-    <script src="{{asset('public/assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
 
     <script>
         "use strict";

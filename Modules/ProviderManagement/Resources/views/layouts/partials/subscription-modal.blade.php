@@ -39,7 +39,7 @@
             <div class="d-flex flex-wrap justify-content-between flex-grow-1 gap-3">
                 <div class="media gap-3 align-items-center">
                     <div class="text-white">
-                        <img src="{{asset('public/assets/provider-module')}}/img/icons/time_bottom.svg" class="svg" alt="">
+                        <img src="{{asset('assets/provider-module')}}/img/icons/time_bottom.svg" class="svg" alt="">
                     </div>
                     <div class="media-body">
                         <h4 class="text-white mb-1 fs-18">{{translate('Your Subscription has been expired on ')}} {{ \Carbon\Carbon::parse($endDate)->format('d M Y')}}</h4>
@@ -64,7 +64,7 @@
             <div class="d-flex flex-wrap justify-content-between flex-grow-1 gap-3">
                 <div class="media gap-3 align-items-center">
                     <div class="text-white">
-                        <img src="{{asset('public/assets/provider-module')}}/img/icons/time_bottom.svg" class="svg" alt="">
+                        <img src="{{asset('assets/provider-module')}}/img/icons/time_bottom.svg" class="svg" alt="">
                     </div>
                     <div class="media-body">
                         <h4 class="text-white mb-1 fs-18">{{translate('Free Trial Has Been Ended')}}</h4>
@@ -101,14 +101,14 @@
 
                             <div class="mt-30">
                                 <div class="cancellantion-note border-0 d-flex gap-2 align-items-center text-danger rounded">
-                                    <img src="{{asset('public/assets/provider-module')}}/img/icons/warning.svg" alt="">
+                                    <img src="{{asset('assets/provider-module')}}/img/icons/warning.svg" alt="">
                                     {{translate('All Access to service has been blocked due to no active subscription.')}}
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-right-bg max-w260 d-none d-sm-block">
-                        <img class="w-100 h-100 object-cover" src="{{asset('public/assets/provider-module')}}/img/media/subscription_plan_modal_bg.png " alt="">
+                        <img class="w-100 h-100 object-cover" src="{{asset('assets/provider-module')}}/img/media/subscription_plan_modal_bg.png " alt="">
                     </div>
                 </div>
             </div>
@@ -320,7 +320,7 @@
                             </div>
 
                             <div class="flex-shrink-0">
-                                <img width="40" src="{{asset('public/assets/admin-module/img/icons/shift.png')}}" alt="">
+                                <img width="40" src="{{asset('assets/admin-module/img/icons/shift.png')}}" alt="">
                             </div>
 
                             <div class="price-box d-flex flex-column active rounded-3 border flex-grow-1  w-25">
@@ -368,14 +368,14 @@
 
                         <div class="mt-30">
                             <div class="cancellantion-note border-0 d-flex gap-2 align-items-center text-danger rounded">
-                                <img src="{{asset('public/assets/provider-module')}}/img/icons/warning.svg" alt="">
+                                <img src="{{asset('assets/provider-module')}}/img/icons/warning.svg" alt="">
                                 {{translate('All Access to service has been blocked due to incomplete payment.')}}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-right-bg max-w260 d-none d-sm-block">
-                    <img class="w-100 h-100 object-cover" src="{{asset('public/assets/provider-module')}}/img/media/subscription_plan_modal_bg.png " alt="">
+                    <img class="w-100 h-100 object-cover" src="{{asset('assets/provider-module')}}/img/media/subscription_plan_modal_bg.png " alt="">
                 </div>
             </div>
         </div>

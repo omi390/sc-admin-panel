@@ -220,7 +220,7 @@
 
 @push('script')
 
-    <script src="{{asset('public/assets/provider-module')}}/plugins/apex/apexcharts.min.js"></script>
+    <script src="{{asset('assets/provider-module')}}/plugins/apex/apexcharts.min.js"></script>
 
     <script>
         "use strict";

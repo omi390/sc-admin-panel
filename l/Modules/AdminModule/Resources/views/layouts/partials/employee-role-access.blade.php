@@ -87,7 +87,7 @@
                                             <div>
                                                 <div class="alert alert-danger d-flex align-items-center alert-dismissible fade show mt-3 mb-0" role="alert">
                                                     <div class="media gap-2">
-                                                        <img src="{{asset('public/assets/admin-module/img/WarningOctagon.svg')}}" class="svg" alt="">
+                                                        <img src="{{asset('assets/admin-module/img/WarningOctagon.svg')}}" class="svg" alt="">
                                                         <div class="media-body">
                                                             {{translate('Employee this role can only view the section')}}
                                                         </div>
@@ -162,7 +162,7 @@
                     <div>
                         <div class="alert alert-danger d-flex align-items-center alert-dismissible fade show mt-3 mb-0" role="alert">
                             <div class="media gap-2">
-                                <img src="{{asset('public/assets/admin-module/img/WarningOctagon.svg')}}" class="svg" alt="">
+                                <img src="{{asset('assets/admin-module/img/WarningOctagon.svg')}}" class="svg" alt="">
                                 <div class="media-body">
                                     {{translate('Employee this role can only view the section')}}
                                 </div>

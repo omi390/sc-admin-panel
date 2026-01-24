@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container pt-3">
-        <section class="page-header bg__img" data-img="{{asset('public/assets/landing')}}/img/privacy-page-header.png">
+        <section class="page-header bg__img" data-img="{{asset('assets/landing')}}/img/privacy-page-header.png">
             <h3 class="title">{{translate('cancellation_policy')}}</h3>
         </section>
     </div>

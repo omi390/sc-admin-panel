@@ -247,7 +247,7 @@
                                                                             aria-label="Close"></button>
                                                                     <div class="d-flex justify-content-center mb-4">
                                                                         <img width="75" height="75"
-                                                                             src="{{asset('public/assets/admin-module/img/delete2.png')}}"
+                                                                             src="{{asset('assets/admin-module/img/delete2.png')}}"
                                                                              class="rounded-circle" alt="">
                                                                     </div>
 
@@ -290,7 +290,7 @@
                                                                             aria-label="Close"></button>
                                                                     <div class="d-flex justify-content-center mb-4">
                                                                         <img width="75" height="75"
-                                                                             src="{{asset('public/assets/admin-module/img/delete2.png')}}"
+                                                                             src="{{asset('assets/admin-module/img/delete2.png')}}"
                                                                              class="rounded-circle" alt="">
                                                                     </div>
 
@@ -332,7 +332,7 @@
                                                                             aria-label="Close"></button>
                                                                     <div class="d-flex justify-content-center mb-4">
                                                                         <img width="75" height="75"
-                                                                             src="{{asset('public/assets/admin-module/img/paused.png')}}"
+                                                                             src="{{asset('assets/admin-module/img/paused.png')}}"
                                                                              class="rounded-circle" alt="">
                                                                     </div>
 
@@ -374,7 +374,7 @@
                                                                             aria-label="Close"></button>
                                                                     <div class="d-flex justify-content-center mb-4">
                                                                         <img width="75" height="75"
-                                                                             src="{{asset('public/assets/admin-module/img/resume.svg')}}"
+                                                                             src="{{asset('assets/admin-module/img/resume.svg')}}"
                                                                              class="rounded-circle" alt="">
                                                                     </div>
 
@@ -411,7 +411,7 @@
                                                                             aria-label="Close"></button>
                                                                     <div class="d-flex justify-content-center mb-4">
                                                                         <img width="75" height="75"
-                                                                             src="{{asset('public/assets/admin-module/img/media/accept.png')}}"
+                                                                             src="{{asset('assets/admin-module/img/media/accept.png')}}"
                                                                              class="rounded-circle" alt="">
                                                                     </div>
 

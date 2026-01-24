@@ -3,11 +3,11 @@
 @section('title',translate('service_update'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/wysiwyg-editor/froala_editor.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/css/tags-input.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/wysiwyg-editor/froala_editor.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/css/tags-input.min.css"/>
 @endpush
 
 @section('content')
@@ -424,10 +424,10 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/js//tags-input.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
-    <script src="{{asset('public/assets/admin-module/plugins/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('assets/admin-module')}}/js//tags-input.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="{{asset('assets/admin-module/plugins/tinymce/tinymce.min.js')}}"></script>
     <!-- CKEditor jQuery adapter removed - using TinyMCE instead -->
     <script>
         "use strict";

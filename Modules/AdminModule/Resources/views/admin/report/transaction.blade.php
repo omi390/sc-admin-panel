@@ -25,7 +25,7 @@
                                             <h3>{{translate('Admin_earning')}}</h3>
                                         </div>
                                         <div class="absolute-img position-static align-self-start"  data-bs-toggle="tooltip" data-bs-title="{{translate('Admin balance means total Earning of the admin')}}">
-                                            <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
+                                            <img src="{{asset('assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@
                                             <h3>{{translate('Admin_commission')}}</h3>
                                         </div>
                                         <div class="absolute-img position-static align-self-start"  data-bs-toggle="tooltip" data-bs-title="{{translate('Admin balance means total Earning of the admin')}}">
-                                            <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
+                                            <img src="{{asset('assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                                             <h3>{{translate('extra_fee')}}</h3>
                                         </div>
                                         <div class="absolute-img position-static align-self-start"  data-bs-toggle="tooltip" data-bs-title="{{translate('extra fee means the earning from booking extra fee')}}">
-                                            <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
+                                            <img src="{{asset('assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                                             <h3>{{translate('Pending_Balance')}}</h3>
                                         </div>
                                         <div class="absolute-img position-static align-self-start"  data-bs-toggle="tooltip" data-bs-title="{{translate('Pending balance means digitally placed booking amount which is yet to disperse')}}">
-                                            <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
+                                            <img src="{{asset('assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@
                                             <h3>{{translate('Account_Payable')}}</h3>
                                         </div>
                                         <div class="absolute-img position-static align-self-start"  data-bs-toggle="tooltip" data-bs-title="{{translate('Account payable means the booking amount that the admin has to pay to the providers')}}">
-                                            <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
+                                            <img src="{{asset('assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                             <h3>{{translate('Account_Receivable')}}</h3>
                                         </div>
                                         <div class="absolute-img position-static align-self-start"  data-bs-toggle="tooltip" data-bs-title="{{translate('Account receivable means the booking commission that the admin will get from the providers for Cash After the Services')}}">
-                                            <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
+                                            <img src="{{asset('assets/admin-module')}}/img/icons/info.svg" class="svg" alt="">
                                         </div>
                                     </div>
                                 </div>

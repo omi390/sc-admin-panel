@@ -11,7 +11,7 @@
                 <img
                     width="84"
                     class="mb-1"
-                    src="{{asset('public/assets/admin-module')}}/img/logo.png"
+                    src="{{asset('assets/admin-module')}}/img/logo.png"
                     alt=""
                 />
                 <div>

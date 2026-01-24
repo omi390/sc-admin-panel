@@ -17,13 +17,13 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
         rel="stylesheet"/>
 
-    <link href="{{asset('public/assets/provider-module')}}/css/material-icons.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/bootstrap.min.css"/>
+    <link href="{{asset('assets/provider-module')}}/css/material-icons.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/bootstrap.min.css"/>
     <link rel="stylesheet"
-          href="{{asset('public/assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.css"/>
+          href="{{asset('assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.css"/>
 
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/style.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/provider-module')}}/css/toastr.css">
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/style.css"/>
+    <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/toastr.css">
 </head>
 
 <body>
@@ -36,7 +36,7 @@ $logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'bus
     <form action="{{route('franchise.auth.login')}}" enctype="multipart/form-data" method="POST" id="login-form">
         @csrf
         <div class="login-wrap">
-            <div class="login-left d-flex justify-content-center align-items-center bg-center" data-bg-img="{{asset('public/assets/provider-module')}}/img/media/login-bg.png">
+            <div class="login-left d-flex justify-content-center align-items-center bg-center" data-bg-img="{{asset('assets/provider-module')}}/img/media/login-bg.png">
                 <div class="tf-box d-flex flex-column gap-3 align-items-center justify-content-center p-5 mx-4 mx-sm-5 h-75">
                     <img class="login-logo mb-2"
                         src="{{ $logo }}" alt="{{ translate('logo') }}">
@@ -128,15 +128,15 @@ $logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'bus
     </form>
 </div>
 
-<script src="{{asset('public/assets/provider-module')}}/js/jquery-3.6.0.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/main.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/jquery-3.6.0.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/main.js"></script>
 
 
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-<script src="{{asset('public/assets/provider-module')}}/js/sweet_alert.js"></script>
-<script src="{{asset('public/assets/provider-module')}}/js/toastr.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/sweet_alert.js"></script>
+<script src="{{asset('assets/provider-module')}}/js/toastr.js"></script>
 {!! Toastr::message() !!}
 
 @php($recaptcha = business_config('recaptcha', 'third_party'))

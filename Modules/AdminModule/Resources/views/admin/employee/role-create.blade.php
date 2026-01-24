@@ -3,8 +3,8 @@
 @section('title', translate('role_settings'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
 @endpush
 
 @section('content')
@@ -194,7 +194,7 @@
                                     <div class="alert-show">
                                         <div class="alert alert-danger d-flex align-items-center alert-dismissible fade show mt-3 mb-0" role="alert">
                                             <div class="media gap-2">
-                                                <img src="{{asset('public/assets/admin-module/img/WarningOctagon.svg')}}" class="svg" alt="">
+                                                <img src="{{asset('assets/admin-module/img/WarningOctagon.svg')}}" class="svg" alt="">
                                                 <div class="media-body">
                                                     {{translate('If no access is selected, employees with this role can only view the section for which permissions are granted; they cannot perform any actions.')}}
                                                 </div>
@@ -224,9 +224,9 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/js/custom.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/js/custom.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
     <script>
         "use strict";
 

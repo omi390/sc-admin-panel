@@ -3,9 +3,9 @@
 @section('title',translate('zone_edit'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/dataTables/jquery.dataTables.min.css')}}"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/dataTables/select.dataTables.min.css')}}"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/css/zone-module.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/dataTables/jquery.dataTables.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/dataTables/select.dataTables.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/css/zone-module.css')}}"/>
 @endpush
 
 @section('content')
@@ -31,7 +31,7 @@
 
                                             <div class="media mb-2 gap-3 align-items-center">
                                                 <img
-                                                    src="{{asset('public/assets/admin-module/img/icons/map-drag.png')}}"
+                                                    src="{{asset('assets/admin-module/img/icons/map-drag.png')}}"
                                                     alt="{{ translate('image') }}">
                                                 <div class="media-body ">
                                                     <p>{{translate('use_this_to_drag_map_to_find_proper_area')}}</p>
@@ -40,7 +40,7 @@
 
                                             <div class="media gap-3 align-items-center">
                                                 <img
-                                                    src="{{asset('public/assets/admin-module/img/icons/map-draw.png')}}"
+                                                    src="{{asset('assets/admin-module/img/icons/map-draw.png')}}"
                                                     alt="{{ translate('image') }}">
                                                 <div class="media-body ">
                                                     <p>{{translate('click_this_icon_to_start_pin_points_in_the_map_and_connect_them_
@@ -50,7 +50,7 @@
                                                 </div>
                                             </div>
                                             <div class="map-img mt-4">
-                                                <img src="{{asset('public/assets/admin-module/img/instructions.gif')}}"
+                                                <img src="{{asset('assets/admin-module/img/instructions.gif')}}"
                                                      alt="">
                                             </div>
                                         </div>

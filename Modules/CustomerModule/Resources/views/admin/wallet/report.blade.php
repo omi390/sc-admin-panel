@@ -111,7 +111,7 @@
                                     <h3>{{translate('Debit')}}</h3>
                                     <div class="absolute-img" data-bs-toggle="tooltip"
                                          data-bs-title="{{translate('Total debited from wallet')}}">
-                                        <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg"
+                                        <img src="{{asset('assets/admin-module')}}/img/icons/info.svg"
                                              class="svg" alt="">
                                     </div>
                                 </div>
@@ -120,7 +120,7 @@
                                     <h3>{{translate('Credit')}}</h3>
                                     <div class="absolute-img" data-bs-toggle="tooltip"
                                          data-bs-title="{{translate('Total credited to wallet')}}">
-                                        <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg"
+                                        <img src="{{asset('assets/admin-module')}}/img/icons/info.svg"
                                              class="svg" alt="">
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@
                                     <h3>{{translate('Balance')}}</h3>
                                     <div class="absolute-img" data-bs-toggle="tooltip"
                                          data-bs-title="{{translate('Total credit')}} - {{translate('Total debit')}}">
-                                        <img src="{{asset('public/assets/admin-module')}}/img/icons/info.svg"
+                                        <img src="{{asset('assets/admin-module')}}/img/icons/info.svg"
                                              class="svg" alt="">
                                     </div>
                                 </div>

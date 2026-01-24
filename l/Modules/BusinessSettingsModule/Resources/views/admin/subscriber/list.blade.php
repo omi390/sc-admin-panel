@@ -33,7 +33,7 @@
                             <div class="business-summary style__two">
                                 <h2>{{ $packageSubscribers->count() }}</h2>
                                 <h3>{{translate('Total Subscription')}}</h3>
-                                <img width="35" src="{{asset('public/assets/admin-module')}}/img/icons/ov1.png"
+                                <img width="35" src="{{asset('assets/admin-module')}}/img/icons/ov1.png"
                                     class="absolute-img"
                                     alt="">
                             </div>
@@ -42,7 +42,7 @@
                             <div class="business-summary style__two success">
                                 <h2>{{ $packageSubscribers->where('package_end_date', '>' , \Carbon\Carbon::now())->count() }}</h2>
                                 <h3>{{translate('Active_Subscriptions')}}</h3>
-                                <img width="35" src="{{asset('public/assets/admin-module')}}/img/icons/ov2.png"
+                                <img width="35" src="{{asset('assets/admin-module')}}/img/icons/ov2.png"
                                     class="absolute-img" alt="">
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                             <div class="business-summary style__two danger">
                                 <h2>{{ $packageSubscribers->where('package_end_date', '<' , \Carbon\Carbon::now())->count() }}</h2>
                                 <h3>{{translate('Expired_Subscription')}}</h3>
-                                <img width="35" src="{{asset('public/assets/admin-module')}}/img/icons/ov3.png"
+                                <img width="35" src="{{asset('assets/admin-module')}}/img/icons/ov3.png"
                                     class="absolute-img"
                                     alt="">
                             </div>
@@ -59,7 +59,7 @@
                             <div class="business-summary style__two warning">
                                 <h2>{{$warningSubscribersCount}}</h2>
                                 <h3>{{translate('Expiring_Soon ')}}</h3>
-                                <img width="35" src="{{asset('public/assets/admin-module')}}/img/icons/ov4.png"
+                                <img width="35" src="{{asset('assets/admin-module')}}/img/icons/ov4.png"
                                     class="absolute-img"
                                     alt="">
                             </div>
@@ -69,7 +69,7 @@
                     <div class="d-flex flex-wrap gap-3 justify-content-between bg-light p-3 rounded">
                         <div class="d-flex align-items-center justify-content-between gap-3">
                             <div class="media gap-2 align-items-center">
-                                <img width="28" src="{{asset('public/assets/admin-module')}}/img/icons/tt.svg" class="svg" alt="">
+                                <img width="28" src="{{asset('assets/admin-module')}}/img/icons/tt.svg" class="svg" alt="">
                                 <div class="meida-body c1 text-uppercase fs-12">{{translate('TOTAL TRANSACTIONS')}}</div>
                             </div>
                             <div class="c1 fw-semibold">{{ $totalTransactions }}</div>
@@ -79,7 +79,7 @@
 
                         <div class="d-flex align-items-center justify-content-between gap-3">
                             <div class="media gap-2 align-items-center">
-                                <img width="28" src="{{asset('public/assets/admin-module')}}/img/icons/te.svg" class="svg" alt="">
+                                <img width="28" src="{{asset('assets/admin-module')}}/img/icons/te.svg" class="svg" alt="">
                                 <div class="meida-body text-success text-uppercase fs-12">{{translate('TOTAL EARNED')}}</div>
                             </div>
                             <div class="text-success fw-semibold">{{ with_currency_symbol($totalEarning) }}</div>
@@ -89,7 +89,7 @@
 
                         <div class="d-flex align-items-center justify-content-between gap-3">
                             <div class="media gap-2 align-items-center">
-                                <img width="28" src="{{asset('public/assets/admin-module')}}/img/icons/em.svg" class="svg" alt="">
+                                <img width="28" src="{{asset('assets/admin-module')}}/img/icons/em.svg" class="svg" alt="">
                                 <div class="meida-body text-warning text-uppercase fs-12">{{translate('EARNED THIS MONTH')}}</div>
                             </div>
                             <div class="text-warning fw-semibold">{{ with_currency_symbol($totalEarningThisMonth) }}</div>

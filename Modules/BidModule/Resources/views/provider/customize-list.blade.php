@@ -366,7 +366,7 @@
 
                                                                     <div class="d-flex align-items-center gap-2 mb-2">
                                                                         <img width="18"
-                                                                             src="{{asset('public/assets/provider-module')}}/img/media/edit-info.png"
+                                                                             src="{{asset('assets/provider-module')}}/img/media/edit-info.png"
                                                                              alt="">
                                                                         <h4>{{translate('Service Requirement')}}</h4>
                                                                     </div>
@@ -435,7 +435,7 @@
                                                     <div class="modal-body">
                                                         <div class="d-flex flex-column gap-2 align-items-center">
                                                             <img width="75" class="mb-2"
-                                                                 src="{{asset('public/assets/provider-module')}}/img/media/ignore-request.png"
+                                                                 src="{{asset('assets/provider-module')}}/img/media/ignore-request.png"
                                                                  alt="">
                                                             <h3>{{translate('Are you sure you want to ignore this request')}}
                                                                 ?</h3>
@@ -468,7 +468,7 @@
                                                     <div class="modal-body">
                                                         <div class="d-flex flex-column gap-2 align-items-center">
                                                             <img width="75" class="mb-2"
-                                                                 src="{{asset('public/assets/provider-module')}}/img/media/withdraw.png"
+                                                                 src="{{asset('assets/provider-module')}}/img/media/withdraw.png"
                                                                  alt="">
                                                             <h3>{{translate('Are you sure you want to withdraw this offer?')}}
                                                                 ?</h3>

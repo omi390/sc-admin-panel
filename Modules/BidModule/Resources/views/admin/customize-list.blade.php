@@ -306,7 +306,7 @@
 
                                                                     <div class="d-flex justify-content-center mb-4">
                                                                         <img width="75" height="75"
-                                                                             src="{{asset('public/assets/admin-module/img/media/delete.png')}}"
+                                                                             src="{{asset('assets/admin-module/img/media/delete.png')}}"
                                                                              class="rounded-circle" alt="">
                                                                     </div>
 

@@ -16,7 +16,7 @@
                             <div class="statistics-card statistics-card__total-orders">
                                 <h2>{{$customer->bookings_count}}</h2>
                                 <h3>{{translate('total_bookings')}}</h3>
-                                <img src="{{asset('public/assets/admin-module')}}/img/icons/total-orders.png"
+                                <img src="{{asset('assets/admin-module')}}/img/icons/total-orders.png"
                                      class="absolute-img" alt="">
                             </div>
                         </div>
@@ -24,7 +24,7 @@
                             <div class="statistics-card statistics-card__ongoing">
                                 <h2>{{$customer->ongoing??0}}</h2>
                                 <h3>{{translate('ongoing')}}</h3>
-                                <img src="{{asset('public/assets/admin-module')}}/img/icons/ongoing.png"
+                                <img src="{{asset('assets/admin-module')}}/img/icons/ongoing.png"
                                      class="absolute-img" alt="">
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                             <div class="statistics-card statistics-card__canceled">
                                 <h2>{{$customer->canceled??0}}</h2>
                                 <h3>{{translate('canceled')}}</h3>
-                                <img src="{{asset('public/assets/admin-module')}}/img/icons/canceled.png"
+                                <img src="{{asset('assets/admin-module')}}/img/icons/canceled.png"
                                      class="absolute-img" alt="">
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                             </form>
 
                             <div class="text-center mb-30">
-                                <img src="{{asset('public/assets/admin-module')}}/img/icons/faq.png" class="mb-4"
+                                <img src="{{asset('assets/admin-module')}}/img/icons/faq.png" class="mb-4"
                                      alt="">
                                 <h3 class="text-muted">{{translate('no_faq_added_yet')}}</h3>
                             </div>

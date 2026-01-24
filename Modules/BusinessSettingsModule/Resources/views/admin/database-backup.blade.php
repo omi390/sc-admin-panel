@@ -115,7 +115,7 @@
                                                                 <div class="modal-body p-30">
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                                                                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                                                                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                                                                         <h3 class="mb-2">{{ translate('Are you sure you want to restore this backup') }}?</h3>
                                                                         <p>{{ translate('This action will replace the current database with the selected backup. Any unsaved changes made after the backup date will be lost.') }}</p>
                                                                         <div class="d-flex gap-3 justify-content-center flex-wrap">

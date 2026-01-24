@@ -139,7 +139,7 @@
                     <div class="d-flex flex-column gap-3">
                         <div class="card flex-row gap-4 p-30">
                             <div class="d-flex gap-4 flex-wrap">
-                                <img width="35" class="avatar" src="{{asset('public/assets/admin-module')}}/img/icons/earning-total.png" alt="">
+                                <img width="35" class="avatar" src="{{asset('assets/admin-module')}}/img/icons/earning-total.png" alt="">
                                 <div>
                                     <h2 class="fz-26">{{with_currency_symbol(array_sum($chart_data['total_earning']))}}</h2>
                                     <div>
@@ -152,7 +152,7 @@
                         <div class="card flex-row align-items-center gap-4 p-30">
                             <div class="d-flex gap-4 flex-wrap">
                                 <img width="35" class="avatar"
-                                     src="{{asset('public/assets/admin-module')}}/img/icons/com-earning.png"
+                                     src="{{asset('assets/admin-module')}}/img/icons/com-earning.png"
                                      alt="">
                                 <div>
                                     <h2 class="fz-26">{{with_currency_symbol(array_sum($chart_data['commission_earning']))}}</h2>
@@ -169,7 +169,7 @@
                         <div class="card flex-row align-items-center gap-4 p-30">
                             <div class="d-flex gap-4 flex-wrap">
                                 <img width="35" class="avatar"
-                                     src="{{asset('public/assets/admin-module')}}/img/icons/sub-ear.png"
+                                     src="{{asset('assets/admin-module')}}/img/icons/sub-ear.png"
                                      alt="">
                                 <div>
                                     <h2 class="fz-26">{{with_currency_symbol(array_sum($chart_data['subscription_earning']))}}</h2>
@@ -186,7 +186,7 @@
                         <div class="card flex-row gap-4 p-30">
                             <div class="d-flex gap-4 flex-wrap">
                                 <img width="35" class="avatar"
-                                     src="{{asset('public/assets/admin-module')}}/img/icons/plat-ear.png" alt="">
+                                     src="{{asset('assets/admin-module')}}/img/icons/plat-ear.png" alt="">
                                 <div>
                                     <h2 class="fz-26">{{with_currency_symbol(array_sum($chart_data['platform_fee']))}}</h2>
                                     <span class="fz-12">{{translate('platform_fee')}}</span>
@@ -365,7 +365,7 @@
 
 @push('script')
 
-    <script src="{{asset('public/assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
 
     <script>
         "use strict";

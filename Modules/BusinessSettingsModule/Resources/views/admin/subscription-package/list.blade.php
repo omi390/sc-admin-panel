@@ -4,7 +4,7 @@
 
 @push('css_or_js')
     <link rel="stylesheet" href="{{asset('/public/assets/landing/css/owl.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
 
     <style>
         .modal-status {
@@ -75,7 +75,7 @@
                                 @endphp
                                 <div class="{{ $styleClass }} text-center d-flex flex-column gap-2 align-items-center">
                                     <div class="img-circle mx-auto mb-2">
-                                        <img src="{{asset('public/assets/admin-module/img/icons/oc1.svg')}}" class="svg" alt="{{ translate('basic') }}">
+                                        <img src="{{asset('assets/admin-module/img/icons/oc1.svg')}}" class="svg" alt="{{ translate('basic') }}">
                                     </div>
                                     <h5>{{ $subscription?->name }}</h5>
                                     <h5 class="h3 fw-bold overview-card__title">{{ with_currency_symbol($subscription?->price) }}</h5>
@@ -203,7 +203,7 @@
             <div class="card mt-3">
                 <div class="card-body py-5">
                     <div class="d-flex flex-column align-items-center text-center gap-2">
-                        <img src="{{asset('public/assets/admin-module/img/create-plan.svg')}}" class="svg mb-3" alt="">
+                        <img src="{{asset('assets/admin-module/img/create-plan.svg')}}" class="svg mb-3" alt="">
                         <h3>{{ translate('Create Subscription Plan')}}</h3>
                         <p class="max-w500">{{ translate('Add new subscription packages to the list. So that Providers get more options to join the business for the growth and success.')}}</p>
                         <a type="button" href="{{ route('admin.subscription.package.create') }}" class="btn btn--primary">
@@ -222,7 +222,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{ translate('Are You Sure You want To Off The Status?')}}</h3>
                         <p>{{ translate('You are about to deactivate a subscription package. You have the option to either switch all providers plans or allow providers to make changes. Please choose an option below to proceed.')}}</p>
                         <div class="d-flex gap-3 justify-content-center flex-wrap">
@@ -244,7 +244,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{ translate('Switch existing business plan')}}</h3>
                         <p class="old-subscription-name" id="old_subscription_name"></p>
                         <form action="{{ route('admin.subscription.package.change-subscription') }}" method="post" class="w-100">
@@ -278,7 +278,7 @@
 @push('script')
 
     <script src="{{asset('/public/assets/landing/js/owl.min.js')}}"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
 
     <script>
         $(document).ready(function () {

@@ -3,12 +3,12 @@
 @section('title',translate('business_setup'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
 
 
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
 @endpush
 
 @section('content')
@@ -715,7 +715,7 @@
                                     <div class="card-body p-30">
                                         <div class="d-flex gap-2 align-items-center mb-4">
                                             <img width="20"
-                                                 src="{{asset('public/assets/admin-module/img/icons/announcement.png')}}"
+                                                 src="{{asset('assets/admin-module/img/icons/announcement.png')}}"
                                                  alt="">
                                             <h4>{{translate('Bookings_Setup')}}</h4>
                                         </div>
@@ -1360,7 +1360,7 @@
                                         <div class="card-header">
                                             <div class="d-flex gap-2 align-items-center">
                                                 <img width="20"
-                                                     src="{{asset('public/assets/admin-module/img/icons/announcement.png')}}"
+                                                     src="{{asset('assets/admin-module/img/icons/announcement.png')}}"
                                                      alt="">
                                                 <h4>{{translate('customer_Setup')}}</h4>
                                             </div>
@@ -1950,7 +1950,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{ translate('Switch commission base')}}</h3>
                         <p class="old-subscription-name" id="old_subscription_name">{{ translate('If disabled Subscription, All subscriber moved to commission and providers have to give a certain percentage of commission to admin for every booking request')}}</p>
                         <form action="{{ route('admin.subscription.package.subscription-to-commission') }}" method="post">
@@ -1980,7 +1980,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{ translate('Want to switch existing business plan')}}?</h3>
                         <p class="old-subscription-name" id="old_subscription_name"></p>
                         <form class="w-100" action="{{ route('admin.subscription.package.commission-to-subscription') }}" method="post">
@@ -2266,9 +2266,9 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
 
 
     <script>

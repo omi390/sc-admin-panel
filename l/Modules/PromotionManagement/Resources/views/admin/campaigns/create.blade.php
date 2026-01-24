@@ -44,7 +44,7 @@
                                                         <div class="upload-file">
                                                             <input type="file" class="upload-file__input" name="cover_image" accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*" required>
                                                             <div class="upload-file__img upload-file__img_banner">
-                                                                <img src="{{asset('public/assets/admin-module')}}/img/media/banner-upload-file.png"
+                                                                <img src="{{asset('assets/admin-module')}}/img/media/banner-upload-file.png"
                                                                      alt="{{translate('campaign')}}">
                                                             </div>
                                                             <span class="upload-file__edit">
@@ -66,7 +66,7 @@
                                                         <div class="upload-file">
                                                             <input type="file" class="upload-file__input" name="thumbnail" accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*" required>
                                                             <div class="upload-file__img">
-                                                                <img src="{{asset('public/assets/admin-module')}}/img/media/upload-file.png" alt="">
+                                                                <img src="{{asset('assets/admin-module')}}/img/media/upload-file.png" alt="">
                                                             </div>
                                                             <span class="upload-file__edit">
                                                                 <span class="material-icons">edit</span>

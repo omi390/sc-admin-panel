@@ -92,7 +92,7 @@
                             <div class="d-flex flex-wrap gap-2">
                                 <div class="card p-30 flex-grow-1">
                                     <div class="d-flex gap-2 justify-content-center align-items-center flex-wrap">
-                                        <img width="35" class="avatar" src="{{asset('public/assets/admin-module')}}/img/icons/total_booking.png" alt="">
+                                        <img width="35" class="avatar" src="{{asset('assets/admin-module')}}/img/icons/total_booking.png" alt="">
                                         <div class="">
                                             <h2 class="fz-26">{{$bookingsCount['total_bookings']}}</h2>
                                             <span class="fz-12">{{translate('Total_Bookings')}}</span>
@@ -120,7 +120,7 @@
 
                                 <div class="card p-30 flex-grow-1">
                                     <div class="d-flex gap-2 align-items-center justify-content-center flex-wrap">
-                                        <img width="35" class="avatar" src="{{asset('public/assets/admin-module')}}/img/icons/booking_amount.png" alt="">
+                                        <img width="35" class="avatar" src="{{asset('assets/admin-module')}}/img/icons/booking_amount.png" alt="">
                                         <div class="">
                                             <h2 class="fz-26">{{with_currency_symbol($bookingAmount['total_booking_amount'])}}</h2>
                                             <span class="fz-12">{{translate('Total_Booking_Amount')}}</span>
@@ -275,7 +275,7 @@
 
 @push('script')
 
-<script src="{{asset('public/assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
+<script src="{{asset('assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
 
     <script>
         "use strict";

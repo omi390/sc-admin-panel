@@ -60,7 +60,7 @@
                     <div class="row justify-content-center">
                         <div class="col-sm-6 col-md-8 col-lg-6 col-xl-5">
                             <div class="card bank-info-card bg-bottom bg-contain bg-img"
-                                 style="background-image: url('{{asset('public/assets/admin-module')}}/img/media/bank-info-card-bg.png');">
+                                 style="background-image: url('{{asset('assets/admin-module')}}/img/media/bank-info-card-bg.png');">
                                 <div class="border-bottom p-3">
                                     <h4 class="fw-semibold">{{translate('Holder_Name')}}:
                                         <strong>{{Str::limit($provider->bank_detail->acc_holder_name ?? translate('Unavailable'), 50)}}</strong>
@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="card-body position-relative">
                                     <img class="bank-card-img"
-                                         src="{{asset('public/assets/admin-module')}}/img/media/bank-card.png" alt="">
+                                         src="{{asset('assets/admin-module')}}/img/media/bank-card.png" alt="">
                                     <ul class="list-unstyled d-flex flex-column gap-4">
                                         <li>
                                             <h3 class="mb-2">{{translate('Bank_Name')}}:</h3>

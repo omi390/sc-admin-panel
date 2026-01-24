@@ -16,7 +16,7 @@
                             <div class="statistics-card statistics-card__total_provider">
                                 <h2>{{$topCards['total_providers']}}</h2>
                                 <h3>{{translate('Total_Providers')}}</h3>
-                                <img src="{{asset('public/assets/admin-module/img/icons/subscribed-providers.png')}}"
+                                <img src="{{asset('assets/admin-module/img/icons/subscribed-providers.png')}}"
                                      class="absolute-img" alt="{{ translate('providers') }}">
                             </div>
                         </div>
@@ -24,7 +24,7 @@
                             <div class="statistics-card statistics-card__ongoing">
                                 <h2>{{$topCards['total_onboarding_requests']}}</h2>
                                 <h3>{{translate('Onboarding_Request')}}</h3>
-                                <img src="{{asset('public/assets/admin-module/img/icons/onboarding-request.png')}}"
+                                <img src="{{asset('assets/admin-module/img/icons/onboarding-request.png')}}"
                                      class="absolute-img" alt="{{ translate('providers') }}">
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                             <div class="statistics-card statistics-card__newly_joined">
                                 <h2>{{$topCards['total_active_providers']}}</h2>
                                 <h3>{{translate('Active_Providers')}}</h3>
-                                <img src="{{asset('public/assets/admin-module/img/icons/newly-joined.png')}}"
+                                <img src="{{asset('assets/admin-module/img/icons/newly-joined.png')}}"
                                      class="absolute-img" alt="{{ translate('providers') }}">
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                             <div class="statistics-card statistics-card__not_served">
                                 <h2>{{$topCards['total_inactive_providers']}}</h2>
                                 <h3>{{translate('Inactive_Providers')}}</h3>
-                                <img src="{{asset('public/assets/admin-module/img/icons/not-served.png')}}"
+                                <img src="{{asset('assets/admin-module/img/icons/not-served.png')}}"
                                      class="absolute-img" alt="{{ translate('providers') }}">
                             </div>
                         </div>

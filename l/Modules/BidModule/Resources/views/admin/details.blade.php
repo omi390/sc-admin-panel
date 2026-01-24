@@ -66,7 +66,7 @@
                                     <div class="card-body pb-5">
                                         <div class="d-flex align-items-center gap-2 mb-3">
                                             <img width="18"
-                                                 src="{{asset('public/assets/provider-module')}}/img/media/more-info.png"
+                                                 src="{{asset('assets/provider-module')}}/img/media/more-info.png"
                                                  alt="">
                                             <h4>{{translate('Service Information')}}</h4>
                                         </div>
@@ -96,7 +96,7 @@
                                     <div
                                         class="card-header d-flex align-items-center gap-2 bg-primary-light shadow-none">
                                         <img width="18"
-                                             src="{{asset('public/assets/provider-module')}}/img/icons/instruction.png"
+                                             src="{{asset('assets/provider-module')}}/img/icons/instruction.png"
                                              alt="">
                                         <h5 class="text-uppercase">{{translate('Additional Instruction')}}</h5>
                                     </div>
@@ -116,7 +116,7 @@
                                     <div
                                         class="card-header d-flex align-items-center gap-2 bg-primary-light shadow-none">
                                         <img width="18"
-                                             src="{{asset('public/assets/provider-module')}}/img/icons/edit-info.png"
+                                             src="{{asset('assets/provider-module')}}/img/icons/edit-info.png"
                                              alt="">
                                         <h5 class="text-uppercase">{{translate('Service Description')}}</h5>
                                     </div>
@@ -130,7 +130,7 @@
                                     <div
                                         class="card-header d-flex align-items-center gap-2 bg-primary-light shadow-none">
                                         <img width="18"
-                                             src="{{asset('public/assets/provider-module')}}/img/icons/provider.png"
+                                             src="{{asset('assets/provider-module')}}/img/icons/provider.png"
                                              alt="">
                                         <h5 class="text-uppercase">{{translate('other_provider_offering')}}</h5>
                                     </div>
@@ -198,7 +198,7 @@
                 </div>
                 <div class="modal-body px-sm-5">
                     <div class="d-flex flex-column align-items-center gap-2 text-center">
-                        <img src="{{asset('public/assets/provider-module')}}/img/icons/alert.png" alt="">
+                        <img src="{{asset('assets/provider-module')}}/img/icons/alert.png" alt="">
                         <h3>{{translate('Alert')}}!</h3>
                         <p class="fw-medium">
                             {{translate('This request is with customized instructions. Please read the customer description and instructions thoroughly and place your pricing according to this')}}
@@ -218,7 +218,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
                     <div class="d-flex justify-content-center mb-4">
-                        <img width="75" height="75" src="{{asset('public/assets/admin-module/img/media/delete.png')}}"
+                        <img width="75" height="75" src="{{asset('assets/admin-module/img/media/delete.png')}}"
                              class="rounded-circle" alt="">
                     </div>
 

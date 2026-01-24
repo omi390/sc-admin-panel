@@ -203,7 +203,7 @@
                                     </div>
 
                                     <div class="flex-shrink-0">
-                                        <img width="40" src="{{asset('public/assets/admin-module/img/icons/shift.png')}}" alt="">
+                                        <img width="40" src="{{asset('assets/admin-module/img/icons/shift.png')}}" alt="">
                                     </div>
 
                                     <div class="price-box d-flex flex-column active rounded-3 border flex-grow-1  w-25">
@@ -241,7 +241,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{translate('Are You Sure?')}}</h3>
                         <p>If you cancel the subscription, after {{$daysDifference}} days the Provider will no longer be able to run the
                         business before subscribe a new plan</p>

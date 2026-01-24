@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{translate('invoice')}}</title>
-    <script src="{{asset('public/assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('public/assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <style>
         body {
             background-color: #F9FCFF;

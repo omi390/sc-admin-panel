@@ -17,7 +17,7 @@
                 <div class="about__wrapper-thumb ps-xl-4">
                     <img class="main-img" src="{{ $aboutUsImage }}" alt="img">
                     <div class="bg-img">
-                        <img src="{{asset('public/assets/landing')}}/img/about-us.png" alt="img">
+                        <img src="{{asset('assets/landing')}}/img/about-us.png" alt="img">
                     </div>
                 </div>
             </div>

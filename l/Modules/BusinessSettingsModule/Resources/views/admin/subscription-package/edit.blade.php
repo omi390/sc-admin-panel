@@ -169,7 +169,7 @@
                         <h3>{{ translate('Subscription Packages')}}</h3>
                         <p>{{translate('Here you can view all the data placements in a package card in the subscription UI in the
                             user app and website')}}</p>
-                        <img src="{{asset('public/assets/admin-module/img/tutorial.svg')}}" class="tutorial-svg svg max-w-100" alt="">
+                        <img src="{{asset('assets/admin-module/img/tutorial.svg')}}" class="tutorial-svg svg max-w-100" alt="">
                     </div>
                     <div class="d-flex justify-content-end mt-5">
                         <button type="button" class="btn btn--primary" data-bs-dismiss="modal">

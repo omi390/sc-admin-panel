@@ -103,7 +103,7 @@
                         <div class="col-xl-3">
                             <div class="d-flex flex-wrap gap-2">
                                 <div class="card flex-row gap-4 p-30 flex-wrap flex-grow-1">
-                                    <img width="35" class="avatar" src="{{asset('public/assets/admin-module')}}/img/icons/total_expenses.png" alt="">
+                                    <img width="35" class="avatar" src="{{asset('assets/admin-module')}}/img/icons/total_expenses.png" alt="">
                                     <div class="text-center">
                                         <h2 class="fz-26">{{with_currency_symbol($totalPromotionalCost['total_expense'])}}</h2>
                                         <span class="fz-12">{{translate('Total_Expenses')}}</span>
@@ -111,7 +111,7 @@
                                 </div>
 
                                 <div class="card flex-row gap-4 p-30 flex-wrap flex-grow-1">
-                                    <img width="35" class="avatar" src="{{asset('public/assets/admin-module')}}/img/icons/discount.png" alt="">
+                                    <img width="35" class="avatar" src="{{asset('assets/admin-module')}}/img/icons/discount.png" alt="">
                                     <div class="text-center">
                                         <h2 class="fz-26">{{with_currency_symbol($totalPromotionalCost['discount'])}}</h2>
                                         <span class="fz-12">{{translate('Normal_Service_Discount')}}</span>
@@ -119,7 +119,7 @@
                                 </div>
 
                                 <div class="card flex-row gap-4 p-30 flex-wrap flex-grow-1">
-                                    <img width="35" class="avatar" src="{{asset('public/assets/admin-module')}}/img/icons/campaign_discount.png" alt="">
+                                    <img width="35" class="avatar" src="{{asset('assets/admin-module')}}/img/icons/campaign_discount.png" alt="">
                                     <div class="text-center">
                                         <h2 class="fz-26">{{with_currency_symbol($totalPromotionalCost['campaign'])}}</h2>
                                         <span class="fz-12">{{translate('Campaign_Discount')}}</span>
@@ -127,7 +127,7 @@
                                 </div>
 
                                 <div class="card flex-row gap-4 p-30 flex-wrap flex-grow-1">
-                                    <img width="35" class="avatar" src="{{asset('public/assets/admin-module')}}/img/icons/coupon_discount.png" alt="">
+                                    <img width="35" class="avatar" src="{{asset('assets/admin-module')}}/img/icons/coupon_discount.png" alt="">
                                     <div class="text-center">
                                         <h2 class="fz-26">{{with_currency_symbol($totalPromotionalCost['coupon'])}}</h2>
                                         <span class="fz-12">{{translate('Coupon_Discount')}}</span>
@@ -219,7 +219,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
 
     <script>
         "use strict";

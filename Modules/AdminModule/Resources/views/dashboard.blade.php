@@ -12,7 +12,7 @@
                         <div class="business-summary business-summary-customers">
                             <h2>{{with_currency_symbol(data_get($data[0], 'top_cards.total_commission_earning', 0) + data_get($data[0], 'top_cards.total_fee_earning', 0) + data_get($data[0], 'top_cards.total_subscription_earning', 0))}}</h2>
                             <h3>{{translate('total_earning')}}</h3>
-                            <img src="{{asset('public/assets/admin-module')}}/img/icons/customers.png"
+                            <img src="{{asset('assets/admin-module')}}/img/icons/customers.png"
                                  class="absolute-img"
                                  alt="">
                         </div>
@@ -21,7 +21,7 @@
                         <div class="business-summary business-summary-earning">
                             <h2>{{data_get($data[0], 'top_cards.total_commission_earning', 0)}}</h2>
                             <h3>{{translate('commission_earning')}}</h3>
-                            <img src="{{asset('public/assets/admin-module')}}/img/icons/total-earning.png"
+                            <img src="{{asset('assets/admin-module')}}/img/icons/total-earning.png"
                                  class="absolute-img" alt="">
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                         <div class="business-summary business-summary-providers">
                             <h2>{{data_get($data[0], 'top_cards.total_fee_earning', 0)}}</h2>
                             <h3>{{translate('Total Fee Earning')}}</h3>
-                            <img src="{{asset('public/assets/admin-module')}}/img/icons/providers.png"
+                            <img src="{{asset('assets/admin-module')}}/img/icons/providers.png"
                                  class="absolute-img"
                                  alt="">
                         </div>
@@ -39,7 +39,7 @@
                         <div class="business-summary business-summary-services">
                             <h2>{{$data[0]['top_cards']['total_provider']}}</h2>
                             <h3>{{translate('providers')}}</h3>
-                            <img src="{{asset('public/assets/admin-module')}}/img/icons/services.png"
+                            <img src="{{asset('assets/admin-module')}}/img/icons/services.png"
                                  class="absolute-img"
                                  alt="">
                         </div>
@@ -87,7 +87,7 @@
                                 <h4 class="mb-3">{{translate('recent_transactions')}}</h4>
                                 @if(isset($data[2]['recent_transactions']) && count($data[2]['recent_transactions']) > 0)
                                     <div class="d-flex align-items-center gap-3 mb-4">
-                                        <img src="{{asset('public/assets/admin-module')}}/img/icons/arrow-up.png"
+                                        <img src="{{asset('assets/admin-module')}}/img/icons/arrow-up.png"
                                              alt="">
                                         <p class="opacity-75">{{$data[2]['this_month_trx_count']}} {{translate('transactions_this_month')}}</p>
                                     </div>
@@ -241,7 +241,7 @@
 
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
     <script>
         'use strict';
 

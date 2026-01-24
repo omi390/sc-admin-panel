@@ -12,7 +12,7 @@
     </div>
 
     <div class="flex-shrink-0">
-        <img width="40" src="{{asset('public/assets/admin-module/img/icons/shift.png')}}" alt="">
+        <img width="40" src="{{asset('assets/admin-module/img/icons/shift.png')}}" alt="">
     </div>
 
     <div class="price-box d-flex flex-column active rounded-3 border flex-grow-1">

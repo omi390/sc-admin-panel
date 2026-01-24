@@ -91,7 +91,7 @@
                                     <h3>{{translate('provider_Balance')}}</h3>
                                     <div class="absolute-img" data-bs-toggle="tooltip"
                                          data-bs-title="{{translate('provider balance means total Earning of booking')}}">
-                                        <img src="{{asset('public/assets/provider-module')}}/img/icons/info.svg"
+                                        <img src="{{asset('assets/provider-module')}}/img/icons/info.svg"
                                              class="svg" alt="">
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                                     <h3>{{translate('Pending_Balance')}}</h3>
                                     <div class="absolute-img" data-bs-toggle="tooltip"
                                          data-bs-title="{{translate('Pending balance means the amount requested for withdraw to admin')}}">
-                                        <img src="{{asset('public/assets/provider-module')}}/img/icons/info.svg"
+                                        <img src="{{asset('assets/provider-module')}}/img/icons/info.svg"
                                              class="svg" alt="">
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@
                                     <h3>{{translate('Commission_Given')}}</h3>
                                     <div class="absolute-img" data-bs-toggle="tooltip"
                                          data-bs-title="{{translate('Total withdrawn means the amount provider has already withdrawn from admin which was got from digitally paid booking')}}">
-                                        <img src="{{asset('public/assets/provider-module')}}/img/icons/info.svg"
+                                        <img src="{{asset('assets/provider-module')}}/img/icons/info.svg"
                                              class="svg" alt="">
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@
                                     <h3>{{translate('Account_Payable')}}</h3>
                                     <div class="absolute-img" data-bs-toggle="tooltip"
                                          data-bs-title="{{translate('Account payable means the admin commission for CAS bookings that is yet to pay')}}">
-                                        <img src="{{asset('public/assets/provider-module')}}/img/icons/info.svg"
+                                        <img src="{{asset('assets/provider-module')}}/img/icons/info.svg"
                                              class="svg" alt="">
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                                     <h3>{{translate('Account_Receivable')}}</h3>
                                     <div class="absolute-img" data-bs-toggle="tooltip"
                                          data-bs-title="{{translate('Account receivable means booking earning by digitally paid bookings that is yet to collect from admin')}}">
-                                        <img src="{{asset('public/assets/provider-module')}}/img/icons/info.svg"
+                                        <img src="{{asset('assets/provider-module')}}/img/icons/info.svg"
                                              class="svg" alt="">
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 <div class="accordion mb-30" id="accordionExample">
     @if($faqs->count() < 1)
-        <img src="{{asset('public/assets/admin-module/img/icons/faq.png')}}" class="mb-4"
+        <img src="{{asset('assets/admin-module/img/icons/faq.png')}}" class="mb-4"
              alt="{{ translate('faq') }}">
         <h3 class="text-muted">{{translate('no_faq_added_yet')}}</h3>
     @endif

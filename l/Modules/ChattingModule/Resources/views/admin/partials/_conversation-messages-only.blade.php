@@ -19,7 +19,7 @@
                             </div>
                         @else
                             <div class="d-flex align-items-center flex-column gap-1">
-                                <img width="50" src="{{asset('public/assets/admin-module/img/icons/folder.png')}}" alt="">
+                                <img width="50" src="{{asset('assets/admin-module/img/icons/folder.png')}}" alt="">
                                 <a class="fs-12" href="{{$file->stored_file_name_full_path}}" download>
                                     {{$file->original_file_name}}
                                 </a>

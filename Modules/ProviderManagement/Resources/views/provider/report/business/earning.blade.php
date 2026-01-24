@@ -131,7 +131,7 @@
                             <div class="d-flex flex-wrap gap-2">
                                 <div class="card flex-row gap-4 p-30 flex-wrap flex-grow-1">
                                     <img width="35" class="avatar"
-                                         src="{{asset('public/assets/admin-module')}}/img/icons/net_profit.png" alt="">
+                                         src="{{asset('assets/admin-module')}}/img/icons/net_profit.png" alt="">
                                     <div class="text-center">
                                         <h2 class="fz-26">{{with_currency_symbol(array_sum($chartData['net_profit']))}}</h2>
                                         <span class="fz-12">{{translate('Net_Profit')}}</span>
@@ -140,7 +140,7 @@
 
                                 <div class="card flex-row gap-4 p-30 flex-wrap flex-grow-1">
                                     <img width="35" class="avatar"
-                                         src="{{asset('public/assets/admin-module')}}/img/icons/commission_earning.png"
+                                         src="{{asset('assets/admin-module')}}/img/icons/commission_earning.png"
                                          alt="">
                                     <div class="text-center">
                                         <h2 class="fz-26">{{with_currency_symbol(array_sum($chartData['total_earning']))}}</h2>
@@ -150,7 +150,7 @@
 
                                 <div class="card flex-row gap-4 p-30 flex-wrap flex-grow-1">
                                     <img width="35" class="avatar"
-                                         src="{{asset('public/assets/admin-module')}}/img/icons/total_expenses.png"
+                                         src="{{asset('assets/admin-module')}}/img/icons/total_expenses.png"
                                          alt="">
                                     <div class="text-center">
                                         <h2 class="fz-26">{{with_currency_symbol(array_sum($chartData['total_expense']))}}</h2>
@@ -269,7 +269,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="{{asset('public/assets/admin-module')}}/img/media/formula.png" class="dark-support"
+                    <img src="{{asset('assets/admin-module')}}/img/media/formula.png" class="dark-support"
                          alt="">
                 </div>
             </div>
@@ -279,7 +279,7 @@
 
 @push('script')
 
-<script src="{{asset('public/assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
+<script src="{{asset('assets/admin-module')}}/plugins/apex/apexcharts.min.js"></script>
 
     <script>
         "use strict";

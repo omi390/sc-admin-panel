@@ -3,9 +3,9 @@
 @section('title',translate('zone_setup'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/dataTables/jquery.dataTables.min.css')}}"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/dataTables/select.dataTables.min.css')}}"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/css/zone-module.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/dataTables/jquery.dataTables.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/dataTables/select.dataTables.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module/css/zone-module.css')}}"/>
 @endpush
 
 @section('content')
@@ -32,7 +32,7 @@
 
                                                 <div class="media mb-2 gap-3 align-items-center">
                                                     <img
-                                                        src="{{asset('public/assets/admin-module/img/icons/map-drag.png')}}"
+                                                        src="{{asset('assets/admin-module/img/icons/map-drag.png')}}"
                                                         alt="{{ translate('image') }}">
                                                     <div class="media-body ">
                                                         <p>{{translate('use_this_to_drag_map_to_find_proper_area')}}</p>
@@ -41,7 +41,7 @@
 
                                                 <div class="media gap-3 align-items-center">
                                                     <img
-                                                        src="{{asset('public/assets/admin-module/img/icons/map-draw.png')}}"
+                                                        src="{{asset('assets/admin-module/img/icons/map-draw.png')}}"
                                                         alt="{{ translate('image') }}">
                                                     <div class="media-body ">
                                                         <p>{{translate('click_this_icon_to_start_pin_points_in_the_map_and_connect_them_to_draw_a_
@@ -51,7 +51,7 @@
                                                 </div>
                                                 <div class="map-img mt-4">
                                                     <img class="dark-support"
-                                                         src="{{asset('public/assets/admin-module/img/instructions.gif')}}"
+                                                         src="{{asset('assets/admin-module/img/instructions.gif')}}"
                                                          alt="{{ translate('image') }}">
                                                 </div>
                                             </div>
@@ -274,8 +274,8 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module/plugins/dataTables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('public/assets/admin-module/plugins/dataTables/dataTables.select.min.js')}}"></script>
+    <script src="{{asset('assets/admin-module/plugins/dataTables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/admin-module/plugins/dataTables/dataTables.select.min.js')}}"></script>
 
     @php($api_key=(business_config('google_map', 'third_party'))->live_values)
     <script

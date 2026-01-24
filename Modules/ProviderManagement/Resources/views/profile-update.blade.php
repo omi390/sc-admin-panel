@@ -4,7 +4,7 @@
 
 @push('css_or_js')
 
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
 
     <style>
         .location_map_div {
@@ -311,7 +311,7 @@
 
 @push('script')
 
-    <script src="{{asset('public/assets/provider-module')}}/js/spartan-multi-image-picker.js"></script>
+    <script src="{{asset('assets/provider-module')}}/js/spartan-multi-image-picker.js"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key={{business_config('google_map', 'third_party')?->live_values['map_api_key_client']}}&libraries=places&v=3.45.8"></script>
 
@@ -347,7 +347,7 @@
                 groupClassName: 'col-3',
                 dropFileLabel: "{{translate('Drop_here')}}",
                 placeholderImage: {
-                    image: '{{asset('public/assets/provider-module')}}/img/media/upload-file.png',
+                    image: '{{asset('assets/provider-module')}}/img/media/upload-file.png',
                     width: '75%',
                 },
 

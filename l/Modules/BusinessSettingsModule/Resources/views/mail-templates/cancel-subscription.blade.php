@@ -141,7 +141,7 @@
 <div class="box">
     <div class="top-wrap-box">
         @php($business_email = business_config('business_email','business_information')?->live_values)
-        <img src="{{asset('public/assets/admin-module/img/email/subscription-cancel.png')}}" alt="{{translate('Logo')}}"
+        <img src="{{asset('assets/admin-module/img/email/subscription-cancel.png')}}" alt="{{translate('Logo')}}"
              width="140"/>
 
         <h3 style="margin-top: 20px">{{translate('Subscription Cancelled')}} !</h3>

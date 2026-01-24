@@ -3,7 +3,7 @@
 @section('title',translate('Subscription Package Details'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
 
 @endpush
 
@@ -49,7 +49,7 @@
                             <div class="business-summary style__two">
                                 <h2>{{ $packageSubscribers->count() }}</h2>
                                 <h3>{{translate('Total Subscription')}}</h3>
-                                <img width="35" src="{{asset('public/assets/admin-module')}}/img/icons/ov1.png"
+                                <img width="35" src="{{asset('assets/admin-module')}}/img/icons/ov1.png"
                                      class="absolute-img"
                                      alt="">
                             </div>
@@ -58,7 +58,7 @@
                             <div class="business-summary style__two success">
                                 <h2>{{ $packageSubscribers->where('package_end_date', '>' , \Carbon\Carbon::now()->subDay())->count() }}</h2>
                                 <h3>{{translate('Active_Subscriptions')}}</h3>
-                                <img width="35" src="{{asset('public/assets/admin-module')}}/img/icons/ov2.png"
+                                <img width="35" src="{{asset('assets/admin-module')}}/img/icons/ov2.png"
                                      class="absolute-img" alt="">
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                             <div class="business-summary style__two danger">
                                 <h2>{{ $packageSubscribers->where('package_end_date', '<' , \Carbon\Carbon::now()->subDay())->count() }}</h2>
                                 <h3>{{translate('Expired_Subscription')}}</h3>
-                                <img width="35" src="{{asset('public/assets/admin-module')}}/img/icons/ov3.png"
+                                <img width="35" src="{{asset('assets/admin-module')}}/img/icons/ov3.png"
                                      class="absolute-img"
                                      alt="">
                             </div>
@@ -79,7 +79,7 @@
                                     <i class="material-symbols-outlined cursor-pointer title-color" data-bs-toggle="tooltip" title="Expired soon warning is base on upcoming {{$deadlineWarning}} days.">info</i>
 
                                 </h3>
-                                <img width="35" src="{{asset('public/assets/admin-module')}}/img/icons/ov4.png"
+                                <img width="35" src="{{asset('assets/admin-module')}}/img/icons/ov4.png"
                                      class="absolute-img"
                                      alt="">
                             </div>
@@ -90,7 +90,7 @@
                             <div class="statistics-card p-3 style__two">
                                 <div class="d-flex justify-content-between gap-2">
                                     <div class="media gap-2 align-items-center">
-                                        <img width="20" src="{{asset('public/assets/admin-module')}}/img/icons/ov5.png" alt="">
+                                        <img width="20" src="{{asset('assets/admin-module')}}/img/icons/ov5.png" alt="">
                                         <h6 class="meida-body title-color">{{translate('In Free Trial')}}</h6>
                                     </div>
                                     <h4 class="text-success h5 fw-bold mb-0">{{ $freeTrialCount }}</h4>
@@ -101,7 +101,7 @@
                             <div class="statistics-card p-3 style__two">
                                 <div class="d-flex justify-content-between gap-2">
                                     <div class="media gap-2 align-items-center">
-                                        <img width="20" src="{{asset('public/assets/admin-module')}}/img/icons/ov6.png" alt="">
+                                        <img width="20" src="{{asset('assets/admin-module')}}/img/icons/ov6.png" alt="">
                                         <h6 class="meida-body title-color">{{translate('Total Renewed')}}</h6>
                                     </div>
                                     <h4 class="c1 h5 fw-bold mb-0">{{ with_currency_symbol($totalRenewPrice) }}</h4>
@@ -112,7 +112,7 @@
                             <div class="statistics-card p-3 style__two">
                                 <div class="d-flex justify-content-between gap-2">
                                     <div class="media gap-2 align-items-center">
-                                        <img width="20" src="{{asset('public/assets/admin-module')}}/img/icons/ov7.png" alt="">
+                                        <img width="20" src="{{asset('assets/admin-module')}}/img/icons/ov7.png" alt="">
                                         <h6 class="meida-body title-color">{{translate('Total Earning')}}</h6>
                                     </div>
                                     <h4 class="text-danger h5 fw-bold mb-0">{{ with_currency_symbol($totalEarning) }}</h4>
@@ -127,7 +127,7 @@
                 <div class="card-body">
                     <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
                         <h4 class="d-flex align-items-center gap-2">
-                            <img width="20" src="{{asset('public/assets/admin-module/img/icons/ov11.png')}}" alt="">
+                            <img width="20" src="{{asset('assets/admin-module/img/icons/ov11.png')}}" alt="">
                             {{translate('Package_Overview')}}
                         </h4>
                         <div class="d-flex align-items-center flex-wrap justify-content-between gap-3">
@@ -223,7 +223,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{ translate('Are You Sure You want To Off The Status?')}}</h3>
                         <p>{{ translate('You are about to deactivate a subscription package. You have the option to either switch all providers plans or allow providers to make changes. Please choose an option below to proceed.')}}</p>
                         <div class="d-flex gap-3 justify-content-center flex-wrap">
@@ -246,7 +246,7 @@
                 <div class="modal-body p-30">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="d-flex flex-column gap-2 align-items-center text-center">
-                        <img class="mb-3" src="{{asset('public/assets/admin-module')}}/img/ad_delete.svg" alt="">
+                        <img class="mb-3" src="{{asset('assets/admin-module')}}/img/ad_delete.svg" alt="">
                         <h3 class="mb-2">{{ translate('Switch existing business plan')}}</h3>
                         <p class="old-subscription-name" id="old_subscription_name"></p>
                         <form action="{{ route('admin.subscription.package.change-subscription') }}" method="post" class="w-100">
@@ -277,7 +277,7 @@
 
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
 
     <script>
         "use strict"

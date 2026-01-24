@@ -3,7 +3,7 @@
 @section('title',translate('Ads Details'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/css/lightbox.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/lightbox.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/public/assets/admin-module/css/daterangepicker.css')}}"/>
 @endpush
 
@@ -341,7 +341,7 @@
                     <div class="modal-body pt-5 p-md-5">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div class="d-flex justify-content-center mb-4">
-                            <img width="75" height="75" src="{{asset('public/assets/admin-module/img/delete2.png')}}"
+                            <img width="75" height="75" src="{{asset('assets/admin-module/img/delete2.png')}}"
                                  class="rounded-circle" alt="">
                         </div>
 
@@ -373,7 +373,7 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/js/lightbox.min.js')}}"></script>
+    <script src="{{asset('assets/js/lightbox.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('/public/assets/admin-module/js/moment.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('/public/assets/admin-module/js/daterangepicker.min.js')}}"></script>
 

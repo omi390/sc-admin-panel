@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="register-form dark-support"
-         data-bg-img="{{asset('public/assets/provider-module')}}/img/media/login-bg.png">
+         data-bg-img="{{asset('assets/provider-module')}}/img/media/login-bg.png">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-xl-8">

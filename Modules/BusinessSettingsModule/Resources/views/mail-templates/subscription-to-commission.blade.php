@@ -140,7 +140,7 @@
 <body style="background-color: #fff;">
 <div class="box">
     <div class="top-wrap-box">
-        <img src="{{asset('public/assets/admin-module/img/email/shift-subscription.png')}}" alt="{{translate('Logo')}}"
+        <img src="{{asset('assets/admin-module/img/email/shift-subscription.png')}}" alt="{{translate('Logo')}}"
              width="140"/>
 
         <h3 style="margin-top: 20px">{{translate('Subscription To Commission')}} !</h3>

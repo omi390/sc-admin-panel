@@ -3,10 +3,10 @@
 @section('title',translate('notification_setup'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/assets/admin-module')}}/plugins/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/select2/select2.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/swiper/swiper-bundle.min.css"/>
 @endpush
 
 @section('content')
@@ -449,7 +449,7 @@
                             <div class="swiper-slide">
                                 <div class="d-flex flex-column align-items-center gap-2 fs-12">
                                     <img width="80" class="mb-3"
-                                         src="{{asset('public/assets/admin-module/img/media/firebase-console.png')}}"
+                                         src="{{asset('assets/admin-module/img/media/firebase-console.png')}}"
                                          alt="">
                                     <h5 class="modal-title text-center mb-3">{{translate('Go to Firebase Console')}}</h5>
 
@@ -468,7 +468,7 @@
                             <div class="swiper-slide">
                                 <div class="d-flex flex-column align-items-center gap-2 fs-12">
                                     <img width="80" class="mb-3"
-                                         src="{{asset('public/assets/admin-module/img/media/project-settings.png')}}"
+                                         src="{{asset('assets/admin-module/img/media/project-settings.png')}}"
                                          alt="">
                                     <h5 class="modal-title text-center mb-3">{{translate('Navigate to Project Settings')}}</h5>
 
@@ -488,7 +488,7 @@
                             <div class="swiper-slide">
                                 <div class="d-flex flex-column align-items-center gap-2 fs-12">
                                     <img width="80" class="mb-3"
-                                         src="{{asset('public/assets/admin-module/img/media/cloud-message.png')}}"
+                                         src="{{asset('assets/admin-module/img/media/cloud-message.png')}}"
                                          alt="">
                                     <h5 class="modal-title text-center mb-3">{{translate('Cloud Messaging API')}}</h5>
 
@@ -526,7 +526,7 @@
                 <div class="modal-body">
                     <div class="d-flex flex-column align-items-center gap-2 max-w360 mx-auto fs-12">
                         <img width="80" class="mb-3"
-                             src="{{asset('public/assets/admin-module/img/media/documentation.png')}}" alt="">
+                             src="{{asset('assets/admin-module/img/media/documentation.png')}}" alt="">
                         <h5 class="modal-title text-center mb-3">{{translate('Documentation')}}</h5>
                         <p>{{translate('If disabled customers and provider will not receive notifications on their devices')}}</p>
 
@@ -572,10 +572,10 @@
 @endsection
 
 @push('script')
-    <script src="{{asset('public/assets/admin-module')}}/plugins/select2/select2.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/swiper/swiper-bundle.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
-    <script src="{{asset('public/assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/select2/select2.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/swiper/swiper-bundle.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets/admin-module')}}/plugins/dataTables/dataTables.select.min.js"></script>
 
     <script>
         "use strict";

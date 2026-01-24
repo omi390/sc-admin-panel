@@ -8,13 +8,13 @@
             <div class="switch-items">
                 <div class="setting-box-wrap">
                     <div class="setting-box active light-mode">
-                        <img src="{{asset('public/assets/provider-module')}}/img/light-mode.png" width="36px" alt="{{ translate('provider-module') }}">
+                        <img src="{{asset('assets/provider-module')}}/img/light-mode.png" width="36px" alt="{{ translate('provider-module') }}">
                     </div>
                     <h5>{{translate('Light_Mode')}}</h5>
                 </div>
                 <div class="setting-box-wrap">
                     <div class="setting-box dark-mode">
-                        <img src="{{asset('public/assets/provider-module')}}/img/dark-mode.png" width="36px" alt="{{ translate('provider-module') }}">
+                        <img src="{{asset('assets/provider-module')}}/img/dark-mode.png" width="36px" alt="{{ translate('provider-module') }}">
                     </div>
                     <h5>{{translate('Dark_Mode')}}</h5>
                 </div>
