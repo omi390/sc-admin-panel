@@ -1,0 +1,13 @@
+{
+    "name": "RewardModule",
+    "alias": "rewardmodule",
+    "description": "Reward points management for sub categories",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\RewardModule\\Providers\\RewardModuleServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

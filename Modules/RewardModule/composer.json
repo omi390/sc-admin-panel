@@ -1,0 +1,21 @@
+{
+    "name": "nwidart/rewardmodule",
+    "description": "Reward points management module",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\RewardModule\\": ""
+        }
+    }
+}

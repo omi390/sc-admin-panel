@@ -516,6 +516,36 @@ $logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'bus
                 @endcan
             @endcanany
 
+            <li class="nav-category" title="{{translate('Reward Management')}}">
+                {{translate('Reward Management')}}
+            </li>
+            <li class="has-sub-item {{request()->is('admin/reward-point/*')?'sub-menu-opened':''}}">
+                <a href="#" class="{{request()->is('admin/reward-point/*')?'active-menu':''}}">
+                    <span class="material-icons" title="{{translate('Reward Management')}}">stars</span>
+                    <span class="link-title">{{translate('Reward Management')}}</span>
+                </a>
+                <ul class="nav sub-menu">
+                    <li>
+                        <a href="{{route('admin.reward-point.config.list')}}"
+                           class="{{request()->is('admin/reward-point/config/list')?'active-menu':''}}">
+                            {{translate('Reward Point Configurations')}}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.reward-point.config.create')}}"
+                           class="{{request()->is('admin/reward-point/config/create')?'active-menu':''}}">
+                            {{translate('Configure Reward Points')}}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.reward-point.usage')}}"
+                           class="{{request()->is('admin/reward-point/usage')?'active-menu':''}}">
+                            {{translate('Usage History')}}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
             @canany(['role_view', 'role_add', 'employee_add', 'employee_view'])
                 <li class="nav-category"
                     title="{{translate('employee_management')}}">{{translate('employee_management')}}</li>
