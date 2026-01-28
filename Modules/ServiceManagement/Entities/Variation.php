@@ -29,6 +29,11 @@ class Variation extends Model
         return $this->belongsTo(Provider::class);
     }
 
+    public function service(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Service::class);
+    }
+
     protected static function booted()
     {
         static::addGlobalScope('zone_wise_data', function (Builder $builder) {

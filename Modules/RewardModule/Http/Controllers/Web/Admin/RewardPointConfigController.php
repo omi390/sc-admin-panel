@@ -58,6 +58,7 @@ class RewardPointConfigController extends Controller
         $variations = Variation::with(['provider:id,name', 'service:id,name'])
             ->whereHas('provider')
             ->whereHas('service')
+            ->orderBy('variant')
             ->get();
         
         $existingConfigIds = $this->rewardPointConfig->whereNotNull('service_variant_id')
