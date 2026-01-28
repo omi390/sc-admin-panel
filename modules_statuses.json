@@ -1,5 +1,6 @@
 {
     "Auth": true,
+    "RewardModule": true,
     "UserManagement": true,
     "ZoneManagement": true,
     "CategoryManagement": true,
