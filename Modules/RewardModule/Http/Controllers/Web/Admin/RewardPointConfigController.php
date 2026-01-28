@@ -29,12 +29,12 @@ class RewardPointConfigController extends Controller
         $isActive = $request->get('is_active', 'all');
         $queryParams = ['search' => $search, 'is_active' => $isActive];
 
-        $configs = $this->rewardPointConfig->with(['serviceVariant.provider', 'serviceVariant.service'])
+        $configs = $this->rewardPointConfig->with(['serviceVariant.provider:id,company_name', 'serviceVariant.service'])
             ->when($search !== '', function ($query) use ($search) {
                 $query->whereHas('serviceVariant', function ($q) use ($search) {
                     $q->where('variant', 'LIKE', '%' . $search . '%')
                         ->orWhereHas('provider', function ($q2) use ($search) {
-                            $q2->where('name', 'LIKE', '%' . $search . '%');
+                            $q2->where('company_name', 'LIKE', '%' . $search . '%');
                         });
                 });
             })
@@ -55,7 +55,7 @@ class RewardPointConfigController extends Controller
     public function create(): Renderable
     {
         // Fetch all variations with provider and service info
-        $variations = Variation::with(['provider:id,name', 'service:id,name'])
+        $variations = Variation::with(['provider:id,company_name', 'service:id,name'])
             ->whereHas('provider')
             ->whereHas('service')
             ->orderBy('variant')
@@ -121,7 +121,7 @@ class RewardPointConfigController extends Controller
      */
     public function edit(string $id): Renderable|RedirectResponse
     {
-        $config = $this->rewardPointConfig->with(['serviceVariant.provider', 'serviceVariant.service'])->find($id);
+        $config = $this->rewardPointConfig->with(['serviceVariant.provider:id,company_name', 'serviceVariant.service'])->find($id);
         if (!$config) {
             Toastr::error(translate('config_not_found'));
             return redirect()->route('admin.reward-point.config.list');
@@ -187,7 +187,7 @@ class RewardPointConfigController extends Controller
         $subCategoryId = $request->get('sub_category_id', '');
         $queryParams = ['user_id' => $userId, 'sub_category_id' => $subCategoryId];
 
-        $usages = $this->rewardPointUsage->with(['user', 'serviceVariant.provider', 'serviceVariant.service', 'booking', 'rewardConfig'])
+        $usages = $this->rewardPointUsage->with(['user', 'serviceVariant.provider:id,company_name', 'serviceVariant.service', 'booking', 'rewardConfig'])
             ->when($userId !== '', function ($query) use ($userId) {
                 $query->where('user_id', $userId);
             })

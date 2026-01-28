@@ -93,7 +93,7 @@
                                                     <br><small class="text-muted">{{ $config->serviceVariant->service->name ?? '' }}</small>
                                                 @endif
                                             </td>
-                                            <td>{{ $config->serviceVariant->provider->name ?? 'N/A' }}</td>
+                                            <td>{{ $config->serviceVariant->provider->company_name ?? 'N/A' }}</td>
                                             <td>{{ number_format($config->reward_points, 3) }}</td>
                                             <td>{{ currency_symbol() }}{{ number_format($config->minimum_order_amount ?? 0, 2) }}</td>
                                             <td>{{ $config->max_uses === 0 ? translate('unlimited') : $config->max_uses }}</td>

@@ -67,7 +67,7 @@
                                                     <br><small class="text-muted">{{ $usage->serviceVariant->service->name ?? '' }}</small>
                                                 @endif
                                             </td>
-                                            <td>{{ $usage->serviceVariant->provider->name ?? 'N/A' }}</td>
+                                            <td>{{ $usage->serviceVariant->provider->company_name ?? 'N/A' }}</td>
                                             <td>{{ number_format($usage->reward_points, 3) }}</td>
                                             <td>
                                                 @if($usage->booking_id)

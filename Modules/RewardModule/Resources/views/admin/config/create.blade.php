@@ -31,7 +31,7 @@
                                                         - {{ $variation->service->name ?? '' }}
                                                     @endif
                                                     @if($variation->provider)
-                                                        ({{ translate('Provider') }}: {{ $variation->provider->name ?? '' }})
+                                                        ({{ translate('Provider') }}: {{ $variation->provider->company_name ?? '' }})
                                                     @endif
                                                 </option>
                                             @endforeach

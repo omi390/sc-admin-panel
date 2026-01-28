@@ -19,7 +19,7 @@
                                     <p class="mb-1"><strong>{{ translate('Service') }}:</strong> {{ $config->serviceVariant->service->name ?? '' }}</p>
                                 @endif
                                 @if($config->serviceVariant && $config->serviceVariant->provider)
-                                    <p class="mb-0"><strong>{{ translate('Provider') }}:</strong> {{ $config->serviceVariant->provider->name ?? '' }}</p>
+                                    <p class="mb-0"><strong>{{ translate('Provider') }}:</strong> {{ $config->serviceVariant->provider->company_name ?? '' }}</p>
                                 @endif
                             </div>
                             <form action="{{ route('admin.reward-point.config.update', $config->id) }}" method="post">
