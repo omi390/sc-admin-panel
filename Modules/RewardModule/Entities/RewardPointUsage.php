@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\BookingModule\Entities\Booking;
 use Modules\CategoryManagement\Entities\Category;
+use Modules\ServiceManagement\Entities\Variation;
 use Modules\UserManagement\Entities\User;
 
 class RewardPointUsage extends Model
@@ -19,6 +20,7 @@ class RewardPointUsage extends Model
         'user_id',
         'booking_id',
         'sub_category_id',
+        'service_variant_id',
         'reward_points',
         'reward_config_id',
     ];
@@ -40,6 +42,11 @@ class RewardPointUsage extends Model
     public function subCategory(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'sub_category_id');
+    }
+
+    public function serviceVariant(): BelongsTo
+    {
+        return $this->belongsTo(Variation::class, 'service_variant_id');
     }
 
     public function rewardConfig(): BelongsTo

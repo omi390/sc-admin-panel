@@ -13,9 +13,15 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <p class="text-muted mb-3">
-                                {{ translate('Sub Category') }}: <strong>{{ $config->subCategory->name ?? $config->sub_category_id }}</strong>
-                            </p>
+                            <div class="mb-3 p-3 bg-light rounded">
+                                <p class="mb-1"><strong>{{ translate('Service Variant') }}:</strong> {{ $config->serviceVariant->variant ?? 'N/A' }}</p>
+                                @if($config->serviceVariant && $config->serviceVariant->service)
+                                    <p class="mb-1"><strong>{{ translate('Service') }}:</strong> {{ $config->serviceVariant->service->name ?? '' }}</p>
+                                @endif
+                                @if($config->serviceVariant && $config->serviceVariant->provider)
+                                    <p class="mb-0"><strong>{{ translate('Provider') }}:</strong> {{ $config->serviceVariant->provider->name ?? '' }}</p>
+                                @endif
+                            </div>
                             <form action="{{ route('admin.reward-point.config.update', $config->id) }}" method="post">
                                 @csrf
                                 @method('PUT')
@@ -28,6 +34,19 @@
                                             <span class="material-icons">stars</span>
                                         </div>
                                         @error('reward_points')
+                                        <div class="text-danger small">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-lg-4 mb-4">
+                                        <div class="form-floating form-floating__icon">
+                                            <input type="number" name="minimum_order_amount" class="form-control"
+                                                   step="0.01" min="0" value="{{ old('minimum_order_amount', $config->minimum_order_amount ?? 0) }}" required>
+                                            <label>{{ translate('Minimum Order Amount') }} ({{ currency_symbol() }})</label>
+                                            <span class="material-icons">attach_money</span>
+                                        </div>
+                                        <small class="text-muted">{{ translate('Reward points will be added only if order amount is above this value') }}</small>
+                                        @error('minimum_order_amount')
                                         <div class="text-danger small">{{ $message }}</div>
                                         @enderror
                                     </div>

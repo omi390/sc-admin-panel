@@ -21,16 +21,22 @@
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-12 mb-4">
-                                        <label class="form-label">{{ translate('Sub Categories') }} <span class="text-danger">*</span></label>
-                                        <select name="sub_category_ids[]" class="js-select theme-input-style w-100" multiple="multiple" required>
-                                            @foreach($subCategories as $cat)
-                                                <option value="{{ $cat->id }}"
-                                                    {{ in_array($cat->id, $existingConfigIds) ? '' : '' }}>
-                                                    {{ $cat->name ?? $cat->id }}
+                                        <label class="form-label">{{ translate('Service Variants') }} <span class="text-danger">*</span></label>
+                                        <select name="service_variant_ids[]" id="service_variant_ids" class="js-select theme-input-style w-100" multiple="multiple" required>
+                                            @foreach($variations as $variation)
+                                                <option value="{{ $variation->id }}"
+                                                    {{ in_array($variation->id, $existingConfigIds) ? '' : '' }}>
+                                                    {{ $variation->variant ?? 'N/A' }} 
+                                                    @if($variation->service)
+                                                        - {{ $variation->service->name ?? '' }}
+                                                    @endif
+                                                    @if($variation->provider)
+                                                        ({{ translate('Provider') }}: {{ $variation->provider->name ?? '' }})
+                                                    @endif
                                                 </option>
                                             @endforeach
                                         </select>
-                                        <small class="text-muted">{{ translate('Select one or more sub categories. Existing configs for selected categories will be updated.') }}</small>
+                                        <small class="text-muted">{{ translate('Select one or more service variants. Existing configs for selected variants will be updated.') }}</small>
                                     </div>
 
                                     <div class="col-lg-4 mb-4">
@@ -47,6 +53,19 @@
 
                                     <div class="col-lg-4 mb-4">
                                         <div class="form-floating form-floating__icon">
+                                            <input type="number" name="minimum_order_amount" class="form-control"
+                                                   placeholder="0" step="0.01" min="0" value="{{ old('minimum_order_amount', 0) }}" required>
+                                            <label>{{ translate('Minimum Order Amount') }} ({{ currency_symbol() }})</label>
+                                            <span class="material-icons">attach_money</span>
+                                        </div>
+                                        <small class="text-muted">{{ translate('Reward points will be added only if order amount is above this value') }}</small>
+                                        @error('minimum_order_amount')
+                                        <div class="text-danger small">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-lg-4 mb-4">
+                                        <div class="form-floating form-floating__icon">
                                             <input type="number" name="max_uses" class="form-control"
                                                    placeholder="0" min="0" value="{{ old('max_uses', 0) }}" required>
                                             <label>{{ translate('Max Uses') }} (0 = {{ translate('unlimited') }})</label>
@@ -56,6 +75,8 @@
                                         <div class="text-danger small">{{ $message }}</div>
                                         @enderror
                                     </div>
+                                </div>
+                                <div class="row">
 
                                     <div class="col-lg-4 mb-4">
                                         <div class="form-check form-switch mt-4">
@@ -84,8 +105,8 @@
     <script>
         "use strict";
         $(document).ready(function () {
-            $('.js-select').select2({
-                placeholder: '{{ translate('Select sub categories') }}'
+            $('#service_variant_ids').select2({
+                placeholder: '{{ translate('Select service variants') }}'
             });
         });
     </script>

@@ -61,7 +61,7 @@
                                         <span class="search-form__icon"><span class="material-icons">search</span></span>
                                         <input type="search" class="theme-input-style search-form__input"
                                                value="{{ $search }}" name="search"
-                                               placeholder="{{ translate('search_by_sub_category') }}">
+                                               placeholder="{{ translate('search_by_variant_or_provider') }}">
                                     </div>
                                     <button type="submit" class="btn btn--primary">{{ translate('search') }}</button>
                                 </form>
@@ -72,8 +72,10 @@
                                     <thead class="text-nowrap">
                                     <tr>
                                         <th>{{ translate('Sl') }}</th>
-                                        <th>{{ translate('Sub Category') }}</th>
+                                        <th>{{ translate('Service Variant') }}</th>
+                                        <th>{{ translate('Provider') }}</th>
                                         <th>{{ translate('Reward Points') }}</th>
+                                        <th>{{ translate('Min Order Amount') }}</th>
                                         <th>{{ translate('Max Uses') }}</th>
                                         <th>{{ translate('Current Uses') }}</th>
                                         <th>{{ translate('Remaining') }}</th>
@@ -85,8 +87,15 @@
                                     @forelse($configs as $key => $config)
                                         <tr>
                                             <td>{{ $configs->firstItem() + $key }}</td>
-                                            <td>{{ $config->subCategory->name ?? $config->sub_category_id }}</td>
+                                            <td>
+                                                <strong>{{ $config->serviceVariant->variant ?? 'N/A' }}</strong>
+                                                @if($config->serviceVariant && $config->serviceVariant->service)
+                                                    <br><small class="text-muted">{{ $config->serviceVariant->service->name ?? '' }}</small>
+                                                @endif
+                                            </td>
+                                            <td>{{ $config->serviceVariant->provider->name ?? 'N/A' }}</td>
                                             <td>{{ number_format($config->reward_points, 3) }}</td>
+                                            <td>{{ currency_symbol() }}{{ number_format($config->minimum_order_amount ?? 0, 2) }}</td>
                                             <td>{{ $config->max_uses === 0 ? translate('unlimited') : $config->max_uses }}</td>
                                             <td>{{ $config->current_uses }}</td>
                                             <td>
@@ -121,7 +130,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="8" class="text-center py-4">{{ translate('no_data_found') }}</td>
+                                            <td colspan="10" class="text-center py-4">{{ translate('no_data_found') }}</td>
                                         </tr>
                                     @endforelse
                                     </tbody>

@@ -43,7 +43,8 @@
                                     <tr>
                                         <th>{{ translate('Sl') }}</th>
                                         <th>{{ translate('User') }}</th>
-                                        <th>{{ translate('Sub Category') }}</th>
+                                        <th>{{ translate('Service Variant') }}</th>
+                                        <th>{{ translate('Provider') }}</th>
                                         <th>{{ translate('Reward Points') }}</th>
                                         <th>{{ translate('Booking') }}</th>
                                         <th>{{ translate('Date') }}</th>
@@ -60,7 +61,13 @@
                                                     {{ Str::limit($usage->user_id, 8) }}
                                                 @endif
                                             </td>
-                                            <td>{{ $usage->subCategory->name ?? Str::limit($usage->sub_category_id, 8) }}</td>
+                                            <td>
+                                                {{ $usage->serviceVariant->variant ?? 'N/A' }}
+                                                @if($usage->serviceVariant && $usage->serviceVariant->service)
+                                                    <br><small class="text-muted">{{ $usage->serviceVariant->service->name ?? '' }}</small>
+                                                @endif
+                                            </td>
+                                            <td>{{ $usage->serviceVariant->provider->name ?? 'N/A' }}</td>
                                             <td>{{ number_format($usage->reward_points, 3) }}</td>
                                             <td>
                                                 @if($usage->booking_id)
@@ -73,7 +80,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="6" class="text-center py-4">{{ translate('no_data_found') }}</td>
+                                            <td colspan="7" class="text-center py-4">{{ translate('no_data_found') }}</td>
                                         </tr>
                                     @endforelse
                                     </tbody>

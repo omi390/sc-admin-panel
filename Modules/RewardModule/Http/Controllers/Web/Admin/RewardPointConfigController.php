@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Modules\CategoryManagement\Entities\Category;
 use Modules\RewardModule\Entities\RewardPointConfig;
 use Modules\RewardModule\Entities\RewardPointUsage;
+use Modules\ServiceManagement\Entities\Variation;
 
 class RewardPointConfigController extends Controller
 {
@@ -28,15 +29,19 @@ class RewardPointConfigController extends Controller
         $isActive = $request->get('is_active', 'all');
         $queryParams = ['search' => $search, 'is_active' => $isActive];
 
-        $configs = $this->rewardPointConfig->with('subCategory')
+        $configs = $this->rewardPointConfig->with(['serviceVariant.provider', 'serviceVariant.service'])
             ->when($search !== '', function ($query) use ($search) {
-                $query->whereHas('subCategory', function ($q) use ($search) {
-                    $q->where('name', 'LIKE', '%' . $search . '%');
+                $query->whereHas('serviceVariant', function ($q) use ($search) {
+                    $q->where('variant', 'LIKE', '%' . $search . '%')
+                        ->orWhereHas('provider', function ($q2) use ($search) {
+                            $q2->where('name', 'LIKE', '%' . $search . '%');
+                        });
                 });
             })
             ->when($isActive !== 'all', function ($query) use ($isActive) {
                 $query->where('is_active', $isActive === 'active');
             })
+            ->whereNotNull('service_variant_id')
             ->latest()
             ->paginate(pagination_limit())
             ->appends($queryParams);
@@ -49,38 +54,48 @@ class RewardPointConfigController extends Controller
      */
     public function create(): Renderable
     {
-        $subCategories = Category::ofType('sub')->ofStatus(1)->orderBy('name')->get(['id', 'name']);
-        $existingConfigIds = $this->rewardPointConfig->pluck('sub_category_id')->toArray();
+        // Fetch all variations with provider and service info
+        $variations = Variation::with(['provider:id,name', 'service:id,name'])
+            ->whereHas('provider')
+            ->whereHas('service')
+            ->get();
+        
+        $existingConfigIds = $this->rewardPointConfig->whereNotNull('service_variant_id')
+            ->pluck('service_variant_id')
+            ->toArray();
 
-        return view('rewardmodule::admin.config.create', compact('subCategories', 'existingConfigIds'));
+        return view('rewardmodule::admin.config.create', compact('variations', 'existingConfigIds'));
     }
 
     /**
-     * Store or update reward point configs for multiple sub categories.
+     * Store or update reward point configs for multiple service variants.
      */
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'sub_category_ids' => 'required|array',
-            'sub_category_ids.*' => 'required|uuid|exists:categories,id',
+            'service_variant_ids' => 'required|array',
+            'service_variant_ids.*' => 'required|uuid|exists:variations,id',
             'reward_points' => 'required|numeric|min:0',
+            'minimum_order_amount' => 'required|numeric|min:0',
             'max_uses' => 'required|integer|min:0',
             'is_active' => 'boolean',
         ], [
-            'sub_category_ids.required' => translate('select_at_least_one_sub_category'),
+            'service_variant_ids.required' => translate('select_at_least_one_service_variant'),
         ]);
 
         $rewardPoints = (float) $request->reward_points;
+        $minimumOrderAmount = (float) $request->minimum_order_amount;
         $maxUses = (int) $request->max_uses;
         $isActive = $request->boolean('is_active', true);
-        $subCategoryIds = $request->sub_category_ids;
+        $serviceVariantIds = $request->service_variant_ids;
         $processed = 0;
 
         DB::beginTransaction();
         try {
-            foreach ($subCategoryIds as $subCategoryId) {
-                $config = $this->rewardPointConfig->firstOrNew(['sub_category_id' => $subCategoryId]);
+            foreach ($serviceVariantIds as $serviceVariantId) {
+                $config = $this->rewardPointConfig->firstOrNew(['service_variant_id' => $serviceVariantId]);
                 $config->reward_points = $rewardPoints;
+                $config->minimum_order_amount = $minimumOrderAmount;
                 $config->max_uses = $maxUses;
                 $config->is_active = $isActive;
                 if (!$config->exists) {
@@ -105,7 +120,7 @@ class RewardPointConfigController extends Controller
      */
     public function edit(string $id): Renderable|RedirectResponse
     {
-        $config = $this->rewardPointConfig->with('subCategory')->find($id);
+        $config = $this->rewardPointConfig->with(['serviceVariant.provider', 'serviceVariant.service'])->find($id);
         if (!$config) {
             Toastr::error(translate('config_not_found'));
             return redirect()->route('admin.reward-point.config.list');
@@ -127,12 +142,14 @@ class RewardPointConfigController extends Controller
 
         $request->validate([
             'reward_points' => 'required|numeric|min:0',
+            'minimum_order_amount' => 'required|numeric|min:0',
             'max_uses' => 'required|integer|min:0',
             'is_active' => 'boolean',
             'reset_current_uses' => 'boolean',
         ]);
 
         $config->reward_points = (float) $request->reward_points;
+        $config->minimum_order_amount = (float) $request->minimum_order_amount;
         $config->max_uses = (int) $request->max_uses;
         $config->is_active = $request->boolean('is_active', true);
         if ($request->boolean('reset_current_uses')) {
@@ -169,7 +186,7 @@ class RewardPointConfigController extends Controller
         $subCategoryId = $request->get('sub_category_id', '');
         $queryParams = ['user_id' => $userId, 'sub_category_id' => $subCategoryId];
 
-        $usages = $this->rewardPointUsage->with(['user', 'subCategory', 'booking', 'rewardConfig'])
+        $usages = $this->rewardPointUsage->with(['user', 'serviceVariant.provider', 'serviceVariant.service', 'booking', 'rewardConfig'])
             ->when($userId !== '', function ($query) use ($userId) {
                 $query->where('user_id', $userId);
             })
