@@ -75,7 +75,7 @@ class RewardPointConfigController extends Controller
     {
         $request->validate([
             'service_variant_ids' => 'required|array',
-            'service_variant_ids.*' => 'required|uuid|exists:variations,id',
+            'service_variant_ids.*' => 'required|integer|exists:variations,id',
             'reward_points' => 'required|numeric|min:0',
             'minimum_order_amount' => 'required|numeric|min:0',
             'max_uses' => 'required|integer|min:0',
