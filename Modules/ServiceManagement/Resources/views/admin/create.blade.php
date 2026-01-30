@@ -180,7 +180,8 @@
                                                                    name="cover_image" accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*">
                                                             <div class="upload-file__img upload-file__img_banner">
                                                                 <img src="{{asset('assets/admin-module/img/media/banner-upload-file.png')}}"
-                                                                     alt="{{ translate('service-cover-image') }}">
+                                                                     alt="{{ translate('service-cover-image') }}"
+                                                                     id="cover-image-preview">
                                                             </div>
                                                             <span class="upload-file__edit">
                                                                 <span class="material-icons">edit</span>
@@ -189,7 +190,28 @@
                                                     </div>
                                                     <p class="opacity-75 max-w220 mx-auto">{{translate('Image format - jpg, png,
                                                         jpeg, gif Image Size - maximum size 2 MB Image Ratio - 3:1')}}</p>
+                                                    <div class="w-100 mt-2">
+                                                        <label class="form-label small">{{translate('or_cover_image_url')}}</label>
+                                                        <input type="url" class="form-control form-control-sm" name="cover_image_url"
+                                                               id="cover-image-url" placeholder="https://...">
+                                                    </div>
                                                 </div>
+                                            </div>
+                                            <div class="col-12 mt-3">
+                                                <label class="form-label fw-bold">{{translate('service_images')}}</label>
+                                                <p class="text-muted small mb-2">{{translate('service_images_urls_help')}}</p>
+                                                <div id="service-images-list"></div>
+                                                <button type="button" class="btn btn-sm btn--primary mt-2" id="add-service-image-btn">
+                                                    <span class="material-icons">add</span> {{ translate('add_image_url') }}
+                                                </button>
+                                                <template id="service-image-row-template">
+                                                    <div class="input-group mb-2 service-image-url-row">
+                                                        <input type="url" class="form-control" name="images[]" placeholder="https://...">
+                                                        <button type="button" class="btn btn-outline-danger remove-service-image" aria-label="{{ translate('remove') }}">
+                                                            <span class="material-icons">delete</span>
+                                                        </button>
+                                                    </div>
+                                                </template>
                                             </div>
                                             @if($language)
                                                 <div class="lang-form2" id="default-form2">
@@ -297,6 +319,11 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                    </section>
+
+                                    <h3>{{translate('service_sections')}}</h3>
+                                    <section>
+                                        @include('servicemanagement::admin.partials._sections', ['sections' => collect()])
                                     </section>
 
                                     <!-- Provider Variant Modal -->
@@ -434,7 +461,8 @@
                     min_bidding_price: "required",
                     "short_description[]": "required",
                     thumbnail: "required",
-                    cover_image: "required",
+                    cover_image: { required: function() { return !$('#cover-image-url').val().trim(); } },
+                    cover_image_url: { required: function() { return !$('input[name=cover_image]')[0].files.length; }, url: true },
                     "description[]": "required",
                 },
                 messages: {
@@ -444,7 +472,8 @@
                     min_bidding_price: "Please enter min bidding price",
                     "short_description[]": "Please enter short description",
                     thumbnail: "Please enter thumbnail",
-                    cover_image: "Please upload cover image",
+                    cover_image: "Please upload cover image or enter cover image URL",
+                    cover_image_url: "Please enter a valid cover image URL or upload a file",
                     "description[]": "Please enter description",
                 },
             });
@@ -564,7 +593,8 @@
                                 min_bidding_price: "required",
                                 "short_description[]": "required",
                                 thumbnail: "required",
-                                cover_image: "required",
+                                cover_image: { required: function() { return !$('#cover-image-url').val().trim(); } },
+                                cover_image_url: { required: function() { return !$('input[name=cover_image]')[0].files.length; }, url: true },
                             }, {
                                 "name[]": "Please enter name",
                                 category_id: "Please enter category id",
@@ -572,7 +602,8 @@
                                 min_bidding_price: "Please enter min bidding price",
                                 "short_description[]": "Please enter short description",
                                 thumbnail: "Please enter thumbnail",
-                                cover_image: "Please upload cover image",
+                                cover_image: "Please upload cover image or enter cover image URL",
+                                cover_image_url: "Please enter a valid cover image URL or upload a file",
                             });
                             break;
                         case 1:
@@ -762,8 +793,53 @@
             });
         });
 
+        // Cover image URL: preview when typing
+        $('#cover-image-url').on('input', function() {
+            var url = $(this).val();
+            if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
+                $('#cover-image-preview').attr('src', url);
+            }
+        });
+
+        // Service images: add row
+        $('#add-service-image-btn').on('click', function() {
+            var template = document.getElementById('service-image-row-template');
+            if (!template || !template.content) return;
+            var clone = template.content.cloneNode(true);
+            $('#service-images-list').append(clone);
+        });
+        $(document).on('click', '.remove-service-image', function() {
+            $(this).closest('.service-image-url-row').remove();
+        });
+
+        // Service Sections: add row (create page - no existing sections)
+        var serviceSectionIndex = 0;
+        $('#add-service-section-btn').on('click', function() {
+            var template = document.getElementById('service-section-row-template');
+            if (!template || !template.content) return;
+            var frag = template.content.cloneNode(true);
+            var div = frag.querySelector('.service-section-row');
+            if (!div) return;
+            var html = div.outerHTML.replace(/__INDEX__/g, serviceSectionIndex);
+            $('#service-sections-list').append(html);
+            tinymce.init({ selector: '#section-desc-' + serviceSectionIndex });
+            serviceSectionIndex++;
+        });
+        // Service Sections: remove row
+        $(document).on('click', '.remove-section-row', function() {
+            var $row = $(this).closest('.service-section-row');
+            var editorId = $row.find('textarea.section-description-editor').attr('id');
+            if (editorId && typeof tinymce !== 'undefined' && tinymce.get(editorId)) {
+                tinymce.get(editorId).remove();
+            }
+            $row.remove();
+        });
+
         // Provider Variant Modal JavaScript
         $(document).ready(function() {
+            // Move provider variant modals to body so they're not affected by parent stacking/overflow (fixes blinking)
+            $('#providerVariantModal, #editProviderVariantModal').appendTo('body');
+
             // Function to get subcategory ID from the form
             function getSubCategoryId() {
                 // Try multiple selectors to find subcategory

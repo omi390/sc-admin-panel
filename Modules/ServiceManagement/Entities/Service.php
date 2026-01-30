@@ -31,6 +31,7 @@ class Service extends Model
         'is_active' => 'integer',
         'rating_count' => 'integer',
         'avg_rating' => 'float',
+        'images' => 'array',
     ];
 
     protected $fillable = [];
@@ -134,6 +135,11 @@ class Service extends Model
         return $this->hasMany(Faq::class);
     }
 
+    public function sections(): HasMany
+    {
+        return $this->hasMany(ServiceSection::class, 'service_id', 'id')->orderBy('sort_order');
+    }
+
     public function reviews(): HasMany
     {
         return $this->hasMany(Review::class);
@@ -225,6 +231,10 @@ class Service extends Model
             }
             return $defaultPath;
         }
+        // If cover_image is already a full URL, return as-is
+        if (str_starts_with($image, 'http://') || str_starts_with($image, 'https://')) {
+            return $image;
+        }
         if (request()->is('*/detail/*')) {
             $defaultPath = asset('public/assets/admin-module/img/placeholder.png');
         }
@@ -258,7 +268,10 @@ class Service extends Model
             if($model->isDirty('thumbnail') && $storageType != 'public'){
                 saveSingleImageDataToStorage(model: $model, modelColumn : 'thumbnail', storageType : $storageType);
             }
-            if($model->isDirty('cover_image') && $storageType != 'public'){
+            // Only save cover_image to storage if it's a file path (not a URL)
+            $coverImage = $model->cover_image ?? '';
+            $isCoverImageUrl = str_starts_with($coverImage, 'http://') || str_starts_with($coverImage, 'https://');
+            if($model->isDirty('cover_image') && $storageType != 'public' && !$isCoverImageUrl){
                 saveSingleImageDataToStorage(model: $model, modelColumn : 'cover_image', storageType : $storageType);
             }
         });

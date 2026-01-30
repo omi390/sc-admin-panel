@@ -20,6 +20,7 @@ use Modules\ReviewModule\Entities\Review;
 use Modules\ReviewModule\Entities\ReviewReply;
 use Modules\ServiceManagement\Entities\Faq;
 use Modules\ServiceManagement\Entities\Service;
+use Modules\ServiceManagement\Entities\ServiceSection;
 use Modules\ServiceManagement\Entities\Tag;
 use Modules\ServiceManagement\Entities\Variation;
 use Modules\ZoneManagement\Entities\Zone;
@@ -130,7 +131,8 @@ class ServiceController extends Controller
                 'name.0' => 'required|max:191',
                 'category_id' => 'required|uuid',
                 'sub_category_id' => 'required|uuid',
-                'cover_image' => 'required|image|mimes:jpeg,jpg,png,gif|max:10000',
+                'cover_image' => 'required_without:cover_image_url|nullable|image|mimes:jpeg,jpg,png,gif|max:10000',
+                'cover_image_url' => 'required_without:cover_image|nullable|url',
                 'description' => 'required',
                 'description.0' => 'required',
                 'short_description' => 'required',
@@ -160,10 +162,15 @@ class ServiceController extends Controller
         $service->sub_category_id = $request->sub_category_id;
         $service->short_description = $request->short_description[array_search('default', $request->lang)];
         $service->description = $request->description[array_search('default', $request->lang)];
-        $service->cover_image = file_uploader('service/', 'png', $request->file('cover_image'));
+        if ($request->hasFile('cover_image')) {
+            $service->cover_image = file_uploader('service/', 'png', $request->file('cover_image'));
+        } elseif ($request->filled('cover_image_url')) {
+            $service->cover_image = $request->cover_image_url;
+        }
         $service->thumbnail = file_uploader('service/', 'png', $request->file('thumbnail'));
         $service->tax = $request->tax;
         $service->min_bidding_price = $request->min_bidding_price;
+        $service->images = $request->input('images') ? array_values(array_filter((array) $request->input('images'))) : null;
         $service->save();
         $service->tags()->sync($tagIds);
 
@@ -220,6 +227,21 @@ class ServiceController extends Controller
         }
 
         $service->variations()->createMany($variationFormat);
+
+        // Save service sections (admin only)
+        $sectionsData = $request->input('service_sections', []);
+        if (is_array($sectionsData)) {
+            $sectionsData = array_values(array_filter($sectionsData, function ($s) {
+                return !empty($s['title'] ?? '') || !empty($s['description'] ?? '');
+            }));
+            foreach ($sectionsData as $sortOrder => $sectionRow) {
+                $service->sections()->create([
+                    'title' => $sectionRow['title'] ?? '',
+                    'description' => $sectionRow['description'] ?? '',
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
 
         $defaultLang = str_replace('_', '-', app()->getLocale());
 
@@ -382,7 +404,7 @@ class ServiceController extends Controller
     public function edit(string $id): View|Factory|RedirectResponse|Application
     {
         $this->authorize('service_update');
-        $service = $this->service->withoutGlobalScope('translate')->where('id', $id)->with(['category.children', 'category.zones', 'variations.provider', 'variations.zone'])->first();
+        $service = $this->service->withoutGlobalScope('translate')->where('id', $id)->with(['category.children', 'category.zones', 'variations.provider', 'variations.zone', 'sections'])->first();
         if (isset($service)) {
             $editingVariants = $service->variations->pluck('variant_key')->unique()->toArray();
             session()->put('editing_variants', $editingVariants);
@@ -454,13 +476,17 @@ class ServiceController extends Controller
         $service->short_description = $request->short_description[array_search('default', $request->lang)];;
         $service->description = $request->description[array_search('default', $request->lang)];
 
-        if ($request->has('cover_image')) {
+        if ($request->hasFile('cover_image')) {
             $service->cover_image = file_uploader('service/', 'png', $request->file('cover_image'));
+        } elseif ($request->filled('cover_image_url')) {
+            $service->cover_image = $request->cover_image_url;
         }
 
         if ($request->has('thumbnail')) {
             $service->thumbnail = file_uploader('service/', 'png', $request->file('thumbnail'));
         }
+
+        $service->images = $request->input('images') ? array_values(array_filter((array) $request->input('images'))) : null;
 
         $service->tax = $request->tax;
         $service->min_bidding_price = $request->min_bidding_price;
@@ -512,6 +538,22 @@ class ServiceController extends Controller
         $service->variations()->createMany($variationFormat);
         session()->forget('variations');
         session()->forget('editing_variants');
+
+        // Update service sections (admin only): replace all
+        $service->sections()->delete();
+        $sectionsData = $request->input('service_sections', []);
+        if (is_array($sectionsData)) {
+            $sectionsData = array_values(array_filter($sectionsData, function ($s) {
+                return !empty($s['title'] ?? '') || !empty($s['description'] ?? '');
+            }));
+            foreach ($sectionsData as $sortOrder => $sectionRow) {
+                $service->sections()->create([
+                    'title' => $sectionRow['title'] ?? '',
+                    'description' => $sectionRow['description'] ?? '',
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
 
         $defaultLang = str_replace('_', '-', app()->getLocale());
 
