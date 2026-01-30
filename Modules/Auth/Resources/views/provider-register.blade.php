@@ -25,7 +25,7 @@
     <link rel="stylesheet"
           href="{{asset('assets/provider-module')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.css"/>
     <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/toastr.css">
-    <link rel="stylesheet" href="{{ asset('public/assets/admin-module/plugins/intl-tel-input/css/intlTelInput.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin-module/plugins/intl-tel-input/css/intlTelInput.min.css') }}">
     <link rel="stylesheet" href="{{asset('assets/admin-module/plugins/swiper/swiper-bundle.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('assets/provider-module')}}/css/style.css"/>
@@ -453,8 +453,8 @@
     <script src="{{asset('assets/admin-module')}}/js/helper.js"></script>
 
 
-    <script src="{{ asset('public/assets/admin-module/plugins/intl-tel-input/js/intlTelInput.js') }}"></script>
-    <script src="{{ asset('public/assets/admin-module/js/country-picker-init.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/plugins/intl-tel-input/js/intlTelInput.js') }}"></script>
+    <script src="{{ asset('assets/admin-module/js/country-picker-init.js') }}"></script>
 
     <script>
         "use strict";

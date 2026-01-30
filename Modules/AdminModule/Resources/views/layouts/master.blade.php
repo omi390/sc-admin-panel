@@ -71,7 +71,7 @@
 
     @if(env('APP_ENV') == 'demo')
         <div class="alert alert--message-2 alert-dismissible fade show" id="demo-reset-warning">
-            <img width="28" class="align-self-start" src="{{ asset('public/assets/admin-module/img/info-2.png') }}" alt="">
+            <img width="28" class="align-self-start" src="{{ asset('assets/admin-module/img/info-2.png') }}" alt="">
             <div class="w-0 flex-grow-1">
                 <h6>{{ translate('warning').'!'}}</h6>
                 <span class="warning-message">
@@ -96,8 +96,8 @@
 <script src="{{asset('assets/admin-module')}}/js/sweet_alert.js"></script>
 <script src="{{asset('assets/admin-module')}}/js/toastr.js"></script>
 <script src="{{asset('assets/admin-module')}}/js/dev.js"></script>
-<script src="{{ asset('public/assets/admin-module/plugins/intl-tel-input/js/intlTelInput.js') }}"></script>
-<script src="{{ asset('public/assets/admin-module/js/country-picker-init.js') }}"></script>
+<script src="{{ asset('assets/admin-module/plugins/intl-tel-input/js/intlTelInput.js') }}"></script>
+<script src="{{ asset('assets/admin-module/js/country-picker-init.js') }}"></script>
 {!! Toastr::message() !!}
 
 <audio id="audio-element">

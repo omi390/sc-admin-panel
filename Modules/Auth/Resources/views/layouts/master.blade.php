@@ -60,8 +60,8 @@ $logo = getBusinessSettingsImageFullPath(key: 'business_logo', settingType: 'bus
         @endforeach
     </script>
 @endif
-<script src="{{ asset('public/assets/admin-module/plugins/intl-tel-input/js/intlTelInput.js') }}"></script>
-<script src="{{ asset('public/assets/admin-module/js/country-picker-init.js') }}"></script>
+<script src="{{ asset('assets/admin-module/plugins/intl-tel-input/js/intlTelInput.js') }}"></script>
+<script src="{{ asset('assets/admin-module/js/country-picker-init.js') }}"></script>
 @stack('script')
 </body>
 </html>
