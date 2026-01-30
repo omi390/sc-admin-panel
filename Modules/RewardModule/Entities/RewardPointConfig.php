@@ -28,6 +28,7 @@ class RewardPointConfig extends Model
     ];
 
     protected $casts = [
+        'service_variant_id' => 'integer',
         'reward_points' => 'decimal:3',
         'minimum_order_amount' => 'decimal:3',
         'max_uses' => 'integer',
