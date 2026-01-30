@@ -94,7 +94,15 @@ class RewardPointConfigController extends Controller
         DB::beginTransaction();
         try {
             foreach ($serviceVariantIds as $serviceVariantId) {
+                $variation = Variation::find($serviceVariantId);
+                if (!$variation) {
+                    continue;
+                }
+
                 $config = $this->rewardPointConfig->firstOrNew(['service_variant_id' => $serviceVariantId]);
+                $config->service_variant_id = $serviceVariantId;
+                $config->provider_id = $variation->provider_id;
+                $config->sub_category_id = $variation->service?->sub_category_id;
                 $config->reward_points = $rewardPoints;
                 $config->minimum_order_amount = $minimumOrderAmount;
                 $config->max_uses = $maxUses;

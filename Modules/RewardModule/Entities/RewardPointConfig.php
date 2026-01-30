@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\CategoryManagement\Entities\Category;
+use Modules\ProviderManagement\Entities\Provider;
 use Modules\ServiceManagement\Entities\Variation;
 
 class RewardPointConfig extends Model
@@ -18,6 +19,7 @@ class RewardPointConfig extends Model
     protected $fillable = [
         'sub_category_id',
         'service_variant_id',
+        'provider_id',
         'reward_points',
         'minimum_order_amount',
         'max_uses',
@@ -41,6 +43,11 @@ class RewardPointConfig extends Model
     public function serviceVariant(): BelongsTo
     {
         return $this->belongsTo(Variation::class, 'service_variant_id');
+    }
+
+    public function provider(): BelongsTo
+    {
+        return $this->belongsTo(Provider::class, 'provider_id');
     }
 
     public function usages(): HasMany
