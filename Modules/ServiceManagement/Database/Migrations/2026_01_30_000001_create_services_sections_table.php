@@ -13,7 +13,7 @@ class CreateServicesSectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('services_sections', function (Blueprint $table) {
+        Schema::create('service_detail_sections', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('service_id')->constrained('services')->cascadeOnDelete();
             $table->string('title', 191)->nullable();
@@ -30,6 +30,6 @@ class CreateServicesSectionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services_sections');
+        Schema::dropIfExists('service_detail_sections');
     }
 }

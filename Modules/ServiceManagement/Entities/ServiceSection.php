@@ -10,7 +10,7 @@ class ServiceSection extends Model
 {
     use HasUuid;
 
-    protected $table = 'services_sections';
+    protected $table = 'service_detail_sections';
 
     protected $fillable = [
         'service_id',
