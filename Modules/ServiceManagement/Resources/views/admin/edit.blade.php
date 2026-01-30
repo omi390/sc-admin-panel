@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/dataTables/select.dataTables.min.css"/>
     <link rel="stylesheet" href="{{asset('assets/admin-module')}}/plugins/wysiwyg-editor/froala_editor.min.css"/>
     <link rel="stylesheet" href="{{asset('assets/admin-module')}}/css/tags-input.min.css"/>
+    <style>
+        /* Prevent offcanvas overlay from capturing pointer when provider variant modal is open (fixes popup blinking on hover) */
+        body.provider-variant-modal-open .offcanvas-overlay {
+            pointer-events: none;
+        }
+        /* Ensure provider variant modals and their backdrops sit above sidebar overlay */
+        .modal.provider-variant-modal .modal-dialog {
+            z-index: 1060;
+        }
+        body.provider-variant-modal-open .modal-backdrop {
+            z-index: 1055;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -331,7 +344,7 @@
                                     </section>
 
                                     <!-- Provider Variant Modal -->
-                                    <div class="modal fade" id="providerVariantModal" tabindex="-1" aria-labelledby="providerVariantModalLabel" aria-hidden="true">
+                                    <div class="modal fade provider-variant-modal" id="providerVariantModal" tabindex="-1" aria-labelledby="providerVariantModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -379,7 +392,7 @@
                                     </div>
 
                                     <!-- Edit Provider Variant Modal -->
-                                    <div class="modal fade" id="editProviderVariantModal" tabindex="-1" aria-labelledby="editProviderVariantModalLabel" aria-hidden="true">
+                                    <div class="modal fade provider-variant-modal" id="editProviderVariantModal" tabindex="-1" aria-labelledby="editProviderVariantModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -692,6 +705,13 @@
                 });
             }
             
+            // When provider variant modal is shown, add body class so offcanvas overlay doesn't capture pointer (prevents blinking)
+            $('#providerVariantModal, #editProviderVariantModal').on('shown.bs.modal', function() {
+                document.body.classList.add('provider-variant-modal-open');
+            }).on('hidden.bs.modal', function() {
+                document.body.classList.remove('provider-variant-modal-open');
+            });
+
             // When modal is shown, check if subcategory is selected and attach event handlers
             $('#providerVariantModal').on('shown.bs.modal', function() {
                 console.log('Modal shown');
