@@ -13,9 +13,12 @@
         body.provider-variant-modal-open .offcanvas-overlay {
             pointer-events: none;
         }
-        /* Ensure provider variant modals and their backdrops sit above sidebar overlay */
-        .modal.provider-variant-modal .modal-dialog {
+        /* Ensure provider variant modal content is above backdrop (backdrop behind, modal clickable) */
+        body.provider-variant-modal-open .modal.provider-variant-modal {
             z-index: 1060;
+        }
+        body.provider-variant-modal-open .modal.provider-variant-modal .modal-dialog {
+            z-index: 1061;
         }
         body.provider-variant-modal-open .modal-backdrop {
             z-index: 1055;

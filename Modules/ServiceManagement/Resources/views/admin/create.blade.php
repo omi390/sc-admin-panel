@@ -13,7 +13,8 @@
         body.provider-variant-modal-open .offcanvas-overlay {
             pointer-events: none;
         }
-        .modal.provider-variant-modal .modal-dialog { z-index: 1060; }
+        body.provider-variant-modal-open .modal.provider-variant-modal { z-index: 1060; }
+        body.provider-variant-modal-open .modal.provider-variant-modal .modal-dialog { z-index: 1061; }
         body.provider-variant-modal-open .modal-backdrop { z-index: 1055; }
     </style>
 @endpush
