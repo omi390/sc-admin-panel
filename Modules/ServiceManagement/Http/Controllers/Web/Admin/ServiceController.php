@@ -20,6 +20,10 @@ use Modules\ReviewModule\Entities\Review;
 use Modules\ReviewModule\Entities\ReviewReply;
 use Modules\ServiceManagement\Entities\Faq;
 use Modules\ServiceManagement\Entities\Service;
+use Modules\ServiceManagement\Entities\ServiceNote;
+use Modules\ServiceManagement\Entities\ServicePolicy;
+use Modules\ServiceManagement\Entities\ServiceProcedure;
+use Modules\ServiceManagement\Entities\ServiceProsAndCon;
 use Modules\ServiceManagement\Entities\ServiceSection;
 use Modules\ServiceManagement\Entities\Tag;
 use Modules\ServiceManagement\Entities\Variation;
@@ -171,6 +175,8 @@ class ServiceController extends Controller
         $service->tax = $request->tax;
         $service->min_bidding_price = $request->min_bidding_price;
         $service->images = $request->input('images') ? array_values(array_filter((array) $request->input('images'))) : null;
+        $service->code_text = $request->input('code_text');
+        $service->code_img = $request->input('code_img');
         $service->save();
         $service->tags()->sync($tagIds);
 
@@ -238,6 +244,92 @@ class ServiceController extends Controller
                 $service->sections()->create([
                     'title' => $sectionRow['title'] ?? '',
                     'description' => $sectionRow['description'] ?? '',
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
+
+        // Save procedures
+        $proceduresData = $request->input('service_procedures', []);
+        if (is_array($proceduresData)) {
+            $proceduresData = array_values(array_filter($proceduresData, function ($p) {
+                return !empty($p['title'] ?? '') || !empty($p['description'] ?? '') || !empty($p['image_url'] ?? '');
+            }));
+            foreach ($proceduresData as $sortOrder => $row) {
+                $service->procedures()->create([
+                    'image_url' => $row['image_url'] ?? null,
+                    'title' => $row['title'] ?? '',
+                    'description' => $row['description'] ?? '',
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
+
+        // Save notes
+        $notesData = $request->input('service_notes', []);
+        if (is_array($notesData)) {
+            $notesData = array_values(array_filter($notesData, function ($n) {
+                return !empty($n['title'] ?? '') || !empty($n['description'] ?? '') || !empty($n['image'] ?? '');
+            }));
+            foreach ($notesData as $sortOrder => $row) {
+                $service->notes()->create([
+                    'title' => $row['title'] ?? '',
+                    'description' => $row['description'] ?? '',
+                    'image' => $row['image'] ?? null,
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
+
+        // Save pros and cons
+        $pros = array_values(array_filter((array) $request->input('service_pros', [])));
+        foreach ($pros as $sortOrder => $title) {
+            if (trim((string) $title) !== '') {
+                $service->prosAndCons()->create([
+                    'title' => $title,
+                    'prod_or_con' => 'pros',
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
+        $cons = array_values(array_filter((array) $request->input('service_cons', [])));
+        foreach ($cons as $sortOrder => $title) {
+            if (trim((string) $title) !== '') {
+                $service->prosAndCons()->create([
+                    'title' => $title,
+                    'prod_or_con' => 'con',
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
+
+        // Save FAQs (inline)
+        $faqsData = $request->input('service_faqs', []);
+        if (is_array($faqsData)) {
+            $faqsData = array_values(array_filter($faqsData, function ($f) {
+                return !empty($f['title'] ?? '') || !empty($f['description'] ?? '');
+            }));
+            foreach ($faqsData as $row) {
+                $service->faqs()->create([
+                    'title' => $row['title'] ?? '',
+                    'description' => $row['description'] ?? '',
+                    'question' => $row['title'] ?? '',
+                    'answer' => $row['description'] ?? '',
+                    'is_active' => 1,
+                ]);
+            }
+        }
+
+        // Save policies
+        $policiesData = $request->input('service_policies', []);
+        if (is_array($policiesData)) {
+            $policiesData = array_values(array_filter($policiesData, function ($p) {
+                return !empty($p['title'] ?? '') || !empty($p['description'] ?? '');
+            }));
+            foreach ($policiesData as $sortOrder => $row) {
+                $service->policies()->create([
+                    'title' => $row['title'] ?? '',
+                    'description' => $row['description'] ?? '',
                     'sort_order' => $sortOrder,
                 ]);
             }
@@ -404,7 +496,10 @@ class ServiceController extends Controller
     public function edit(string $id): View|Factory|RedirectResponse|Application
     {
         $this->authorize('service_update');
-        $service = $this->service->withoutGlobalScope('translate')->where('id', $id)->with(['category.children', 'category.zones', 'variations.provider', 'variations.zone', 'sections'])->first();
+        $service = $this->service->withoutGlobalScope('translate')->where('id', $id)->with([
+            'category.children', 'category.zones', 'variations.provider', 'variations.zone', 'sections',
+            'procedures', 'notes', 'prosAndCons', 'faqs', 'policies',
+        ])->first();
         if (isset($service)) {
             $editingVariants = $service->variations->pluck('variant_key')->unique()->toArray();
             session()->put('editing_variants', $editingVariants);
@@ -487,6 +582,8 @@ class ServiceController extends Controller
         }
 
         $service->images = $request->input('images') ? array_values(array_filter((array) $request->input('images'))) : null;
+        $service->code_text = $request->input('code_text');
+        $service->code_img = $request->input('code_img');
 
         $service->tax = $request->tax;
         $service->min_bidding_price = $request->min_bidding_price;
@@ -550,6 +647,97 @@ class ServiceController extends Controller
                 $service->sections()->create([
                     'title' => $sectionRow['title'] ?? '',
                     'description' => $sectionRow['description'] ?? '',
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
+
+        // Update procedures
+        $service->procedures()->delete();
+        $proceduresData = $request->input('service_procedures', []);
+        if (is_array($proceduresData)) {
+            $proceduresData = array_values(array_filter($proceduresData, function ($p) {
+                return !empty($p['title'] ?? '') || !empty($p['description'] ?? '') || !empty($p['image_url'] ?? '');
+            }));
+            foreach ($proceduresData as $sortOrder => $row) {
+                $service->procedures()->create([
+                    'image_url' => $row['image_url'] ?? null,
+                    'title' => $row['title'] ?? '',
+                    'description' => $row['description'] ?? '',
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
+
+        // Update notes
+        $service->notes()->delete();
+        $notesData = $request->input('service_notes', []);
+        if (is_array($notesData)) {
+            $notesData = array_values(array_filter($notesData, function ($n) {
+                return !empty($n['title'] ?? '') || !empty($n['description'] ?? '') || !empty($n['image'] ?? '');
+            }));
+            foreach ($notesData as $sortOrder => $row) {
+                $service->notes()->create([
+                    'title' => $row['title'] ?? '',
+                    'description' => $row['description'] ?? '',
+                    'image' => $row['image'] ?? null,
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
+
+        // Update pros and cons
+        $service->prosAndCons()->delete();
+        $pros = array_values(array_filter((array) $request->input('service_pros', [])));
+        foreach ($pros as $sortOrder => $title) {
+            if (trim((string) $title) !== '') {
+                $service->prosAndCons()->create([
+                    'title' => $title,
+                    'prod_or_con' => 'pros',
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
+        $cons = array_values(array_filter((array) $request->input('service_cons', [])));
+        foreach ($cons as $sortOrder => $title) {
+            if (trim((string) $title) !== '') {
+                $service->prosAndCons()->create([
+                    'title' => $title,
+                    'prod_or_con' => 'con',
+                    'sort_order' => $sortOrder,
+                ]);
+            }
+        }
+
+        // Update FAQs: replace all
+        $service->faqs()->delete();
+        $faqsData = $request->input('service_faqs', []);
+        if (is_array($faqsData)) {
+            $faqsData = array_values(array_filter($faqsData, function ($f) {
+                return !empty($f['title'] ?? '') || !empty($f['description'] ?? '');
+            }));
+            foreach ($faqsData as $row) {
+                $service->faqs()->create([
+                    'title' => $row['title'] ?? '',
+                    'description' => $row['description'] ?? '',
+                    'question' => $row['title'] ?? '',
+                    'answer' => $row['description'] ?? '',
+                    'is_active' => 1,
+                ]);
+            }
+        }
+
+        // Update policies
+        $service->policies()->delete();
+        $policiesData = $request->input('service_policies', []);
+        if (is_array($policiesData)) {
+            $policiesData = array_values(array_filter($policiesData, function ($p) {
+                return !empty($p['title'] ?? '') || !empty($p['description'] ?? '');
+            }));
+            foreach ($policiesData as $sortOrder => $row) {
+                $service->policies()->create([
+                    'title' => $row['title'] ?? '',
+                    'description' => $row['description'] ?? '',
                     'sort_order' => $sortOrder,
                 ]);
             }
@@ -659,6 +847,12 @@ class ServiceController extends Controller
             }
             $service->translations()->delete();
             $service->variations()->delete();
+            $service->faqs()->delete();
+            $service->sections()->delete();
+            $service->procedures()->delete();
+            $service->notes()->delete();
+            $service->prosAndCons()->delete();
+            $service->policies()->delete();
             $service->delete();
 
             Toastr::success(translate(DEFAULT_DELETE_200['message']));

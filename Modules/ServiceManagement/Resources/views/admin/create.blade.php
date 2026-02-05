@@ -316,6 +316,36 @@
                                         @include('servicemanagement::admin.partials._sections', ['sections' => collect()])
                                     </section>
 
+                                    <h3>{{ translate('procedure') }}</h3>
+                                    <section>
+                                        @include('servicemanagement::admin.partials._procedures', ['procedures' => collect()])
+                                    </section>
+
+                                    <h3>{{ translate('service_note') }}</h3>
+                                    <section>
+                                        @include('servicemanagement::admin.partials._notes', ['notes' => collect()])
+                                    </section>
+
+                                    <h3>{{ translate('pros_and_cons') }}</h3>
+                                    <section>
+                                        @include('servicemanagement::admin.partials._pros-and-cons', ['prosAndCons' => collect()])
+                                    </section>
+
+                                    <h3>{{ translate('faq') }}</h3>
+                                    <section>
+                                        @include('servicemanagement::admin.partials._faqs-inline', ['faqs' => collect()])
+                                    </section>
+
+                                    <h3>{{ translate('policy') }}</h3>
+                                    <section>
+                                        @include('servicemanagement::admin.partials._policies', ['policies' => collect()])
+                                    </section>
+
+                                    <h3>{{ translate('code') }}</h3>
+                                    <section>
+                                        @include('servicemanagement::admin.partials._code', ['service' => null])
+                                    </section>
+
                                     <!-- Provider Variant Modal -->
                                     <div class="modal fade provider-variant-modal" id="providerVariantModal" tabindex="-1" aria-labelledby="providerVariantModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="true">
                                         <div class="modal-dialog">
@@ -834,6 +864,78 @@
                 tinymce.get(editorId).remove();
             }
             $row.remove();
+        });
+
+        // Procedure: add row
+        var procedureIndex = 0;
+        $('#add-service-procedure-btn').on('click', function() {
+            var template = document.getElementById('service-procedure-row-template');
+            if (!template || !template.content) return;
+            var html = template.innerHTML.replace(/__INDEX__/g, procedureIndex).replace(/__NUM__/g, procedureIndex + 1);
+            $('#service-procedures-list').append(html);
+            procedureIndex++;
+        });
+        $(document).on('click', '.remove-procedure-row', function() {
+            $(this).closest('.service-procedure-row').remove();
+        });
+
+        // Note: add row
+        var noteIndex = 0;
+        $('#add-service-note-btn').on('click', function() {
+            var template = document.getElementById('service-note-row-template');
+            if (!template || !template.content) return;
+            var html = template.innerHTML.replace(/__INDEX__/g, noteIndex).replace(/__NUM__/g, noteIndex + 1);
+            $('#service-notes-list').append(html);
+            noteIndex++;
+        });
+        $(document).on('click', '.remove-note-row', function() {
+            $(this).closest('.service-note-row').remove();
+        });
+
+        // Pros: add row
+        $('#add-pros-btn').on('click', function() {
+            var template = document.getElementById('pros-row-template');
+            if (!template || !template.content) return;
+            $('#service-pros-list').append(template.content.cloneNode(true));
+        });
+        $(document).on('click', '.remove-pros-row', function() {
+            $(this).closest('.pros-row').remove();
+        });
+
+        // Cons: add row
+        $('#add-cons-btn').on('click', function() {
+            var template = document.getElementById('cons-row-template');
+            if (!template || !template.content) return;
+            $('#service-cons-list').append(template.content.cloneNode(true));
+        });
+        $(document).on('click', '.remove-cons-row', function() {
+            $(this).closest('.cons-row').remove();
+        });
+
+        // FAQ inline: add row
+        var faqInlineIndex = 0;
+        $('#add-service-faq-inline-btn').on('click', function() {
+            var template = document.getElementById('service-faq-inline-row-template');
+            if (!template || !template.content) return;
+            var html = template.innerHTML.replace(/__INDEX__/g, faqInlineIndex).replace(/__NUM__/g, faqInlineIndex + 1);
+            $('#service-faqs-inline-list').append(html);
+            faqInlineIndex++;
+        });
+        $(document).on('click', '.remove-faq-inline-row', function() {
+            $(this).closest('.service-faq-inline-row').remove();
+        });
+
+        // Policy: add row
+        var policyIndex = 0;
+        $('#add-service-policy-btn').on('click', function() {
+            var template = document.getElementById('service-policy-row-template');
+            if (!template || !template.content) return;
+            var html = template.innerHTML.replace(/__INDEX__/g, policyIndex).replace(/__NUM__/g, policyIndex + 1);
+            $('#service-policies-list').append(html);
+            policyIndex++;
+        });
+        $(document).on('click', '.remove-policy-row', function() {
+            $(this).closest('.service-policy-row').remove();
         });
 
         // Provider Variant Modal JavaScript

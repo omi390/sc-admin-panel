@@ -18,6 +18,10 @@ use Modules\CategoryManagement\Entities\Category;
 use Modules\PromotionManagement\Entities\DiscountType;
 use Modules\ReviewModule\Entities\Review;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\ServiceManagement\Entities\ServiceProcedure;
+use Modules\ServiceManagement\Entities\ServiceNote;
+use Modules\ServiceManagement\Entities\ServiceProsAndCon;
+use Modules\ServiceManagement\Entities\ServicePolicy;
 
 class Service extends Model
 {
@@ -133,6 +137,26 @@ class Service extends Model
     public function faqs(): HasMany
     {
         return $this->hasMany(Faq::class);
+    }
+
+    public function procedures(): HasMany
+    {
+        return $this->hasMany(ServiceProcedure::class, 'service_id', 'id')->orderBy('sort_order');
+    }
+
+    public function notes(): HasMany
+    {
+        return $this->hasMany(ServiceNote::class, 'service_id', 'id')->orderBy('sort_order');
+    }
+
+    public function prosAndCons(): HasMany
+    {
+        return $this->hasMany(ServiceProsAndCon::class, 'service_id', 'id')->orderBy('sort_order');
+    }
+
+    public function policies(): HasMany
+    {
+        return $this->hasMany(ServicePolicy::class, 'service_id', 'id')->orderBy('sort_order');
     }
 
     public function sections(): HasMany

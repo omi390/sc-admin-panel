@@ -15,7 +15,7 @@ class Faq extends Model
         'is_active' => 'integer'
     ];
 
-    protected $fillable = [];
+    protected $fillable = ['service_id', 'question', 'answer', 'title', 'description', 'is_active'];
 
     protected function scopeOfStatus($query, $status)
     {
