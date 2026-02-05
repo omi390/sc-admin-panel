@@ -81,7 +81,7 @@ class SubCategoryController extends Controller
             'parent_id' => 'required|uuid',
             'short_description' => 'required',
             'short_description.0' => 'required',
-            'image' => 'required|image|mimes:jpeg,jpg,png,gif|max:10240',
+            'image_url' => 'required|url',
         ],
             [
                 'name.0.required' => translate('default_name_is_required'),
@@ -90,7 +90,7 @@ class SubCategoryController extends Controller
 
         $category = $this->category;
         $category->name = $request->name[array_search('default', $request->lang)];
-        $category->image = file_uploader('category/', 'png', $request->file('image'));
+        $category->image = $request->filled('image_url') ? $request->image_url : null;
         $category->parent_id = $request['parent_id'];
         $category->position = 2;
         $category->description = $request->short_description[array_search('default', $request->lang)];
@@ -210,8 +210,8 @@ class SubCategoryController extends Controller
             return response()->json(response_formatter(CATEGORY_204), 204);
         }
         $category->name = $request->name[array_search('default', $request->lang)];
-        if ($request->has('image')) {
-            $category->image = file_uploader('category/', 'png', $request->file('image'), $category->image);
+        if ($request->filled('image_url')) {
+            $category->image = $request->image_url;
         }
         $category->parent_id = $request['parent_id'];
         $category->position = 2;
@@ -288,7 +288,10 @@ class SubCategoryController extends Controller
         $this->authorize('category_delete');
         $category = $this->category->where('id', $id)->ofType($this)->first();
         if ($category) {
-            file_remover('category/', $category->image);
+            $image = $category->image ?? '';
+            if ($image && !str_starts_with($image, 'http://') && !str_starts_with($image, 'https://')) {
+                file_remover('category/', $image);
+            }
             DB::transaction(function () use ($category, $id) {
                 $category->translations()->delete();
                 $category->delete();

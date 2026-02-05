@@ -87,23 +87,13 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
-                                            <div class="d-flex  gap-3 gap-xl-5">
-                                                <p class="opacity-75 max-w220">{{translate('image_format_-_jpg,_png,_jpeg,_gif_image
-                                                size_-_
-                                                maximum_size_2_MB_Image_Ratio_-_1:1')}}</p>
-                                                <div class="d-flex align-items-center flex-column">
-                                                    <div class="upload-file">
-                                                        <input type="file" class="upload-file__input" name="image"
-                                                               accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*">
-                                                        <div class="upload-file__img">
-                                                            <img
-                                                                src="{{asset('assets/admin-module/img/media/upload-file.png')}}"
-                                                                alt="{{translate('image')}}">
-                                                        </div>
-                                                        <span class="upload-file__edit">
-                                                        <span class="material-icons">edit</span>
-                                                    </span>
-                                                    </div>
+                                            <div class="d-flex flex-column gap-3">
+                                                <label class="form-label fw-bold">{{translate('image')}}</label>
+                                                <label class="form-label small text-muted">{{translate('image_url')}}</label>
+                                                <input type="url" class="form-control" name="image_url"
+                                                       id="category-image-url" placeholder="https://..." required>
+                                                <div class="mt-2 text-center">
+                                                    <img src="{{ asset('assets/admin-module/img/placeholder.png') }}" alt="" id="category-image-preview" class="img-fluid rounded" style="max-height: 120px; display: none;">
                                                 </div>
                                             </div>
                                         </div>
@@ -313,7 +303,18 @@
             let route = '{{route('admin.category.featured-update',['id' => ':itemId'])}}';
             route = route.replace(':itemId', itemId);
             route_alert(route, '{{ translate('want_to_update_status') }}');
-        })
+        });
+
+        // Category image URL: preview when typing
+        $('#category-image-url').on('input', function() {
+            var url = $(this).val();
+            var $preview = $('#category-image-preview');
+            if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
+                $preview.attr('src', url).show();
+            } else {
+                $preview.hide();
+            }
+        });
     </script>
 
 @endpush

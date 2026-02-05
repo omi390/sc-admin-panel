@@ -132,24 +132,14 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
-                                        <div class="d-flex  gap-3 gap-xl-5">
-                                            <p class="opacity-75 max-w220">{{translate('image_format_-_jpg,_png,_jpeg,_gif_image
-                                                size_-_
-                                                maximum_size_2_MB_Image_Ratio_-_1:1')}}</p>
-                                            <div>
-                                                <div class="upload-file">
-                                                    <input type="file" class="upload-file__input" name="image" accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*">
-                                                    <div class="upload-file__img">
-                                                        <img src="{{onErrorImage($subCategory->image,
-                                                                        asset('storage/app/public/category').'/' . $subCategory->image,
-                                                                        asset('public/assets/admin-module/img/media/upload-file.png') ,
-                                                                        'category/')}}"
-                                                            alt="{{translate('image')}}">
-                                                    </div>
-                                                    <span class="upload-file__edit">
-                                                        <span class="material-icons">edit</span>
-                                                    </span>
-                                                </div>
+                                        <div class="d-flex flex-column gap-3">
+                                            <label class="form-label fw-bold">{{translate('image')}}</label>
+                                            <label class="form-label small text-muted">{{translate('image_url')}}</label>
+                                            <input type="url" class="form-control" name="image_url"
+                                                   id="subcategory-image-url" placeholder="https://..."
+                                                   value="{{ (\Illuminate\Support\Str::startsWith($subCategory->getRawOriginal('image') ?? '', 'http') ? $subCategory->getRawOriginal('image') : '') }}">
+                                            <div class="mt-2 text-center">
+                                                <img src="{{ $subCategory->image_full_path ?? asset('public/assets/admin-module/img/media/upload-file.png') }}" alt="" id="subcategory-image-preview" class="img-fluid rounded" style="max-height: 120px;">
                                             </div>
                                         </div>
                                     </div>
@@ -176,4 +166,13 @@
     <script src="{{asset('assets/category-module/js/sub-category/edit.js')}}"></script>
     <script src="{{asset('assets/admin-module/plugins/dataTables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('assets/admin-module/plugins/dataTables/dataTables.select.min.js')}}"></script>
+    <script>
+        // Sub-category image URL: preview when typing
+        $('#subcategory-image-url').on('input', function() {
+            var url = $(this).val();
+            if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
+                $('#subcategory-image-preview').attr('src', url);
+            }
+        });
+    </script>
 @endpush

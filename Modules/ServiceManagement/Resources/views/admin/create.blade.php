@@ -151,24 +151,14 @@
                                             <div class="col-lg-3 col-sm-5 mb-5 mb-sm-0">
                                                 <div class="d-flex flex-column align-items-center gap-3">
                                                     <p class="mb-0">{{translate('thumbnail_image')}} *</p>
-                                                    <div class="d-flex flex-column align-items-center">
-                                                        <div class="upload-file form-error-wrap">
-                                                            <input type="file" class="upload-file__input"
-                                                                   name="thumbnail" accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*">
-                                                            <div class="upload-file__img">
-                                                                <img src="{{asset('assets/admin-module/img/media/upload-file.png')}}"
-                                                                        alt="{{ translate('service') }}">
-                                                            </div>
-                                                            <span class="upload-file__edit">
-                                                                <span class="material-icons">edit</span>
-                                                            </span>
+                                                    <div class="w-100">
+                                                        <label class="form-label small">{{translate('thumbnail_image_url')}}</label>
+                                                        <input type="url" class="form-control form-error-wrap" name="thumbnail_url"
+                                                               id="thumbnail-url" placeholder="https://..." required>
+                                                        <div class="mt-2 text-center">
+                                                            <img src="{{ asset('assets/admin-module/img/placeholder.png') }}" alt="" id="thumbnail-preview" class="img-fluid rounded" style="max-height: 120px; display: none;">
                                                         </div>
                                                     </div>
-                                                    <p class="opacity-75 max-w220 mx-auto">{{translate('Image format - jpg, png,
-                                                        jpeg,
-                                                        gif Image
-                                                        Size -
-                                                        maximum size 2 MB Image Ratio - 1:1')}}</p>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-7">
@@ -460,7 +450,7 @@
                     tax: "required",
                     min_bidding_price: "required",
                     "short_description[]": "required",
-                    thumbnail: "required",
+                    thumbnail_url: { required: true, url: true },
                     cover_image: { required: function() { return !$('#cover-image-url').val().trim(); } },
                     cover_image_url: { required: function() { return !$('input[name=cover_image]')[0].files.length; }, url: true },
                     "description[]": "required",
@@ -471,7 +461,7 @@
                     tax: "Please enter Tax",
                     min_bidding_price: "Please enter min bidding price",
                     "short_description[]": "Please enter short description",
-                    thumbnail: "Please enter thumbnail",
+                    thumbnail_url: "Please enter a valid thumbnail image URL",
                     cover_image: "Please upload cover image or enter cover image URL",
                     cover_image_url: "Please enter a valid cover image URL or upload a file",
                     "description[]": "Please enter description",
@@ -592,7 +582,7 @@
                                 tax: "required",
                                 min_bidding_price: "required",
                                 "short_description[]": "required",
-                                thumbnail: "required",
+                                thumbnail_url: { required: true, url: true },
                                 cover_image: { required: function() { return !$('#cover-image-url').val().trim(); } },
                                 cover_image_url: { required: function() { return !$('input[name=cover_image]')[0].files.length; }, url: true },
                             }, {
@@ -601,7 +591,7 @@
                                 tax: "Please enter Tax",
                                 min_bidding_price: "Please enter min bidding price",
                                 "short_description[]": "Please enter short description",
-                                thumbnail: "Please enter thumbnail",
+                                thumbnail_url: "Please enter a valid thumbnail image URL",
                                 cover_image: "Please upload cover image or enter cover image URL",
                                 cover_image_url: "Please enter a valid cover image URL or upload a file",
                             });
@@ -798,6 +788,17 @@
             var url = $(this).val();
             if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
                 $('#cover-image-preview').attr('src', url);
+            }
+        });
+
+        // Thumbnail URL: preview when typing
+        $('#thumbnail-url').on('input', function() {
+            var url = $(this).val();
+            var $preview = $('#thumbnail-preview');
+            if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
+                $preview.attr('src', url).show();
+            } else {
+                $preview.hide();
             }
         });
 

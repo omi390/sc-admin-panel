@@ -164,24 +164,15 @@
                                             <div class="col-lg-3 col-sm-5 mb-5 mb-sm-0">
                                                 <div class="d-flex flex-column align-items-center gap-3">
                                                     <p class="mb-0">{{translate('thumbnail_image')}}</p>
-                                                    <div>
-                                                        <div class="upload-file">
-                                                            <input type="file" class="upload-file__input"
-                                                                   name="thumbnail" accept=".{{ implode(',.', array_column(IMAGEEXTENSION, 'key')) }}, |image/*">
-                                                            <div class="upload-file__img">
-                                                                <img src="{{$service->thumbnail_full_path}}"
-                                                                     alt="{{translate('image')}}">
-                                                            </div>
-                                                            <span class="upload-file__edit">
-                                                                <span class="material-icons">edit</span>
-                                                            </span>
+                                                    <div class="w-100">
+                                                        <label class="form-label small">{{translate('thumbnail_image_url')}}</label>
+                                                        <input type="url" class="form-control" name="thumbnail_url"
+                                                               id="thumbnail-url" placeholder="https://..."
+                                                               value="{{ (\Illuminate\Support\Str::startsWith($service->getRawOriginal('thumbnail') ?? '', 'http') ? $service->getRawOriginal('thumbnail') : '') }}">
+                                                        <div class="mt-2 text-center">
+                                                            <img src="{{ $service->thumbnail_full_path }}" alt="" id="thumbnail-preview" class="img-fluid rounded" style="max-height: 120px;">
                                                         </div>
                                                     </div>
-                                                    <p class="opacity-75 max-w220 mx-auto">{{translate('Image format - jpg, png,
-                                                        jpeg,
-                                                        gif Image
-                                                        Size -
-                                                        maximum size 2 MB Image Ratio - 1:1')}}</p>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-sm-7">
@@ -635,6 +626,14 @@
             var url = $(this).val();
             if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
                 $('#cover-image-preview').attr('src', url);
+            }
+        });
+
+        // Thumbnail URL: preview when typing
+        $('#thumbnail-url').on('input', function() {
+            var url = $(this).val();
+            if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
+                $('#thumbnail-preview').attr('src', url);
             }
         });
 

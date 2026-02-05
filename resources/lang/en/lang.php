@@ -280,6 +280,7 @@
                                                         Size -
                                                         maximum size 2 MB Image Ratio - 1:1',
   'thumbnail_image' => 'Thumbnail image',
+  'thumbnail_image_url' => 'Thumbnail image URL',
   'add_tax_percentage' => 'Add tax percentage',
   'add_service' => 'Add service',
   'zones' => 'Zones',
@@ -1093,6 +1094,7 @@
   'background' => 'Background',
   'images' => 'Images',
   'image' => 'Image',
+  'image_url' => 'Image URL',
   'review' => 'Review',
   'register_here' => 'Register here',
   'features' => 'Features',

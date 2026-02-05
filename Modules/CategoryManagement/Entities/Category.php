@@ -150,6 +150,10 @@ class Category extends Model
             }
             return $defaultPath;
         }
+        // If image is already a full URL, return as-is
+        if (str_starts_with($image, 'http://') || str_starts_with($image, 'https://')) {
+            return $image;
+        }
 
         $s3Storage = $this->storage;
 
@@ -177,7 +181,9 @@ class Category extends Model
 
         static::saved(function ($model) {
             $storageType = getDisk();
-            if($model->isDirty('image') && $storageType != 'public'){
+            $image = $model->image ?? '';
+            $isImageUrl = str_starts_with($image, 'http://') || str_starts_with($image, 'https://');
+            if($model->isDirty('image') && $storageType != 'public' && !$isImageUrl){
                 saveSingleImageDataToStorage(model: $model, modelColumn : 'image', storageType : $storageType);
             }
         });

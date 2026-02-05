@@ -82,7 +82,7 @@ class CategoryController extends Controller
             'name' => 'required|unique:categories',
             'name.0' => 'required',
             'zone_ids' => 'required|array',
-            'image' => 'required|image|mimes:jpeg,jpg,png,gif|max:10240',
+            'image_url' => 'required|url',
         ],
             [
                 'name.0.required' => translate('default_name_is_required'),
@@ -90,7 +90,7 @@ class CategoryController extends Controller
 
         $category = $this->category;
         $category->name = $request->name[array_search('default', $request->lang)];
-        $category->image = file_uploader('category/', 'png', $request->file('image'));
+        $category->image = $request->filled('image_url') ? $request->image_url : null;
         $category->parent_id = 0;
         $category->position = 1;
         $category->description = null;
@@ -178,8 +178,8 @@ class CategoryController extends Controller
             return response()->json(response_formatter(CATEGORY_204), 204);
         }
         $category->name = $request->name[array_search('default', $request->lang)];
-        if ($request->has('image')) {
-            $category->image = file_uploader('category/', 'png', $request->file('image'), $category->image);
+        if ($request->filled('image_url')) {
+            $category->image = $request->image_url;
         }
         $category->parent_id = 0;
         $category->position = 1;
@@ -233,7 +233,10 @@ class CategoryController extends Controller
         $this->authorize('category_delete');
         $category = $this->category->ofType('main')->where('id', $id)->first();
         if (isset($category)) {
-            file_remover('category/', $category->image);
+            $image = $category->image ?? '';
+            if ($image && !str_starts_with($image, 'http://') && !str_starts_with($image, 'https://')) {
+                file_remover('category/', $image);
+            }
             $category->zones()->sync([]);
             $category->translations()->delete();
             $category->delete();

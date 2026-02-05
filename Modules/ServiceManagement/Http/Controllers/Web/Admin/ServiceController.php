@@ -137,7 +137,7 @@ class ServiceController extends Controller
                 'description.0' => 'required',
                 'short_description' => 'required',
                 'short_description.0' => 'required',
-                'thumbnail' => 'required',
+                'thumbnail_url' => 'required|url',
                 'tax' => 'required|numeric|min:0|max:100',
                 'min_bidding_price' => 'required|numeric|min:0|not_in:0',
             ]
@@ -167,7 +167,7 @@ class ServiceController extends Controller
         } elseif ($request->filled('cover_image_url')) {
             $service->cover_image = $request->cover_image_url;
         }
-        $service->thumbnail = file_uploader('service/', 'png', $request->file('thumbnail'));
+        $service->thumbnail = $request->filled('thumbnail_url') ? $request->thumbnail_url : null;
         $service->tax = $request->tax;
         $service->min_bidding_price = $request->min_bidding_price;
         $service->images = $request->input('images') ? array_values(array_filter((array) $request->input('images'))) : null;
@@ -482,8 +482,8 @@ class ServiceController extends Controller
             $service->cover_image = $request->cover_image_url;
         }
 
-        if ($request->has('thumbnail')) {
-            $service->thumbnail = file_uploader('service/', 'png', $request->file('thumbnail'));
+        if ($request->filled('thumbnail_url')) {
+            $service->thumbnail = $request->thumbnail_url;
         }
 
         $service->images = $request->input('images') ? array_values(array_filter((array) $request->input('images'))) : null;
@@ -652,7 +652,10 @@ class ServiceController extends Controller
         $service = $this->service->where('id', $id)->first();
         if (isset($service)) {
             foreach (['thumbnail', 'cover_image'] as $item) {
-                file_remover('service/', $service[$item]);
+                $value = $service[$item] ?? '';
+                if ($value && !str_starts_with($value, 'http://') && !str_starts_with($value, 'https://')) {
+                    file_remover('service/', $value);
+                }
             }
             $service->translations()->delete();
             $service->variations()->delete();

@@ -212,6 +212,10 @@ class Service extends Model
             }
             return $defaultPath;
         }
+        // If thumbnail is already a full URL, return as-is
+        if (str_starts_with($image, 'http://') || str_starts_with($image, 'https://')) {
+            return $image;
+        }
 
         $s3Storage = $this->storage_thumbnail;
         $path = 'service/';
@@ -265,7 +269,9 @@ class Service extends Model
 
         static::saved(function ($model) {
             $storageType = getDisk();
-            if($model->isDirty('thumbnail') && $storageType != 'public'){
+            $thumbnail = $model->thumbnail ?? '';
+            $isThumbnailUrl = str_starts_with($thumbnail, 'http://') || str_starts_with($thumbnail, 'https://');
+            if($model->isDirty('thumbnail') && $storageType != 'public' && !$isThumbnailUrl){
                 saveSingleImageDataToStorage(model: $model, modelColumn : 'thumbnail', storageType : $storageType);
             }
             // Only save cover_image to storage if it's a file path (not a URL)
