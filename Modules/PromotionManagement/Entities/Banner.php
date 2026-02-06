@@ -10,12 +10,23 @@ use Illuminate\Support\Facades\Config;
 use Modules\BusinessSettingsModule\Entities\Storage;
 use Modules\CategoryManagement\Entities\Category;
 use Modules\ServiceManagement\Entities\Service;
+use Modules\ZoneManagement\Entities\Zone;
 
 class Banner extends Model
 {
     use HasFactory, HasUuid;
 
-    protected $fillable = [];
+    protected $fillable = [
+        'banner_title',
+        'resource_type',
+        'resource_id',
+        'redirect_link',
+        'banner_image',
+        'is_active',
+        'main_category_id',
+        'zone_id',
+        'tab_id',
+    ];
 
     protected $casts = [
         'is_active' => 'integer'
@@ -36,6 +47,11 @@ class Banner extends Model
     public function service(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Service::class, 'resource_id');
+    }
+
+    public function zone(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Zone::class, 'zone_id');
     }
 
     public function storage()

@@ -27,6 +27,37 @@
                                     @csrf
                                     <div class="row">
                                         <div class="col-lg-6 mb-4 mb-lg-0">
+                                            <div class="mb-30">
+                                                <label class="form-label">{{translate('main_category')}} *</label>
+                                                <select class="js-select theme-input-style w-100" name="main_category_id"
+                                                        id="main_category_id" required>
+                                                    <option value="" selected disabled>---{{translate('select_main_category')}}---</option>
+                                                    @foreach($mainCategories as $mainCat)
+                                                        <option value="{{$mainCat->id}}">{{$mainCat->CategoryCode ?? $mainCat->title}} (ID: {{$mainCat->id}})</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-30">
+                                                <label class="form-label">{{translate('zone')}} *</label>
+                                                <select class="js-select theme-input-style w-100" name="zone_id" required>
+                                                    <option value="" selected disabled>---{{translate('select_zone')}}---</option>
+                                                    @foreach($zones as $zone)
+                                                        <option value="{{$zone->id}}">{{$zone->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-30" id="tab_selector">
+                                                <label class="form-label">{{translate('tab')}} ({{translate('optional')}})</label>
+                                                <select class="js-select theme-input-style w-100" name="tab_id" id="tab_id">
+                                                    <option value="">{{translate('select_tab')}}</option>
+                                                    @foreach($tabs as $tab)
+                                                        <option value="{{$tab->id}}">{{$tab->category_name ?? 'Tab #'.$tab->id}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+
                                             <div class="form-floating form-floating__icon mb-30">
                                                 <input type="text" class="form-control" name="banner_title"
                                                        placeholder="{{translate('title')}} *"
@@ -190,6 +221,9 @@
                                     <thead>
                                     <tr>
                                         <th>{{translate('sl')}}</th>
+                                        <th>{{translate('main_category')}}</th>
+                                        <th>{{translate('zone')}}</th>
+                                        <th>{{translate('tab')}}</th>
                                         <th>{{translate('title')}}</th>
                                         <th>{{translate('type')}}</th>
                                         @can('banner_manage_status')
@@ -204,6 +238,19 @@
                                     @foreach($banners as $key => $item)
                                         <tr>
                                             <td>{{$key+$banners->firstItem()}}</td>
+                                            <td>
+                                                @php
+                                                    $mainCat = $item->main_category_id ? \Illuminate\Support\Facades\DB::table('Main_Category')->where('id', $item->main_category_id)->first() : null;
+                                                @endphp
+                                                {{ $mainCat ? ($mainCat->CategoryCode ?? $mainCat->title) . ' (ID: '.$mainCat->id.')' : '-' }}
+                                            </td>
+                                            <td>{{$item->zone?->name ?? '-'}}</td>
+                                            <td>
+                                                @php
+                                                    $tab = $item->tab_id ? \Illuminate\Support\Facades\DB::table('category_tabs')->leftJoin('categories', 'categories.id', '=', 'category_tabs.category_id')->where('category_tabs.id', $item->tab_id)->select('categories.name')->first() : null;
+                                                @endphp
+                                                {{ $tab?->name ?? ($item->tab_id ? 'Tab #'.$item->tab_id : '-') }}
+                                            </td>
                                             <td>{{$item->banner_title}}</td>
                                             <td>{{$item->resource_type}}</td>
                                             @can('banner_manage_status')
@@ -296,6 +343,35 @@
             $('#category_selector').hide();
             $('#service_selector').hide();
             $('#link_selector').show();
+        });
+
+        // Load tabs when main category changes
+        $('#main_category_id').on('change', function () {
+            var mainCategoryId = $(this).val();
+            var tabSelect = $('#tab_id');
+            tabSelect.html('<option value="">{{ translate("loading") }}...</option>');
+
+            if (!mainCategoryId) {
+                tabSelect.html('<option value="">{{ translate("select_tab") }}</option>');
+                tabSelect.trigger('change');
+                return;
+            }
+
+            $.get('{{ route('admin.banner.tabs-by-main-category') }}', { main_category_id: mainCategoryId })
+                .done(function (response) {
+                    var options = '<option value="">{{ translate("select_tab") }}</option>';
+                    if (response.tabs && response.tabs.length > 0) {
+                        response.tabs.forEach(function (tab) {
+                            options += '<option value="' + tab.id + '">' + (tab.category_name || 'Tab #' + tab.id) + '</option>';
+                        });
+                    }
+                    tabSelect.html(options);
+                    tabSelect.trigger('change');
+                })
+                .fail(function () {
+                    tabSelect.html('<option value="">{{ translate("select_tab") }}</option>');
+                    tabSelect.trigger('change');
+                });
         });
     </script>
 @endpush

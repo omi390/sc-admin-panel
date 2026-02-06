@@ -24,6 +24,37 @@
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 mb-4 mb-lg-0">
+                                        <div class="mb-30">
+                                            <label class="form-label">{{translate('main_category')}} *</label>
+                                            <select class="js-select theme-input-style w-100" name="main_category_id"
+                                                    id="main_category_id" required>
+                                                <option value="" disabled>---{{translate('select_main_category')}}---</option>
+                                                @foreach($mainCategories as $mainCat)
+                                                    <option value="{{$mainCat->id}}" {{$mainCat->id==$banner->main_category_id?'selected':''}}>{{$mainCat->CategoryCode ?? $mainCat->title}} (ID: {{$mainCat->id}})</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-30">
+                                            <label class="form-label">{{translate('zone')}} *</label>
+                                            <select class="js-select theme-input-style w-100" name="zone_id" required>
+                                                <option value="" disabled>---{{translate('select_zone')}}---</option>
+                                                @foreach($zones as $zone)
+                                                    <option value="{{$zone->id}}" {{$zone->id==$banner->zone_id?'selected':''}}>{{$zone->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-30" id="tab_selector">
+                                            <label class="form-label">{{translate('tab')}} ({{translate('optional')}})</label>
+                                            <select class="js-select theme-input-style w-100" name="tab_id" id="tab_id">
+                                                <option value="">{{translate('select_tab')}}</option>
+                                                @foreach($tabs as $tab)
+                                                    <option value="{{$tab->id}}" {{$tab->id==$banner->tab_id?'selected':''}}>{{$tab->category_name ?? 'Tab #'.$tab->id}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
                                         <div class="form-floating form-floating__icon mb-30">
                                             <input type="text" class="form-control" name="banner_title"
                                                    value="{{$banner->banner_title}}"
@@ -157,6 +188,35 @@
 
         $(document).ready(function () {
             $('.js-select').select2();
+        });
+
+        // Load tabs when main category changes
+        $('#main_category_id').on('change', function () {
+            var mainCategoryId = $(this).val();
+            var tabSelect = $('#tab_id');
+            tabSelect.html('<option value="">{{ translate("loading") }}...</option>');
+
+            if (!mainCategoryId) {
+                tabSelect.html('<option value="">{{ translate("select_tab") }}</option>');
+                tabSelect.trigger('change');
+                return;
+            }
+
+            $.get('{{ route('admin.banner.tabs-by-main-category') }}', { main_category_id: mainCategoryId })
+                .done(function (response) {
+                    var options = '<option value="">{{ translate("select_tab") }}</option>';
+                    if (response.tabs && response.tabs.length > 0) {
+                        response.tabs.forEach(function (tab) {
+                            options += '<option value="' + tab.id + '">' + (tab.category_name || 'Tab #' + tab.id) + '</option>';
+                        });
+                    }
+                    tabSelect.html(options);
+                    tabSelect.trigger('change');
+                })
+                .fail(function () {
+                    tabSelect.html('<option value="">{{ translate("select_tab") }}</option>');
+                    tabSelect.trigger('change');
+                });
         });
     </script>
 @endpush
