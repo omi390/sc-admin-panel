@@ -69,7 +69,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Web\Admin',
 
     Route::group(['prefix' => 'banner', 'as' => 'banner.'], function () {
         Route::any('create', 'BannerController@create')->name('create');
-        Route::get('tabs-by-main-category', 'BannerController@getTabsByMainCategory')->name('tabs-by-main-category');
         Route::post('store', 'BannerController@store')->name('store');
         Route::get('edit/{id}', 'BannerController@edit')->name('edit');
         Route::put('update/{id}', 'BannerController@update')->name('update');

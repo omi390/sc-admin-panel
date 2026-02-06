@@ -50,11 +50,10 @@ class BannerController extends Controller
         $resourceType = $request->has('resource_type') ? $request['resource_type'] : 'all';
         $queryParam = ['search' => $search, 'resource_type' => $resourceType];
 
-        $categories = $this->category->ofStatus(1)->ofType('main')->latest()->get();
+        $subCategories = $this->category->ofStatus(1)->ofType('sub')->with('parent')->latest()->get();
         $services = $this->service->active()->latest()->get();
         $mainCategories = DB::table('Main_Category')->where('is_active', 1)->orderBy('order')->get();
         $zones = $this->zone->ofStatus(1)->latest()->get();
-        $tabs = collect();
 
         $banners = $this->banner->with(['service', 'category', 'zone'])
             ->when($request->has('search'), function ($query) use ($request) {
@@ -69,7 +68,7 @@ class BannerController extends Controller
                 return $query->where(['resource_type' => $request['resource_type']]);
             })->latest()->paginate(pagination_limit())->appends($queryParam);
 
-        return view('promotionmanagement::admin.promotional-banners.create', compact('banners', 'services', 'categories', 'mainCategories', 'zones', 'tabs', 'resourceType', 'search'));
+        return view('promotionmanagement::admin.promotional-banners.create', compact('banners', 'services', 'subCategories', 'mainCategories', 'zones', 'resourceType', 'search'));
     }
 
     /**
@@ -88,13 +87,12 @@ class BannerController extends Controller
             'service_id' => 'uuid',
             'category_id' => 'uuid',
             'resource_type' => 'required|in:service,category,link',
-            'banner_image' => 'required|image|max:10000|mimes:' . implode(',', array_column(IMAGEEXTENSION, 'key'))
+            'banner_image' => 'required|url'
         ]);
 
         $banner = $this->banner;
         $banner->main_category_id = $request['main_category_id'];
         $banner->zone_id = $request['zone_id'];
-        $banner->tab_id = $request['tab_id'] ?? null;
         $banner->banner_title = $request['banner_title'];
         $banner->redirect_link = $request['redirect_link'];
         $banner->resource_type = $request['resource_type'];
@@ -104,7 +102,7 @@ class BannerController extends Controller
             $resourceId = null;
         }
         $banner->resource_id = $resourceId;
-        $banner->banner_image = file_uploader('banner/', 'png', $request->file('banner_image'));
+        $banner->banner_image = $request['banner_image'];
         $banner->is_active = 1;
         $banner->save();
 
@@ -122,19 +120,12 @@ class BannerController extends Controller
     {
         $this->authorize('banner_update');
         $banner = $this->banner->with(['service', 'category', 'zone'])->where('id', $id)->first();
-        $categories = $this->category->ofStatus(1)->ofType('main')->latest()->get();
+        $subCategories = $this->category->ofStatus(1)->ofType('sub')->with('parent')->latest()->get();
         $services = $this->service->active()->latest()->get();
         $mainCategories = DB::table('Main_Category')->where('is_active', 1)->orderBy('order')->get();
         $zones = $this->zone->ofStatus(1)->latest()->get();
-        $tabs = $banner->main_category_id
-            ? DB::table('category_tabs')
-                ->leftJoin('categories', 'categories.id', '=', 'category_tabs.category_id')
-                ->where('category_tabs.Main_Category_id', $banner->main_category_id)
-                ->select('category_tabs.id', 'categories.name as category_name')
-                ->get()
-            : collect();
 
-        return view('promotionmanagement::admin.promotional-banners.edit', compact('categories', 'services', 'mainCategories', 'zones', 'tabs', 'banner'));
+        return view('promotionmanagement::admin.promotional-banners.edit', compact('subCategories', 'services', 'mainCategories', 'zones', 'banner'));
     }
 
     /**
@@ -153,13 +144,12 @@ class BannerController extends Controller
             'resource_type' => 'required|in:service,category,link',
             'service_id' => 'uuid',
             'category_id' => 'uuid',
-            'banner_image' => 'image|max:10000|mimes:' . implode(',', array_column(IMAGEEXTENSION, 'key'))
+            'banner_image' => 'required|url'
         ]);
 
         $banner = $this->banner->where(['id' => $id])->first();
         $banner->main_category_id = $request['main_category_id'];
         $banner->zone_id = $request['zone_id'];
-        $banner->tab_id = $request['tab_id'] ?? null;
         $banner->banner_title = $request['banner_title'];
         $banner->redirect_link = $request['redirect_link'];
         $banner->resource_type = $request['resource_type'];
@@ -169,7 +159,7 @@ class BannerController extends Controller
             $resourceId = null;
         }
         $banner->resource_id = $resourceId;
-        $banner->banner_image = file_uploader('banner/', 'png', $request->file('banner_image'), $banner->banner_image);
+        $banner->banner_image = $request['banner_image'];
         $banner->save();
 
         Toastr::success(translate(BANNER_UPDATE_200['message']));
@@ -188,32 +178,14 @@ class BannerController extends Controller
         $banner = $this->banner->where('id', $id)->first();
 
         if (isset($banner)) {
-            file_remover('banner/', $banner['banner_image']);
+            $isImageUrl = $banner->banner_image && (str_starts_with($banner->banner_image, 'http://') || str_starts_with($banner->banner_image, 'https://'));
+            if (!$isImageUrl && $banner->banner_image) {
+                file_remover('banner/', $banner['banner_image']);
+            }
             $this->banner->where('id', $id)->delete();
         }
         Toastr::success(translate(DEFAULT_DELETE_200['message']));
         return back();
-    }
-
-    /**
-     * Fetch tabs by main category for banner form.
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function getTabsByMainCategory(Request $request): JsonResponse
-    {
-        $mainCategoryId = $request->input('main_category_id');
-        if (!$mainCategoryId) {
-            return response()->json(['tabs' => []]);
-        }
-
-        $tabs = DB::table('category_tabs')
-            ->leftJoin('categories', 'categories.id', '=', 'category_tabs.category_id')
-            ->where('category_tabs.Main_Category_id', $mainCategoryId)
-            ->select('category_tabs.id', 'categories.name as category_name')
-            ->get();
-
-        return response()->json(['tabs' => $tabs]);
     }
 
     /**

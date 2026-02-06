@@ -18,8 +18,7 @@
                     </div>
                     <div class="card mb-30">
                         <div class="card-body p-30">
-                            <form action="{{route('admin.banner.update',[$banner->id])}}" method="POST"
-                                  enctype="multipart/form-data">
+                            <form action="{{route('admin.banner.update',[$banner->id])}}" method="POST">
                                 @method('PUT')
                                 @csrf
                                 <div class="row">
@@ -41,16 +40,6 @@
                                                 <option value="" disabled>---{{translate('select_zone')}}---</option>
                                                 @foreach($zones as $zone)
                                                     <option value="{{$zone->id}}" {{$zone->id==$banner->zone_id?'selected':''}}>{{$zone->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-
-                                        <div class="mb-30" id="tab_selector">
-                                            <label class="form-label">{{translate('tab')}} ({{translate('optional')}})</label>
-                                            <select class="js-select theme-input-style w-100" name="tab_id" id="tab_id">
-                                                <option value="">{{translate('select_tab')}}</option>
-                                                @foreach($tabs as $tab)
-                                                    <option value="{{$tab->id}}" {{$tab->id==$banner->tab_id?'selected':''}}>{{$tab->category_name ?? 'Tab #'.$tab->id}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -85,14 +74,12 @@
 
                                         <div class="mb-30" id="category_selector"
                                              style="display: {{$banner->resource_type=='category'?'block':'none'}}">
-                                            <select class="js-select theme-input-style w-100" name="category_id">
-                                                <option value="" selected disabled>---{{translate('Select_Category')}}
-                                                    ---
-                                                </option>
-                                                @foreach($categories as $category)
-                                                    <option
-                                                        value="{{$category->id}}" {{$category->id==$banner->resource_id?'selected':''}}>
-                                                        {{$category->name}}
+                                            <label class="form-label">{{translate('sub_category')}}</label>
+                                            <select class="js-select theme-input-style w-100" name="category_id" id="category_id">
+                                                <option value="">{{translate('select_sub_category')}}</option>
+                                                @foreach($subCategories as $subCat)
+                                                    <option value="{{$subCat->id}}" {{$subCat->id==$banner->resource_id?'selected':''}}>
+                                                        {{$subCat->name}} ({{$subCat->parent?->name ?? '-'}})
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -114,7 +101,7 @@
                                         <div class="form-floating form-floating__icon mb-30"
                                              style="display: {{$banner->resource_type=='link'?'block':'none'}}"
                                              id="link_selector">
-                                            <input type="url" class="form-control"
+                                            <input type="url" class="form-control" name="redirect_link"
                                                    placeholder="{{translate('redirect_link')}}"
                                                    value="{{$banner->redirect_link}}">
                                             <label>{{translate('redirect_link')}}</label>
@@ -123,24 +110,23 @@
 
                                     </div>
                                     <div class="col-lg-6">
-                                        <div class="d-flex flex-column align-items-center gap-3">
-                                            <p class="title-color mb-0">{{translate('upload_cover_image')}}</p>
-                                            <div>
-                                                <div class="upload-file">
-                                                    <input type="file" class="upload-file__input" name="banner_image">
-                                                    <div class="upload-file__img upload-file__img_banner">
-                                                        <img src="{{$banner->banner_image_full_path}}"
-                                                            alt="{{ translate('banner') }}">
-                                                    </div>
-                                                    <span class="upload-file__edit">
-                                                        <span class="material-icons">edit</span>
-                                                    </span>
-                                                </div>
+                                        <div class="form-floating form-floating__icon mb-30">
+                                            <input type="url" class="form-control" name="banner_image"
+                                                   id="banner_image_url"
+                                                   placeholder="{{translate('banner_image_url')}} *"
+                                                   value="{{ $banner->banner_image }}"
+                                                   required="">
+                                            <label>{{translate('banner_image_url')}} *</label>
+                                            <span class="material-icons">image</span>
+                                        </div>
+                                        <div class="mb-30">
+                                            <p class="title-color mb-2">{{translate('image_preview')}}</p>
+                                            <div class="upload-file__img upload-file__img_banner border rounded p-2" style="min-height: 120px;">
+                                                <img id="banner_image_preview"
+                                                     src="{{ $banner->banner_image_full_path }}"
+                                                     alt="{{ translate('banner') }}"
+                                                     class="img-fluid" style="max-height: 200px;">
                                             </div>
-
-                                            <p class="opacity-75 max-w220 mx-auto">{{translate('Image format - jpg,
-                                                png, jpeg, gif Image Size - maximum size 2 MB Image
-                                                Ratio - 2:1')}}</p>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -190,33 +176,17 @@
             $('.js-select').select2();
         });
 
-        // Load tabs when main category changes
-        $('#main_category_id').on('change', function () {
-            var mainCategoryId = $(this).val();
-            var tabSelect = $('#tab_id');
-            tabSelect.html('<option value="">{{ translate("loading") }}...</option>');
-
-            if (!mainCategoryId) {
-                tabSelect.html('<option value="">{{ translate("select_tab") }}</option>');
-                tabSelect.trigger('change');
-                return;
-            }
-
-            $.get('{{ route('admin.banner.tabs-by-main-category') }}', { main_category_id: mainCategoryId })
-                .done(function (response) {
-                    var options = '<option value="">{{ translate("select_tab") }}</option>';
-                    if (response.tabs && response.tabs.length > 0) {
-                        response.tabs.forEach(function (tab) {
-                            options += '<option value="' + tab.id + '">' + (tab.category_name || 'Tab #' + tab.id) + '</option>';
-                        });
-                    }
-                    tabSelect.html(options);
-                    tabSelect.trigger('change');
-                })
-                .fail(function () {
-                    tabSelect.html('<option value="">{{ translate("select_tab") }}</option>');
-                    tabSelect.trigger('change');
+        // Banner image URL preview
+        $('#banner_image_url').on('input', function () {
+            var url = $(this).val();
+            var $preview = $('#banner_image_preview');
+            if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
+                $preview.attr('src', url).on('error', function () {
+                    $(this).attr('src', '{{ asset("assets/admin-module/img/media/banner-upload-file.png") }}');
                 });
+            } else {
+                $preview.attr('src', '{{ asset("assets/admin-module/img/media/banner-upload-file.png") }}');
+            }
         });
     </script>
 @endpush

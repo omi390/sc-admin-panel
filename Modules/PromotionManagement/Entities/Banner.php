@@ -71,6 +71,11 @@ class Banner extends Model
             return $defaultPath;
         }
 
+        // If image is already a full URL, return as-is
+        if (str_starts_with($image, 'http://') || str_starts_with($image, 'https://')) {
+            return $image;
+        }
+
         $s3Storage = $this->storage;
         $path = 'banner/';
         $imagePath = $path . $image;
@@ -91,9 +96,13 @@ class Banner extends Model
         });
 
         static::saved(function ($model) {
-            $storageType = getDisk();
-            if($model->isDirty('banner_image') && $storageType != 'public'){
-                saveSingleImageDataToStorage(model: $model, modelColumn : 'banner_image', storageType : $storageType);
+            $image = $model->banner_image ?? '';
+            $isImageUrl = str_starts_with($image, 'http://') || str_starts_with($image, 'https://');
+            if ($model->wasChanged('banner_image') && !$isImageUrl) {
+                $storageType = getDisk();
+                if ($storageType != 'public') {
+                    saveSingleImageDataToStorage(model: $model, modelColumn : 'banner_image', storageType : $storageType);
+                }
             }
         });
     }
