@@ -172,6 +172,7 @@ class ServiceController extends Controller
             $service->cover_image = $request->cover_image_url;
         }
         $service->thumbnail = $request->filled('thumbnail_url') ? $request->thumbnail_url : null;
+        $service->badge_image = $request->filled('badge_image_url') ? $request->badge_image_url : null;
         $service->tax = $request->tax;
         $service->min_bidding_price = $request->min_bidding_price;
         $service->images = $request->input('images') ? array_values(array_filter((array) $request->input('images'))) : null;
@@ -580,6 +581,7 @@ class ServiceController extends Controller
         if ($request->filled('thumbnail_url')) {
             $service->thumbnail = $request->thumbnail_url;
         }
+        $service->badge_image = $request->filled('badge_image_url') ? $request->badge_image_url : null;
 
         $service->images = $request->input('images') ? array_values(array_filter((array) $request->input('images'))) : null;
         $service->code_text = $request->input('code_text');

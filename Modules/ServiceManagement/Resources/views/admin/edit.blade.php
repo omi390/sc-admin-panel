@@ -231,6 +231,16 @@
                                                     </div>
                                                 </template>
                                             </div>
+                                            <div class="col-12 mt-3">
+                                                <label class="form-label fw-bold">{{ translate('badge_image') }}</label>
+                                                <p class="text-muted small mb-2">{{ translate('badge_image_url_help') }}</p>
+                                                <input type="url" class="form-control" name="badge_image_url" id="badge-image-url"
+                                                       placeholder="https://..."
+                                                       value="{{ (\Illuminate\Support\Str::startsWith($service->getRawOriginal('badge_image') ?? '', 'http') ? $service->getRawOriginal('badge_image') : '') }}">
+                                                <div class="mt-2" id="badge-image-preview-wrap" style="{{ !empty($service->getRawOriginal('badge_image')) ? '' : 'display:none;' }}">
+                                                    <img src="{{ $service->getRawOriginal('badge_image') ?? '' }}" alt="{{ translate('badge_image') }}" id="badge-image-preview" class="img-fluid rounded" style="max-height: 80px;">
+                                                </div>
+                                            </div>
                                             @if($language)
                                                 <div class="lang-form2" id="default-form2">
                                                     <div class="col-lg-12 mt-5">
@@ -664,6 +674,19 @@
             var url = $(this).val();
             if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
                 $('#thumbnail-preview').attr('src', url);
+            }
+        });
+
+        // Badge image URL: preview when typing
+        $('#badge-image-url').on('input', function() {
+            var url = $(this).val();
+            var $wrap = $('#badge-image-preview-wrap');
+            var $img = $('#badge-image-preview');
+            if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
+                $img.attr('src', url);
+                $wrap.show();
+            } else {
+                $wrap.hide();
             }
         });
 

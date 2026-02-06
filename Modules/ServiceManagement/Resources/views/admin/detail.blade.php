@@ -74,9 +74,12 @@
                     <div class="card">
                         <div class="card-body p-30">
                             <div class="media flex-column flex-md-row gap-3 mb-3">
-                                <div class="">
+                                <div class="position-relative">
                                     <img width="300"
                                          src="{{$service->cover_image_full_path}}">
+                                    @if(!empty($service->badge_image))
+                                        <img src="{{ $service->badge_image }}" alt="{{ translate('badge_image') }}" class="position-absolute rounded" style="max-height: 60px; max-width: 80px; bottom: 10px; left: 10px; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+                                    @endif
                                 </div>
                                 <div class="media-body ">
                                     <div class="d-flex flex-wrap gap-3 align-items-center justify-content-between mb-3">
