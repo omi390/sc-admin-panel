@@ -84,8 +84,8 @@ class BannerController extends Controller
             'main_category_id' => 'required|integer',
             'zone_id' => 'required|uuid',
             'banner_title' => 'required',
-            'service_id' => 'uuid',
-            'category_id' => 'uuid',
+            'service_id' => 'nullable|uuid',
+            'category_id' => 'nullable|integer',
             'resource_type' => 'required|in:service,category,link',
             'banner_image' => 'required|url'
         ]);
@@ -142,8 +142,8 @@ class BannerController extends Controller
             'zone_id' => 'required|uuid',
             'banner_title' => 'required',
             'resource_type' => 'required|in:service,category,link',
-            'service_id' => 'uuid',
-            'category_id' => 'uuid',
+            'service_id' => 'nullable|uuid',
+            'category_id' => 'nullable|integer',
             'banner_image' => 'required|url'
         ]);
 

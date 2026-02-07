@@ -36,6 +36,7 @@ class Service extends Model
         'rating_count' => 'integer',
         'avg_rating' => 'float',
         'images' => 'array',
+        'video' => 'array',
     ];
 
     protected $fillable = [];

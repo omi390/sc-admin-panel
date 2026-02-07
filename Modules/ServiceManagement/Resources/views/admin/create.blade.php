@@ -204,6 +204,22 @@
                                                 </template>
                                             </div>
                                             <div class="col-12 mt-3">
+                                                <label class="form-label fw-bold">{{ translate('service_videos') }}</label>
+                                                <p class="text-muted small mb-2">{{ translate('service_videos_urls_help') }}</p>
+                                                <div id="service-videos-list"></div>
+                                                <button type="button" class="btn btn-sm btn--primary mt-2" id="add-service-video-btn">
+                                                    <span class="material-icons">add</span> {{ translate('add_video_url') }}
+                                                </button>
+                                                <template id="service-video-row-template">
+                                                    <div class="input-group mb-2 service-video-url-row">
+                                                        <input type="url" class="form-control" name="videos[]" placeholder="https://...">
+                                                        <button type="button" class="btn btn-outline-danger remove-service-video" aria-label="{{ translate('remove') }}">
+                                                            <span class="material-icons">delete</span>
+                                                        </button>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                            <div class="col-12 mt-3">
                                                 <label class="form-label fw-bold">{{ translate('badge_image') }}</label>
                                                 <p class="text-muted small mb-2">{{ translate('badge_image_url_help') }}</p>
                                                 <input type="url" class="form-control" name="badge_image_url" id="badge-image-url" placeholder="https://...">
@@ -862,6 +878,17 @@
         });
         $(document).on('click', '.remove-service-image', function() {
             $(this).closest('.service-image-url-row').remove();
+        });
+
+        // Service videos: add row
+        $('#add-service-video-btn').on('click', function() {
+            var template = document.getElementById('service-video-row-template');
+            if (!template || !template.content) return;
+            var clone = template.content.cloneNode(true);
+            $('#service-videos-list').append(clone);
+        });
+        $(document).on('click', '.remove-service-video', function() {
+            $(this).closest('.service-video-url-row').remove();
         });
 
         // Service Sections: add row (create page - no existing sections)

@@ -123,6 +123,23 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="long-description-tab-pane">
                                     {!! $service->description !!}
+                                    @php($serviceVideos = $service->video ?? [])
+                                    @if(!empty($serviceVideos))
+                                        <div class="mt-4 pt-3 border-top">
+                                            <h5 class="mb-3">{{ translate('service_videos') }}</h5>
+                                            <ul class="list-unstyled mb-0">
+                                                @foreach($serviceVideos as $videoUrl)
+                                                    @if(!empty(trim($videoUrl)))
+                                                        <li class="mb-2">
+                                                            <a href="{{ $videoUrl }}" target="_blank" rel="noopener noreferrer" class="text-primary">
+                                                                {{ $videoUrl }}
+                                                            </a>
+                                                        </li>
+                                                    @endif
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="tab-pane fade" id="price-table-tab-pane">
                                     <div class="row justify-content-center">

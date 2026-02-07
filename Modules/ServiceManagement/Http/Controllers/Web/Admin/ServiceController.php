@@ -176,6 +176,7 @@ class ServiceController extends Controller
         $service->tax = $request->tax;
         $service->min_bidding_price = $request->min_bidding_price;
         $service->images = $request->input('images') ? array_values(array_filter((array) $request->input('images'))) : null;
+        $service->video = $request->input('videos') ? array_values(array_filter((array) $request->input('videos'))) : null;
         $service->code_text = $request->input('code_text');
         $service->code_img = $request->input('code_img');
         $service->save();
@@ -584,6 +585,7 @@ class ServiceController extends Controller
         $service->badge_image = $request->filled('badge_image_url') ? $request->badge_image_url : null;
 
         $service->images = $request->input('images') ? array_values(array_filter((array) $request->input('images'))) : null;
+        $service->video = $request->input('videos') ? array_values(array_filter((array) $request->input('videos'))) : null;
         $service->code_text = $request->input('code_text');
         $service->code_img = $request->input('code_img');
 
