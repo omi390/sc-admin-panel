@@ -27,10 +27,10 @@
                                     <div class="row">
                                         <div class="col-lg-6 mb-4 mb-lg-0">
                                             <div class="mb-30">
-                                                <label class="form-label">{{translate('main_category')}} *</label>
+                                                <label class="form-label">{{translate('main_category')}} ({{translate('optional')}})</label>
                                                 <select class="js-select theme-input-style w-100" name="main_category_id"
-                                                        id="main_category_id" required>
-                                                    <option value="" selected disabled>---{{translate('select_main_category')}}---</option>
+                                                        id="main_category_id">
+                                                    <option value="" selected>{{translate('open')}}</option>
                                                     @foreach($mainCategories as $mainCat)
                                                         <option value="{{$mainCat->id}}">{{$mainCat->CategoryCode ?? $mainCat->title}} (ID: {{$mainCat->id}})</option>
                                                     @endforeach
@@ -229,7 +229,7 @@
                                                 @php
                                                     $mainCat = $item->main_category_id ? \Illuminate\Support\Facades\DB::table('Main_Category')->where('id', $item->main_category_id)->first() : null;
                                                 @endphp
-                                                {{ $mainCat ? ($mainCat->CategoryCode ?? $mainCat->title) . ' (ID: '.$mainCat->id.')' : '-' }}
+                                                {{ $mainCat ? ($mainCat->CategoryCode ?? $mainCat->title) . ' (ID: '.$mainCat->id.')' : translate('open') }}
                                             </td>
                                             <td>{{$item->zone?->name ?? '-'}}</td>
                                             <td>{{$item->banner_title}}</td>

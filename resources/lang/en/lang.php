@@ -619,6 +619,8 @@
   'resource_type' => 'Resource type',
   'main_category' => 'Main Category',
   'select_main_category' => 'Select Main Category',
+  'open' => 'Open',
+  'optional' => 'Optional',
   'select_sub_category' => 'Select Sub Category',
   'banner_image_url' => 'Banner Image URL',
   'image_preview' => 'Image Preview',

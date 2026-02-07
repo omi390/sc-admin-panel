@@ -24,10 +24,10 @@
                                 <div class="row">
                                     <div class="col-lg-6 mb-4 mb-lg-0">
                                         <div class="mb-30">
-                                            <label class="form-label">{{translate('main_category')}} *</label>
+                                            <label class="form-label">{{translate('main_category')}} ({{translate('optional')}})</label>
                                             <select class="js-select theme-input-style w-100" name="main_category_id"
-                                                    id="main_category_id" required>
-                                                <option value="" disabled>---{{translate('select_main_category')}}---</option>
+                                                    id="main_category_id">
+                                                <option value="" {{!$banner->main_category_id ? 'selected' : ''}}>{{translate('open')}}</option>
                                                 @foreach($mainCategories as $mainCat)
                                                     <option value="{{$mainCat->id}}" {{$mainCat->id==$banner->main_category_id?'selected':''}}>{{$mainCat->CategoryCode ?? $mainCat->title}} (ID: {{$mainCat->id}})</option>
                                                 @endforeach

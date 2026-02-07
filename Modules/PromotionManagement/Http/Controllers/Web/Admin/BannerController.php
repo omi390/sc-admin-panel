@@ -81,7 +81,7 @@ class BannerController extends Controller
     {
         $this->authorize('banner_add');
         $request->validate([
-            'main_category_id' => 'required|integer',
+            'main_category_id' => 'nullable|integer',
             'zone_id' => 'required|uuid',
             'banner_title' => 'required',
             'service_id' => 'nullable|uuid',
@@ -91,7 +91,7 @@ class BannerController extends Controller
         ]);
 
         $banner = $this->banner;
-        $banner->main_category_id = $request['main_category_id'];
+        $banner->main_category_id = $request['main_category_id'] ?: null;
         $banner->zone_id = $request['zone_id'];
         $banner->banner_title = $request['banner_title'];
         $banner->redirect_link = $request['redirect_link'];
@@ -138,7 +138,7 @@ class BannerController extends Controller
     {
         $this->authorize('banner_update');
         $request->validate([
-            'main_category_id' => 'required|integer',
+            'main_category_id' => 'nullable|integer',
             'zone_id' => 'required|uuid',
             'banner_title' => 'required',
             'resource_type' => 'required|in:service,category,link',
@@ -148,7 +148,7 @@ class BannerController extends Controller
         ]);
 
         $banner = $this->banner->where(['id' => $id])->first();
-        $banner->main_category_id = $request['main_category_id'];
+        $banner->main_category_id = $request['main_category_id'] ?: null;
         $banner->zone_id = $request['zone_id'];
         $banner->banner_title = $request['banner_title'];
         $banner->redirect_link = $request['redirect_link'];
